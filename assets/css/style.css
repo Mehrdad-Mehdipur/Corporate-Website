@@ -1,65 +1,113 @@
+:root {
+  --main-color: #393940;
+  --main-text-color: #4d536d;
+  --second-text-color: #858aa3;
+  --light-color: #ffffff;
+  --text-light-color: #ffffff;
+  --hover-color: #bfad98;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-}
-
-* a {
   text-decoration: none;
-  color: #000;
+  list-style: none;
 }
 
 body {
   font-family: "vazir", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #4c445c;
+  background: var(--main-color);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden;
+  font-size: 10px;
 }
 
 .container {
   width: 95vw;
-  height: 100%;
 }
 
-/** ===== Showcase ===== */
+/** ===== Button ===== */
 
-#showcase {
-  width: 100%;
-  height: 100vh;
+.btn {
+  background: var(--main-color);
+  font-family: "vazir";
+  font-size: 1rem;
+  padding: 0.5rem 2rem;
+  margin-top: 2rem;
+  border: none;
+  color: var(--text-light-color);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
-.container .showcase-bg {
-  width: 100vw;
-  height: 100vh;
-  background: url(../images/pic5.jpg) no-repeat left bottom;
-  background-size: cover;
+.btn:hover {
+  background: var(--second-text-color);
 }
 
 /** ===== Navbar ===== */
 
-#showcase nav {
+nav.container {
   position: absolute;
   top: 50px;
-  left: 0;
-  width: 100vw;
-  height: 70px;
-  padding: 0 2rem;
+  width: 80vw;
+  height: 80px;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: #fff;
-  z-index: 4;
+  z-index: 2;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+  color: var(--main-text-color);
 }
 
 /* ===== Nav Icons ===== */
+nav .menuIcon {
+  height: 100%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  display: none;
+}
+
+nav .menuIcon:hover {
+  scale: 110%;
+  transform-origin: center;
+  color: var(--hover-color);
+}
 
 nav .navIcons {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 nav .navIcons .icon {
@@ -68,19 +116,154 @@ nav .navIcons .icon {
   justify-content: center;
   width: 30px;
   height: 30px;
-  margin: 5px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+nav .navIcons .icon i {
+  font-size: 1rem;
+}
+
+nav .navIcons .icon i:hover {
+  scale: 110%;
+  transform-origin: bottom;
+  color: var(--second-text-color);
+}
+
+nav .navIcons .navSearch {
+  position: relative;
+}
+
+nav .navIcons .navSearch .searchBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100%;
+  padding-left: 2rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+
+nav .navIcons .navSearch .searchBar.show {
+  opacity: 1;
+  width: 250px;
+}
+
+nav .navIcons .navSearch i {
+  position: absolute;
 }
 
 /* ===== Nav Links ===== */
 
-nav ul {
+nav .navLinks {
+  height: 100%;
   display: flex;
-  justify-content: center;
 }
 
-nav ul a {
-  padding: 10px;
-  font-size: 1.2;
+nav .navLinks .link {
+  height: 100%;
+  padding: 0 0.5rem;
+}
+
+nav .navLinks .link .titleLink {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+nav .navLinks .link .titleLink a {
+  font-size: 1rem;
+  color: var(--main-text-color);
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+nav .navLinks .link .titleLink a:hover {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--second-text-color);
+}
+
+nav .navLinks .link .dropdown {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-text-color);
+  background: var(--light-color);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transform: translateY(-20px);
+  -webkit-transform: translateY(-20px);
+  -moz-transform: translateY(-20px);
+  -ms-transform: translateY(-20px);
+  -o-transform: translateY(-20px);
+}
+
+nav .navLinks .link:hover .dropdown {
+  opacity: 1;
+  pointer-events: initial;
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+}
+
+nav .navLinks .dropdown .content {
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 2rem;
+}
+
+nav .navLinks .dropdown .content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+nav .navLinks .dropdown .content p {
+  font-size: 1rem;
+  text-align: justify;
+}
+
+nav .navLinks .dropdown .dropImage {
+  width: 50%;
+  height: 100%;
+  background: url(../images/pic12.jpg) no-repeat center;
+  background-size: cover;
 }
 
 /* ===== Nav Logo ===== */
@@ -91,11 +274,27 @@ nav .logo {
   justify-content: center;
   width: 90px;
   height: 100%;
-  background: #c7b7a0;
   font-size: 1.5rem;
+  padding: 1rem;
+  cursor: pointer;
 }
 
-/** ===== Sections ===== */
+/** ===== Showcase ===== */
+
+#showcase {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+body .showcase-bg {
+  width: 100vw;
+  height: 100vh;
+  background: url(../images/pic5.jpg) no-repeat left bottom;
+  background-size: cover;
+}
+
+/** ===== Other Sections ===== */
 
 #e2 {
   width: 100%;

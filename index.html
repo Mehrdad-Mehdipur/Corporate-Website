@@ -15,38 +15,74 @@
   </head>
 
   <body>
-    <div class="container">
-      <!-- Showcase -->
-      <section id="showcase" class="showcase-bg">
-        <!-- Navbar -->
-        <nav>
-          <div class="navIcons">
-            <div class="icon"><i class="fa fa-home"></i></div>
-            <div class="icon"><i class="fa fa-heart"></i></div>
-            <div class="icon"><i class="fa fa-search"></i></div>
+    <!--  Navbar -->
+    <nav class="container">
+      <!-- Nav Icons -->
+      <div class="menuIcon"><i class="fa fa-bars"></i></div>
+
+      <div class="navIcons">
+        <div class="icon"><i class="fa fa-user-circle"></i></div>
+        <div class="icon"><i class="fa fa-home"></i></div>
+        <div class="icon"><i class="fa fa-heart"></i></div>
+        <div class="icon navSearch">
+          <input id="searchBar" type="search" class="searchBar" />
+          <i id="showSearchBar" class="fa fa-search"></i>
+        </div>
+      </div>
+
+      <!-- Nav LInks -->
+      <div class="navLinks">
+        <div class="link">
+          <div class="titleLink">
+            <a href="#">درباره ما</a>
           </div>
 
-          <!-- Nav LInks -->
-          <ul>
-            <div><a href="#">صفحه اصلی</a></div>
-            <div><a href="#">درباره ما</a></div>
-            <div><a href="#">محصولات</a></div>
-            <div><a href="#">مشاوره</a></div>
-            <div><a href="#">فروشگاه</a></div>
-            <div><a href="#">وبلاگ</a></div>
-          </ul>
+          <div class="dropdown">
+            <div class="content">
+              <h3>شرکت معمار مهندسین مشاور</h3>
+              <p>
+                ارتقا و پیشرفت شرکت طراحی دکوراسیون داخلی نوژا با تلاش و پشتکار
+                معماران خلاق و باتجربه تداوم یافته است و در حال حاضر پروژه‌های
+                بسیاری را در زمینه طراحی داخلی در دست اجرا دارد. اولویت این شرکت
+                در پروژه‌ها، استفاده از خلاقیت و طرح‌هایی کارآمد است تا رضایت
+                خاطر کارفرمایان فراهم شده و از سویی دیگر گامی مثبت در جهت ارتقای
+                سطح کیفی فضاهای امروزی برداشته شود. در همین راستا پرورش نیروهایی
+                خلاق و حرفه‌ای یکی از شاخصه های شرکت طراحی داخلی نوژا در سال‌های
+                فعالیتش بوده است.
+              </p>
+              <button class="btn">بیشتر بخوانید</button>
+            </div>
 
-          <!-- Logo -->
-          <div class="logo">logo</div>
-        </nav>
-      </section>
+            <div class="dropImage"></div>
+          </div>
+        </div>
+        <div class="link">
+          <div class="titleLink">
+            <a href="#">مشاوره</a>
+          </div>
 
-      <section id="e2"></section>
-      <section id="e3"></section>
-      <section id="e4"></section>
-      <section id="e5"></section>
+          <div class="dropdown">
+            <div class="content">
+              <h3>مشاوره</h3>
+            </div>
 
-      <script src="./assets/js/script.js"></script>
-    </div>
+            <div class="dropImage"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nav Logo -->
+      <div class="logo">logo</div>
+    </nav>
+
+    <!-- Showcase -->
+    <section id="showcase" class="showcase-bg"></section>
+
+    <section id="e2"></section>
+    <section id="e3"></section>
+    <section id="e4"></section>
+    <section id="e5"></section>
+
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
