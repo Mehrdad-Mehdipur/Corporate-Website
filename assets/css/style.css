@@ -1,7 +1,7 @@
 :root {
   --main-color: #393940;
   --main-text-color: #4d536d;
-  --second-text-color: #858aa3;
+  --second-text-color: #999fb6;
   --light-color: #ffffff;
   --text-light-color: #ffffff;
   --hover-color: #bfad98;
@@ -14,10 +14,11 @@
   scroll-behavior: smooth;
   text-decoration: none;
   list-style: none;
+  line-height: 1.5;
 }
 
 body {
-  font-family: "vazir", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "shabnam", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: var(--main-color);
   display: flex;
   flex-direction: column;
@@ -35,9 +36,9 @@ body {
 
 .btn {
   background: var(--main-color);
-  font-family: "vazir";
+  font-family: "iransans";
   font-size: 1rem;
-  padding: 0.5rem 2rem;
+  padding: 0.8rem 2rem;
   margin-top: 2rem;
   border: none;
   color: var(--text-light-color);

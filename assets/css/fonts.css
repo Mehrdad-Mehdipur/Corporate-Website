@@ -7,3 +7,18 @@
   font-family: "vazir";
   src: url("../fonts/vazir.ttf");
 }
+
+@font-face {
+  font-family: "shabnam";
+  src: url("../fonts/Shabnam.ttf");
+}
+
+@font-face {
+  font-family: "shabnam-Light";
+  src: url("../fonts/Shabnam-Light.ttf");
+}
+
+@font-face {
+  font-family: "shabnam-Bold";
+  src: url("../fonts/Shabnam-Bold.ttf");
+}

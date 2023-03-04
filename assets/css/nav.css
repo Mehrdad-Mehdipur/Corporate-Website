@@ -117,7 +117,6 @@
 
 .navbar .navLinks .link {
   height: 100%;
-  padding: 0 0.5rem;
 }
 
 .navbar .navLinks .link .titleLink {
@@ -130,7 +129,9 @@
 }
 
 .navbar .navLinks .link .titleLink a {
+  font-family: "shabnam-Light";
   font-size: 1rem;
+  padding: 0 0.5rem;
   color: var(--main-text-color);
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
@@ -140,8 +141,8 @@
 }
 
 .navbar .navLinks .link .titleLink a:hover {
-  font-size: 1.1rem;
-  font-weight: bold;
+  /* scale: 1.1; */
+  padding-bottom: 5px;
   color: var(--second-text-color);
 }
 
@@ -173,6 +174,52 @@
   pointer-events: initial;
 }
 
+/* ============ Projects ============ */
+
+.navbar .navLinks .projects .dropdown {
+  justify-content: space-between;
+}
+
+.navbar .navLinks .projects .dropdown .content {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.navbar .navLinks .projects .dropdown .content h3 {
+  font-size: 1.8rem;
+  font-family: "shabnam-Light";
+}
+
+.navbar .navLinks .projects .dropdown .content ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .navLinks .projects .dropdown .content ul li {
+  font-size: 1rem;
+  font-family: "shabnam";
+  padding: 0.6rem 0;
+}
+
+.navbar .navLinks .projects .dropdown .imgBox {
+  width: 50%;
+  height: 100%;
+}
+
+.navbar .navLinks .projects .dropdown .imgBox .navLinkImg {
+  width: 100%;
+  height: 100%;
+}
+
 /* ============ Services ============ */
 
 .navbar .navLinks .services .dropdown {
@@ -190,7 +237,7 @@
 .navbar .navLinks .services .dropdown .content .verticalLine {
   width: 1px;
   height: 400px;
-  background: #bbb;
+  background: #eaeaea;
 }
 
 .navbar .navLinks .services .dropdown .content .list {
@@ -206,17 +253,22 @@
   font-size: 1rem;
   color: var(--main-text-color);
   cursor: default;
+  font-family: "shabnam-Light";
 }
 
 .navbar .navLinks .services .dropdown .content .list ul li {
-  font-size: 0.8rem;
-  color: var(--second-text-color);
-  padding: 5px;
+  font-family: "shabnam";
+  padding: 6px 0;
   transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -ms-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
+}
+
+.navbar .navLinks .services .dropdown .content .list ul li a {
+  font-size: 0.8rem;
+  color: var(--second-text-color);
 }
 
 .navbar .navLinks .services .dropdown .content .list ul li:hover {
@@ -273,11 +325,12 @@
 }
 
 .navbar .navLinks .aboutUs .dropdown .content h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 2rem;
 }
 
 .navbar .navLinks .aboutUs .dropdown .content p {
+  line-height: 1.5;
   font-size: 1rem;
   text-align: justify;
   color: var(--second-text-color);
@@ -292,8 +345,7 @@
 .navbar .navLinks .aboutUs .dropdown .imgBox img {
   width: 100%;
   height: 100%;
-  background: url(../images/pic12.jpg) no-repeat center;
-  background-size: cover;
+  object-fit: cover;
 }
 
 /** ===== Nav Logo ===== */
