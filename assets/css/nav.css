@@ -131,7 +131,7 @@
 .navbar .navLinks .link .titleLink a {
   font-family: "shabnam-Light";
   font-size: 1rem;
-  padding: 0 0.5rem;
+  padding: 0 0.7rem;
   color: var(--main-text-color);
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
@@ -141,7 +141,6 @@
 }
 
 .navbar .navLinks .link .titleLink a:hover {
-  /* scale: 1.1; */
   padding-bottom: 5px;
   color: var(--second-text-color);
 }
@@ -159,14 +158,15 @@
   color: var(--main-text-color);
   background: var(--light-color);
   overflow: hidden;
+  border: 1px #ffffff10 outset;
   border-radius: 0 0 6px 6px;
   -webkit-border-radius: 0 0 6px 6px;
   -moz-border-radius: 0 0 6px 6px;
   -ms-border-radius: 0 0 6px 6px;
   -o-border-radius: 0 0 6px 6px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
-  pointer-events: none;
-  opacity: 0;
+  /* pointer-events: none; */
+  opacity: 1;
 }
 
 .navbar .navLinks .link:hover .dropdown {
@@ -174,53 +174,96 @@
   pointer-events: initial;
 }
 
-/* ============ Projects ============ */
+/*? ============  Contact Us ============ */
 
-.navbar .navLinks .projects .dropdown {
-  justify-content: space-between;
+.navbar .navLinks .contactUs {
+  z-index: 100;
 }
 
-.navbar .navLinks .projects .dropdown .content {
-  width: 50%;
-  height: 100%;
+.navbar .navLinks .contactUs .dropdown .imgBox {
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-}
-
-.navbar .navLinks .projects .dropdown .content h3 {
-  font-size: 1.8rem;
-  font-family: "shabnam-Light";
-}
-
-.navbar .navLinks .projects .dropdown .content ul {
   width: 100%;
   height: 100%;
+  overflow: hidden;
+}
+
+.navbar .navLinks .contactUs:hover .dropdown .imgBox img {
+  animation: scaleInLowOpacity;
+  -webkit-animation: scaleInLowOpacity;
+  animation-duration: 1s;
+}
+
+.navbar .navLinks .contactUs .dropdown .imgBox img {
+  opacity: 0.5;
+}
+
+.navbar .navLinks .contactUs .dropdown .content {
+  width: 100%;
+  height: 100%;
+  background: yellow;
+}
+
+.navbar .navLinks .contactUs .dropdown .content .Counseling {
+  background: red;
+}
+
+.navbar .navLinks .contactUs:hover .dropdown .content {
+  animation: comeDown;
+  -webkit-animation: comeDown;
+  animation-duration: 1s;
+}
+
+/*? ============ About Us ============ */
+
+.navbar .navLinks .aboutUs .dropdown .content {
+  direction: rtl;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 50%;
+  padding: 2rem;
+}
+.navbar .navLinks .aboutUs:hover .dropdown .content {
+  animation: comeDown;
+  -webkit-animation: comeDown;
+  animation-duration: 1s;
 }
 
-.navbar .navLinks .projects .dropdown .content ul li {
+.navbar .navLinks .aboutUs .dropdown .content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.navbar .navLinks .aboutUs .dropdown .content p {
+  line-height: 1.5;
   font-size: 1rem;
-  font-family: "shabnam";
-  padding: 0.6rem 0;
+  text-align: justify;
+  color: var(--second-text-color);
 }
 
-.navbar .navLinks .projects .dropdown .imgBox {
+.navbar .navLinks .aboutUs .dropdown .imgBox {
   width: 50%;
   height: 100%;
+  overflow: hidden;
 }
 
-.navbar .navLinks .projects .dropdown .imgBox .navLinkImg {
+.navbar .navLinks .aboutUs .dropdown .imgBox img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
-/* ============ Services ============ */
+.navbar .navLinks .aboutUs:hover .dropdown .imgBox img {
+  animation: scaleIn;
+  -webkit-animation: scaleIn;
+  animation-duration: 1s;
+}
+
+/*? ============ Services ============ */
 
 .navbar .navLinks .services .dropdown {
   justify-content: space-between;
@@ -232,6 +275,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.navbar .navLinks .services:hover .dropdown .content {
+  animation: comeDown;
+  -webkit-animation: comeDown;
+  animation-duration: 1s;
 }
 
 .navbar .navLinks .services .dropdown .content .verticalLine {
@@ -257,7 +306,6 @@
 }
 
 .navbar .navLinks .services .dropdown .content .list ul li {
-  font-family: "shabnam";
   padding: 6px 0;
   transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;
@@ -267,7 +315,8 @@
 }
 
 .navbar .navLinks .services .dropdown .content .list ul li a {
-  font-size: 0.8rem;
+  font-family: "shabnam";
+  font-size: 0.9rem;
   color: var(--second-text-color);
 }
 
@@ -295,6 +344,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.navbar .navLinks .services:hover .dropdown .content .list .imgBox img {
   animation: scaleIn;
   -webkit-animation: scaleIn;
   animation-duration: 1s;
@@ -306,46 +358,97 @@
   height: 100%;
 }
 
-.navbar .navLinks .services .dropdown .imgBox .navLinkImg {
+.navbar .navLinks .services .dropdown .imgBox img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* ============ About Us ============ */
+.navbar .navLinks .services:hover .dropdown .imgBox img {
+  animation: scaleIn;
+  -webkit-animation: scaleIn;
+  animation-duration: 1s;
+}
 
-.navbar .navLinks .aboutUs .dropdown .content {
-  direction: rtl;
+/*? ============ Projects ============ */
+
+.navbar .navLinks .projects .dropdown {
+  justify-content: space-between;
+}
+
+.navbar .navLinks .projects .dropdown .content {
+  width: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 50%;
-  padding: 2rem;
+  padding: 1rem;
 }
 
-.navbar .navLinks .aboutUs .dropdown .content h3 {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+.navbar .navLinks .projects:hover .dropdown .content {
+  animation: comeDown;
+  -webkit-animation: comeDown;
+  animation-duration: 1s;
 }
 
-.navbar .navLinks .aboutUs .dropdown .content p {
-  line-height: 1.5;
+.navbar .navLinks .projects .dropdown .content h3 {
+  font-size: 1.8rem;
+  font-family: "shabnam-Light";
+}
+
+.navbar .navLinks .projects .dropdown .content ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .navLinks .projects .dropdown .content ul li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 0;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+.navbar .navLinks .projects .dropdown .content ul li:hover {
+  margin-right: 1rem;
+  background: var(--nav-text-hover-color);
+}
+
+.navbar .navLinks .projects .dropdown .content ul li a {
   font-size: 1rem;
-  text-align: justify;
+  font-family: "shabnam";
   color: var(--second-text-color);
 }
 
-.navbar .navLinks .aboutUs .dropdown .imgBox {
+.navbar .navLinks .projects .dropdown .imgBox {
+  position: relative;
   width: 50%;
   height: 100%;
   overflow: hidden;
 }
 
-.navbar .navLinks .aboutUs .dropdown .imgBox img {
+.navbar .navLinks .projects .dropdown .imgBox img {
+  position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0;
+}
+
+.navbar .navLinks .projects .dropdown .imgBox img.active {
+  animation: scaleIn;
+  -webkit-animation: scaleIn;
+  animation-duration: 1s;
+  opacity: 1;
 }
 
 /** ===== Nav Logo ===== */
@@ -363,27 +466,14 @@
 
 /** ===== Animations  =====  */
 
-/* Dropdown Content Animation */
-.navbar .navLinks .link:hover .dropdown .content {
-  animation: comeDown;
-  -webkit-animation: comeDown;
-  animation-duration: 0.7s;
-}
-
-/* Dropdown Image Animation */
-.navbar .navLinks .link:hover .dropdown .imgBox .navLinkImg {
-  animation: scaleIn;
-  -webkit-animation: scaleIn;
-  animation-duration: 1s;
-}
-
+/* Come Down */
 @keyframes comeDown {
   0% {
-    transform: translateY(-15px);
-    -webkit-transform: translateY(-15px);
-    -moz-transform: translateY(-15px);
-    -ms-transform: translateY(-15px);
-    -o-transform: translateY(-15px);
+    transform: translateY(-20px);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
   }
   100% {
     transform: translateY(0);
@@ -394,6 +484,7 @@
   }
 }
 
+/* Scale in */
 @keyframes scaleIn {
   0% {
     opacity: 0;
@@ -401,6 +492,18 @@
   }
   100% {
     opacity: 1;
+    scale: 100%;
+  }
+}
+
+/* Scale in with low opacity */
+@keyframes scaleInLowOpacity {
+  0% {
+    opacity: 0;
+    scale: 110%;
+  }
+  100% {
+    opacity: 0.5;
     scale: 100%;
   }
 }
