@@ -158,7 +158,7 @@
   color: var(--main-text-color);
   background: var(--light-color);
   overflow: hidden;
-  border: 1px #ffffff10 outset;
+  border: 1px #ffffff10 solid;
   border-radius: 0 0 6px 6px;
   -webkit-border-radius: 0 0 6px 6px;
   -moz-border-radius: 0 0 6px 6px;
@@ -178,42 +178,69 @@
 
 .navbar .navLinks .contactUs {
   z-index: 100;
+  display: flex;
 }
 
-.navbar .navLinks .contactUs .dropdown .imgBox {
-  position: relative;
+.navbar .navLinks .contactUs .dropdown {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  background: blue;
+}
+
+.navbar .navLinks .contactUs .dropdown .imgBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
   height: 100%;
   overflow: hidden;
 }
 
+.navbar .navLinks .contactUs .dropdown .imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .navbar .navLinks .contactUs:hover .dropdown .imgBox img {
-  animation: scaleInLowOpacity;
-  -webkit-animation: scaleInLowOpacity;
+  animation: scaleIn;
+  -webkit-animation: scaleIn;
   animation-duration: 1s;
 }
 
-.navbar .navLinks .contactUs .dropdown .imgBox img {
-  opacity: 0.5;
-}
-
 .navbar .navLinks .contactUs .dropdown .content {
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
   height: 100%;
-  background: yellow;
-}
-
-.navbar .navLinks .contactUs .dropdown .content .Counseling {
-  background: red;
+  background: #a4a4a4;
 }
 
 .navbar .navLinks .contactUs:hover .dropdown .content {
   animation: comeDown;
   -webkit-animation: comeDown;
   animation-duration: 1s;
+}
+
+.navbar .navLinks .contactUs .dropdown .Counseling {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  background: #ff0000;
+}
+
+.navbar .navLinks .contactUs .dropdown .contactInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 100%;
+  background: rgb(255, 255, 117);
 }
 
 /*? ============ About Us ============ */
