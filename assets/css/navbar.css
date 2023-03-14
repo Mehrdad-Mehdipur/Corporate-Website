@@ -184,10 +184,148 @@
   pointer-events: initial;
 }
 
-/*? ============  Contact Us ============ */
+/*? ============ Blog ============ */
+
+.navbar .navLinks .blog {
+  /* فقط برای دیدن */
+  z-index: 100;
+  display: flex;
+}
+
+.navbar .navLinks .blog .dropdown {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Blog Title */
+
+.navbar .navLinks .blog .dropdown .blogTitle {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.navbar .navLinks .blog:hover .dropdown .blogTitle {
+  animation: rightIn;
+  -webkit-animation: rightIn;
+  animation-duration: 1s;
+}
+
+.navbar .navLinks .blog .dropdown .blogTitle h1 {
+  text-align: center;
+  font-size: 1rem;
+  padding-bottom: 2rem;
+}
+
+.navbar .navLinks .blog .dropdown .blogTitle p {
+  text-align: justify;
+  font-size: 0.8rem;
+}
+
+/* Cards Left and Right*/
+
+.navbar .navLinks .blog .dropdown .cardsLeft,
+.navbar .navLinks .blog .dropdown .cardsRight {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .navLinks .blog .dropdown .cardsLeft .card,
+.navbar .navLinks .blog .dropdown .cardsRight .card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .navLinks .blog .dropdown .cardsLeft .card .imgBox,
+.navbar .navLinks .blog .dropdown .cardsRight .card .imgBox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.navbar .navLinks .blog .dropdown .cardsLeft .card .imgBox img,
+.navbar .navLinks .blog .dropdown .cardsRight .card .imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+
+.navbar .navLinks .blog .dropdown .cardsLeft .card:hover .imgBox img,
+.navbar .navLinks .blog .dropdown .cardsRight .card:hover .imgBox img {
+  scale: 105%;
+}
+
+.navbar .navLinks .blog:hover .dropdown .cardsLeft .card .imgBox img,
+.navbar .navLinks .blog:hover .dropdown .cardsRight .card .imgBox img {
+  animation: scaleIn;
+  -webkit-animation: scaleIn;
+  animation-duration: 1s;
+}
+
+.navbar .navLinks .blog .dropdown .cardsLeft .card h2,
+.navbar .navLinks .blog .dropdown .cardsRight .card h2 {
+  position: absolute;
+  bottom: 0;
+  font-size: 1rem;
+  text-align: center;
+  width: 100%;
+  height: 200px;
+  padding-top: 5rem;
+  color: var(--text-light-color);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.8015800070028012) 77%
+  );
+}
+
+.navbar .navLinks .blog:hover .dropdown .cardsLeft .card h2,
+.navbar .navLinks .blog:hover .dropdown .cardsRight .card h2 {
+  animation: downIn;
+  -webkit-animation: downIn;
+  animation-duration: 1s;
+}
+
+/* Cards Right Changes */
+
+.navbar .navLinks .blog .dropdown .cardsRight {
+  width: 30%;
+  flex-direction: column;
+}
+
+.navbar .navLinks .blog .dropdown .cardsRight .card {
+  height: 50%;
+}
+
+.navbar .navLinks .blog .dropdown .cardsRight .card h2 {
+  height: 100px;
+  padding-top: 2rem;
+}
+
+/*? ============ Contact Us ============ */
 
 .navbar .navLinks .contactUs {
-  z-index: 100;
   display: flex;
 }
 
@@ -658,6 +796,24 @@
     -moz-transform: translateY(-20px);
     -ms-transform: translateY(-20px);
     -o-transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+}
+
+/* Come from the Bottom */
+@keyframes downIn {
+  0% {
+    transform: translateY(20px);
+    -webkit-transform: translateY(20px);
+    -moz-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    -o-transform: translateY(20px);
   }
   100% {
     transform: translateY(0);
