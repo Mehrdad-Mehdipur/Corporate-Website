@@ -1,0 +1,93 @@
+:root {
+  --main-color: #393940;
+  --light-color: #ffffff;
+  --main-text-color: #4d536d;
+  --second-text-color: #999fb6;
+  --nav-text-hover-color: #f4f4f4;
+  --text-light-color: #ffffff;
+  --hover-color: #bfad98;
+}
+
+/** ===== Portfolio ===== */
+#portfolio {
+  width: 100%;
+  height: 100vh;
+  background: var(--main-color);
+}
+
+.portfolio {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*? ============  SlideShow  ============ */
+.portfolio .slideShow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  height: 100vh;
+}
+
+.portfolio .slideShow .slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 85vh;
+  overflow: hidden;
+  border-bottom: 1px solid var(--light-color);
+  border-top: 1px solid var(--light-color);
+  background: #000;
+}
+
+.portfolio .slideShow .slider .slides {
+  width: 100%;
+  height: 120%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.portfolio .slideShow .slider .slides .imageBox {
+  width: 150px;
+  height: 150px;
+  background: #bfad98;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  border: 1px solid #5d5d5d;
+}
+
+.portfolio .slideShow .slider .slides .imageBox:hover {
+  scale: 107%;
+}
+
+.portfolio .slideShow .slider .slides .imageBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*? ============  MainPic  ============ */
+.portfolio .mainPic {
+  height: 100vh;
+  width: 50%;
+  background: rgb(33, 34, 65);
+}
+
+/*? ============  Links  ============ */
+.portfolio .links {
+  height: 100vh;
+  width: 25%;
+  background: rgb(52, 75, 47);
+}

@@ -30,7 +30,8 @@ body {
 }
 
 .container {
-  width: 95vw;
+  max-width: 95vw;
+  margin: 0 auto;
 }
 
 /** ===== Button ===== */
@@ -76,13 +77,6 @@ body .showcase-bg {
 }
 
 /** ===== Other Sections ===== */
-
-#e2 {
-  width: 100%;
-  height: 100vh;
-  background: url(../images/pic11.jpg) no-repeat center bottom;
-  background-size: cover;
-}
 
 #e3 {
   width: 100%;
