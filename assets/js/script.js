@@ -22,3 +22,11 @@ for (let i = 0; i < navProjectsLinks.length; i++) {
     navProjectsImg[id].classList.add("active");
   });
 }
+
+//* Showcase
+
+const intro = document.querySelector("#showcase .intro");
+
+// window.addEventListener("load", function () {
+//   intro.classList.add("fadeOut");
+// });
