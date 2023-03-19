@@ -8,7 +8,7 @@ showSearchBar.onclick = () => {
   searchBar.classList.toggle("show");
 };
 
-// ========== Change Image By Hover On The Links ==========
+// ========== Change Image By Hover On The Links of Project ==========
 
 const navProjectsLinks = document.querySelector("#navProjectsLinks").children;
 const navProjectsImg = document.querySelector("#navProjectsImg").children;
@@ -25,8 +25,16 @@ for (let i = 0; i < navProjectsLinks.length; i++) {
 
 //* Showcase
 
-const intro = document.querySelector("#showcase .intro");
+// ========== Showcase imgBox becomes full screen when scroll down  ==========
 
-// window.addEventListener("load", function () {
-//   intro.classList.add("fadeOut");
-// });
+const showcaseImgBox = document.querySelector("#showcase .imgBox");
+
+window.addEventListener("scroll", function () {
+  const scrollTop = window.scrollY;
+
+  if (scrollTop >= 50) {
+    showcaseImgBox.classList.add("fullScreen");
+  } else {
+    showcaseImgBox.classList.remove("fullScreen");
+  }
+});
