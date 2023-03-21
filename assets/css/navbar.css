@@ -187,8 +187,6 @@
 /*? ============ Blog ============ */
 
 .navbar .navLinks .blog {
-  /* فقط برای دیدن */
-  z-index: 100;
   display: flex;
 }
 
@@ -211,9 +209,8 @@
   padding: 2rem;
 }
 .navbar .navLinks .blog:hover .dropdown .blogTitle {
-  animation: rightIn;
-  -webkit-animation: rightIn;
-  animation-duration: 1s;
+  animation: rightIn 1s ease-out;
+  -webkit-animation: rightIn 1s ease-out;
 }
 
 .navbar .navLinks .blog .dropdown .blogTitle h1 {
@@ -225,6 +222,11 @@
 .navbar .navLinks .blog .dropdown .blogTitle p {
   text-align: justify;
   font-size: 0.8rem;
+}
+
+.navbar .navLinks .blog .dropdown .blogTitle .btn a {
+  font-size: 0.8rem;
+  color: var(--text-light-color);
 }
 
 /* Cards Left and Right*/
@@ -278,9 +280,8 @@
 
 .navbar .navLinks .blog:hover .dropdown .cardsLeft .card .imgBox img,
 .navbar .navLinks .blog:hover .dropdown .cardsRight .card .imgBox img {
-  animation: scaleIn;
-  -webkit-animation: scaleIn;
-  animation-duration: 1s;
+  animation: scaleIn 1s ease;
+  -webkit-animation: scaleIn 1s ease;
 }
 
 .navbar .navLinks .blog .dropdown .cardsLeft .card h2,
@@ -302,9 +303,8 @@
 
 .navbar .navLinks .blog:hover .dropdown .cardsLeft .card h2,
 .navbar .navLinks .blog:hover .dropdown .cardsRight .card h2 {
-  animation: downIn;
-  -webkit-animation: downIn;
-  animation-duration: 1s;
+  animation: downIn 1s ease-in;
+  -webkit-animation: downIn 1s ease-in;
 }
 
 /* Cards Right Changes */
@@ -353,7 +353,7 @@
   height: 70%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   direction: ltr;
 }
 
@@ -361,19 +361,24 @@
   width: 40%;
   height: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: end;
   justify-content: center;
-  padding: 1rem;
+  padding-left: 1rem;
 }
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .contacts .qr-code img {
   width: 100%;
 }
 
+.navbar .navLinks .contactUs .dropdown .contactInfo .contacts .qr-code p {
+  font-size: 0.8rem;
+  margin: 10px auto;
+}
+
 .navbar .navLinks .contactUs:hover .dropdown .contactInfo {
-  animation: leftIn;
-  -webkit-animation: leftIn;
-  animation-duration: 1s;
+  animation: leftIn 1s ease-out;
+  -webkit-animation: leftIn 1s ease-out;
 }
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .contact {
@@ -419,7 +424,6 @@
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .contact .address {
   width: 100%;
-  padding: 0 0 1rem 0;
   display: flex;
   align-items: center;
   justify-content: start;
@@ -438,7 +442,7 @@
   direction: ltr;
   width: 100%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 30%;
 }
 
@@ -451,15 +455,10 @@
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .socialMedia ul li {
   padding-right: 1rem;
-}
-
-.navbar .navLinks .contactUs .dropdown .contactInfo .socialMedia img {
-  width: 200px;
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -ms-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
 }
 
 /* Icons */
@@ -468,11 +467,11 @@
 .navbar .navLinks .contactUs .dropdown .contactInfo .contact .address a,
 .navbar .navLinks .contactUs .dropdown .contactInfo .socialMedia ul li a {
   font-size: 1rem;
-  width: 40px;
-  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 40px;
+  height: 40px;
   padding: 0.6rem;
   background: var(--main-text-color);
   color: var(--text-light-color);
@@ -481,6 +480,16 @@
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
+}
+
+.navbar .navLinks .contactUs .dropdown .contactInfo .socialMedia ul li a {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  padding: 1rem;
 }
 
 /* Image */
@@ -501,9 +510,8 @@
 }
 
 .navbar .navLinks .contactUs:hover .dropdown .imgBox img {
-  animation: scaleIn;
-  -webkit-animation: scaleIn;
-  animation-duration: 1s;
+  animation: scaleIn 1s ease;
+  -webkit-animation: scaleIn 1s ease;
 }
 
 /* ContactInfo */
@@ -519,9 +527,8 @@
 }
 
 .navbar .navLinks .contactUs:hover .dropdown .counseling {
-  animation: rightIn;
-  -webkit-animation: rightIn;
-  animation-duration: 1s;
+  animation: rightIn 1s ease-out;
+  -webkit-animation: rightIn 1s ease-out;
 }
 
 .navbar .navLinks .contactUs .dropdown .counseling h2 {
@@ -550,9 +557,8 @@
   padding: 2rem;
 }
 .navbar .navLinks .aboutUs:hover .dropdown .content {
-  animation: topIn;
-  -webkit-animation: topIn;
-  animation-duration: 1s;
+  animation: topIn 1s ease-out;
+  -webkit-animation: topIn 1s ease-out;
 }
 
 .navbar .navLinks .aboutUs .dropdown .content h3 {
@@ -580,9 +586,8 @@
 }
 
 .navbar .navLinks .aboutUs:hover .dropdown .imgBox img {
-  animation: scaleIn;
-  -webkit-animation: scaleIn;
-  animation-duration: 1s;
+  animation: scaleIn 1s ease;
+  -webkit-animation: scaleIn 1s ease;
 }
 
 /*? ============ Services ============ */
@@ -600,9 +605,8 @@
 }
 
 .navbar .navLinks .services:hover .dropdown .content {
-  animation: topIn;
-  -webkit-animation: topIn;
-  animation-duration: 1s;
+  animation: topIn 0.7s ease-out;
+  -webkit-animation: topIn 0.7s ease-out;
 }
 
 .navbar .navLinks .services .dropdown .content .verticalLine {
@@ -669,9 +673,8 @@
 }
 
 .navbar .navLinks .services:hover .dropdown .content .list .imgBox img {
-  animation: scaleIn;
-  -webkit-animation: scaleIn;
-  animation-duration: 1s;
+  animation: scaleIn 1s ease-in;
+  -webkit-animation: scaleIn 1s ease-in;
 }
 
 .navbar .navLinks .services .dropdown .imgBox {
@@ -687,9 +690,8 @@
 }
 
 .navbar .navLinks .services:hover .dropdown .imgBox img {
-  animation: scaleIn;
-  -webkit-animation: scaleIn;
-  animation-duration: 1s;
+  animation: scaleIn 1s ease-out;
+  -webkit-animation: scaleIn 1s ease-out;
 }
 
 /*? ============ Projects ============ */
@@ -709,9 +711,8 @@
 }
 
 .navbar .navLinks .projects:hover .dropdown .content {
-  animation: topIn;
-  -webkit-animation: topIn;
-  animation-duration: 1s;
+  animation: topIn 0.7s ease-out;
+  -webkit-animation: topIn 0.7s ease-out;
 }
 
 .navbar .navLinks .projects .dropdown .content h3 {
@@ -767,9 +768,8 @@
 }
 
 .navbar .navLinks .projects .dropdown .imgBox img.active {
-  animation: scaleIn;
-  -webkit-animation: scaleIn;
-  animation-duration: 1s;
+  animation: scaleIn 1s ease;
+  -webkit-animation: scaleIn 1s ease;
   opacity: 1;
 }
 
