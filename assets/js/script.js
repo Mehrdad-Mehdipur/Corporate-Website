@@ -33,6 +33,9 @@ for (let i = 0; i < navProjectsLinks.length; i++) {
     }
     navProjectsImg[id].classList.add("active");
   });
+<<<<<<< HEAD
+}
+=======
 }
 
 //* Showcase
@@ -53,3 +56,4 @@ window.addEventListener("scroll", function () {
     showcaseTitle.classList.remove("moveDown");
   }
 });
+>>>>>>> 53c024a861f243a8c922afb4f9da18d5df84df5f

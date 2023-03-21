@@ -1,3 +1,5 @@
+/* OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
+
 :root {
   --main-color: #393940;
   --light-color: #ffffff;
@@ -16,8 +18,8 @@
 }
 
 .portfolio {
-  height: 100%;
   width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,135 +27,98 @@
 
 /*? ============  SlideShow  ============ */
 .portfolio .slideShow {
+  width: 25%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 25%;
-  height: 100vh;
 }
 
 .portfolio .slideShow .slider {
+  position: relative;
+  width: 80%;
+  height: 85vh;
+  margin: 0 auto;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 80%;
-  height: 85vh;
-  /* overflow: hidden; */
   border-bottom: 1px solid var(--light-color);
   border-top: 1px solid var(--light-color);
 }
 
-.portfolio .slideShow .slider .slides {
+.portfolio .slideShow .slider .slideTrack {
   width: 170px;
-  height: calc(150px * 6);
+  height: calc(150px * 14);
+  margin: 0 auto;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  /* animation: scroll 10s linear infinite;
-  -webkit-animation: scroll 10s linear infinite; */
+  animation: sliderImagesScroll 30s linear infinite;
+  -webkit-animation: sliderImagesScroll 30s linear infinite;
 }
 
-.portfolio .slideShow .slider .slides:hover {
-  animation-play-state: paused;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateY(0);
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -o-transform: translateY(0);
-  }
-  100% {
-    transform: translateY(100%);
-    -webkit-transform: translateY(100%);
-    -moz-transform: translateY(100%);
-    -ms-transform: translateY(100%);
-    -o-transform: translateY(100%);
-  }
-}
-
-.portfolio .slideShow .slider .slides .imageBox {
-  width: 150px;
+.portfolio .slideShow .slider .slideTrack .slide {
+  width: 170px;
   height: 150px;
-  background: #bfad98;
-  margin-bottom: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  margin: 0.5rem auto;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
   perspective: 100px;
 }
 
-.portfolio .slideShow .slider .slides .imageBox img:hover {
-  transform: translateZ(15px);
-  -webkit-transform: translateZ(15px);
-  -moz-transform: translateZ(15px);
-  -ms-transform: translateZ(15px);
-  -o-transform: translateZ(15px);
+.portfolio .slideShow .slider .slideTrack:hover {
+  animation-play-state: paused;
 }
 
-.portfolio .slideShow .slider .slides .imageBox img {
-  width: 100%;
-  height: 100%;
+.portfolio .slideShow .slider .slideTrack .slide img {
   object-fit: cover;
-  transition: transform 0.8s;
-  -webkit-transition: transform 0.8s;
-  -moz-transition: transform 0.8s;
-  -ms-transition: transform 0.8s;
-  -o-transition: transform 0.8s;
+  transition: transform 0.3s;
+  -webkit-transition: transform 0.3s;
+  -moz-transition: transform 0.3s;
+  -ms-transition: transform 0.3s;
+  -o-transition: transform 0.3s;
 }
 
-/* دوتای آخری اوپسیتی صفر باشه */
-
-.imageBox.activeSlide {
-  opacity: 1;
-  transform: translateY(0);
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
-  border: 2px solid red;
-}
-
-.imageBox.lastSlide {
-  opacity: 1;
-  transform: translateY(calc(-150 * 6));
-  -webkit-transform: translateY(calc(-150 * 6));
-  -moz-transform: translateY(calc(-150 * 6));
-  -ms-transform: translateY(calc(-150 * 6));
-  -o-transform: translateY(calc(-150 * 6));
-  border: 2px solid rgb(55, 0, 255);
-}
-
-.imageBox.nextSlide {
-  opacity: 1;
-  transform: translateY(0);
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
-  border: 2px solid rgb(60, 255, 0);
+.portfolio .slideShow .slider .slideTrack .slide img:hover {
+  transform: translateZ(10px);
+  -webkit-transform: translateZ(10px);
+  -moz-transform: translateZ(10px);
+  -ms-transform: translateZ(10px);
+  -o-transform: translateZ(10px);
 }
 
 /*? ============  MainPic  ============ */
 .portfolio .mainPic {
-  height: 100vh;
   width: 50%;
+  height: 100vh;
   background: rgb(33, 34, 65);
 }
 
 /*? ============  Links  ============ */
 .portfolio .links {
-  height: 100vh;
   width: 25%;
+  height: 100vh;
   background: rgb(52, 75, 47);
+}
+
+/** ===== Animations ===== */
+
+/* Slider Images Scroll*/
+@keyframes sliderImagesScroll {
+  0% {
+    transform: translateY(calc(150px * 3));
+    -webkit-transform: translateY(calc(150px * 3));
+    -moz-transform: translateY(calc(150px * 3));
+    -ms-transform: translateY(calc(150px * 3));
+    -o-transform: translateY(calc(150px * 3));
+  }
+  100% {
+    transform: translateY(calc(-102px * 7));
+    -webkit-transform: translateY(calc(-102px * 7));
+    -moz-transform: translateY(calc(-102px * 7));
+    -ms-transform: translateY(calc(-102px * 7));
+    -o-transform: translateY(calc(-102px * 7));
+  }
 }
