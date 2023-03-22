@@ -93,14 +93,31 @@
 .portfolio .mainPic {
   width: 50%;
   height: 100vh;
-  background: rgb(33, 34, 65);
+}
+
+.portfolio .mainPic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: showSelectImage 1s;
+  -webkit-animation: showSelectImage 1s;
+}
+
+@keyframes showSelectImage {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: 100%;
+  }
 }
 
 /*? ============  Links  ============ */
-.portfolio .links {
+.portfolio .slideLinks {
   width: 25%;
   height: 100vh;
-  background: rgb(52, 75, 47);
 }
 
 /** ===== Animations ===== */
