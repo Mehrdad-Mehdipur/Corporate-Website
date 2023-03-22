@@ -5,13 +5,14 @@
   --second-text-color: #999fb6;
   --nav-text-hover-color: #f4f4f4;
   --text-light-color: #ffffff;
+  --text-dark-color: #000;
   --hover-color: #bfad98;
 }
 
 /** ===== Navbar ===== */
 
 .navbar {
-  position: absolute;
+  position: fixed;
   top: 50px;
   width: 80vw;
   height: 60px;
@@ -19,15 +20,31 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #fff;
+  background: var(--light-color);
   z-index: 2;
+  color: var(--main-color);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
-  color: var(--main-text-color);
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+}
+
+.navbar.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
 }
 
 /** ===== Nav Icons ===== */
