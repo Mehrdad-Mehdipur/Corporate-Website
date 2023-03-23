@@ -137,15 +137,13 @@
   padding: 0.7rem 0;
 }
 
-.portfolio .slideLinks .links ul li a::before {
+/* .portfolio .slideLinks .links ul li a::before {
   content: "";
   position: absolute;
-  width: 50%;
   height: 2px;
-  left: 100%;
   bottom: 50%;
   background: var(--second-text-color);
-}
+} */
 
 /** ===== Animations ===== */
 
