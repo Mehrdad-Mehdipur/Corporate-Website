@@ -36,40 +36,124 @@
   -o-transition: all 0.4s ease;
 }
 
-.navbar.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  border-radius: 0;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  -o-border-radius: 0;
+/*? ============ Shrink ============ */
+
+.navbar.shrink {
+  align-items: start;
+  justify-content: center;
+  top: 0px;
+  right: 0px;
+  width: 400px;
+  height: 100vh;
+  flex-direction: column;
+  overflow: auto;
+  padding: 0 0 1rem 0;
+  border-radius: 10px 0 0 10px;
+  -webkit-border-radius: 10px 0 0 10px;
+  -moz-border-radius: 10px 0 0 10px;
+  -ms-border-radius: 10px 0 0 10px;
+  -o-border-radius: 10px 0 0 10px;
 }
 
-/** ===== Nav Icons ===== */
+/* All Animations Off */
 
-.navbar .menuIcon {
-  height: 100%;
-  font-size: 1.5rem;
+.navbar.shrink .navLinks .blog:hover .dropdown .blogTitle {
+  animation: none;
+  -webkit-animation: none;
+}
+
+.navbar.shrink .navLinks {
+  /* position: relative; */
+  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
+  flex-direction: column;
+  margin-top: 180px;
+  background: tomato;
+}
+
+.navbar.shrink .navLinks .link {
+  height: 3rem;
   cursor: pointer;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
+  background: lime;
+}
+
+.navbar.shrink .navLinks .link .dropdown {
+  position: initial;
+  flex-direction: column;
+  height: 0;
+  opacity: 1;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+
+.navbar.shrink .navLinks .link.active .dropdown {
+  height: max-content;
+}
+
+/* Nav Blog */
+
+.navbar.shrink .navLinks .blog {
+  /* position: absolute; */
+  flex-direction: column;
+  width: 100%;
+  top: 30px;
+  left: 0;
+}
+
+.navbar.shrink .navLinks .blog .dropdown .blogTitle {
+  width: 100%;
+}
+
+.navbar.shrink .navLinks .blog .dropdown .cardsLeft,
+.navbar.shrink .navLinks .blog .dropdown .cardsRight {
   display: none;
 }
 
-.navbar .menuIcon:hover {
-  scale: 110%;
-  transform-origin: center;
-  color: var(--hover-color);
+/* Nav  */
+
+/* Icons */
+
+.navbar.shrink .navIcons {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  padding: 0.2rem;
+  margin-top: 10px;
+  justify-content: start;
+  align-items: start;
 }
+
+.navbar.shrink .navIcons .navSearch {
+  position: absolute;
+  top: 45px;
+  width: 100%;
+  height: 2.5rem;
+}
+
+.navbar.shrink .navIcons .navSearch i {
+  position: absolute;
+  left: 0;
+  padding-left: 10px;
+}
+
+.navbar.shrink .navIcons .navSearch .searchBar.show {
+  width: 98%;
+}
+
+.navbar.shrink .logo {
+  position: absolute;
+  top: 110px;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  padding: 1rem;
+  pointer-events: none;
+}
+
+/** ===== Nav Icons ===== */
 
 .navbar .navIcons {
   display: flex;
@@ -104,6 +188,11 @@
 
 .navbar .navIcons .navSearch {
   position: relative;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 .navbar .navIcons .navSearch .searchBar {
@@ -803,6 +892,43 @@
   cursor: pointer;
 }
 
+/** ===== Nav Menu Icon ===== */
+
+.navbar .menuIcon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  display: none;
+}
+
+.navbar .menuIcon {
+  font-size: 2rem;
+  color: var(--main-color);
+}
+
+.navbar .menuIcon:hover {
+  scale: 110%;
+  transform-origin: center;
+  color: var(--hover-color);
+}
+
+/* Show Menu Icon in responsive mode and scrolling down */
+/* .navbar.sticky :not(.navbar, .menuIcon, .menuIcon i) {
+  display: none;
+} */
+
+/* .navbar.sticky .menuIcon {
+  display: block;
+} */
+
 /** ===== Animations  =====  */
 
 /* Come from the Top */
@@ -900,3 +1026,5 @@
     scale: 100%;
   }
 }
+
+/** ===== Responsive  =====  */

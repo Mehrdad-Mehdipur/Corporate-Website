@@ -1,16 +1,26 @@
 //* Navbar
 
-// ========== Sticky Navbar ==========
+// ========== Shrink Navbar ==========
 
 const navbar = document.querySelector("nav");
 
 window.onscroll = () => {
   if (window.pageYOffset > navbar.offsetTop * 4) {
-    navbar.classList.add("sticky");
+    navbar.classList.add("shrink");
   } else {
-    navbar.classList.remove("sticky");
+    navbar.classList.remove("shrink");
   }
 };
+
+// ========== Dropdown links on Shrink Navbar mode ==========
+
+const links = document.querySelectorAll(".link");
+
+links.forEach((link) => {
+  link.addEventListener("click", function () {
+    this.classList.toggle("active");
+  });
+});
 
 // ========== Show Search bar ==========
 const showSearchBar = document.querySelector("#showSearchBar");
