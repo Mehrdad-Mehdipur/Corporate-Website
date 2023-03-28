@@ -1,5 +1,3 @@
-/* OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
-
 :root {
   --main-color: #393940;
   --light-color: #ffffff;
@@ -20,195 +18,28 @@
 .portfolio {
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-/*? ============  SlideShow  ============ */
-.portfolio .slideShow {
-  width: 25%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.portfolio .slideShow .slider {
-  position: relative;
-  width: 80%;
-  height: 85vh;
-  margin: 0 auto;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid var(--light-color);
-  border-top: 1px solid var(--light-color);
-}
-
-.portfolio .slideShow .slider .slideTrack {
-  width: 170px;
-  height: calc(150px * 14);
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  animation: sliderImagesScroll 30s linear infinite;
-  -webkit-animation: sliderImagesScroll 30s linear infinite;
-}
-
-.portfolio .slideShow .slider .slideTrack .slide {
-  width: 170px;
-  height: 150px;
-  margin: 0.5rem auto;
-  cursor: pointer;
-  perspective: 100px;
-}
-
-.portfolio .slideShow .slider .slideTrack:hover {
-  animation-play-state: paused;
-}
-
-.portfolio .slideShow .slider .slideTrack .slide img {
-  object-fit: cover;
-  transition: transform 0.3s;
-  -webkit-transition: transform 0.3s;
-  -moz-transition: transform 0.3s;
-  -ms-transition: transform 0.3s;
-  -o-transition: transform 0.3s;
-}
-
-.portfolio .slideShow .slider .slideTrack .slide img:hover {
-  transform: translateZ(10px);
-  -webkit-transform: translateZ(10px);
-  -moz-transform: translateZ(10px);
-  -ms-transform: translateZ(10px);
-  -o-transform: translateZ(10px);
-}
-
-/*? ============  MainPic  ============ */
-.portfolio .mainPic {
-  width: 50%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.portfolio .mainPic img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  animation: showSelectImage 0.5s;
-  -webkit-animation: showSelectImage 0.5s;
-}
-
-/*? ============  Links  ============ */
-.portfolio .slideLinks {
-  width: 25%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: right;
-  justify-content: space-around;
-}
-
-.portfolio .slideLinks .title {
+.portfolio .title {
   text-align: center;
+  color: var(--text-light-color);
+  padding: 2rem;
 }
 
-.portfolio .slideLinks .title h3 {
-  margin-top: 3rem;
+.portfolio .title h3 {
+  font-size: 2rem;
+  margin: 1rem auto;
+}
+.portfolio .title p {
   font-size: 1.5rem;
-  color: var(--text-light-color);
 }
 
-.portfolio .slideLinks .title button {
-  background: var(--main-text-color);
-}
+/*? ============  Title  ============ */
 
-.portfolio .slideLinks .title button:hover {
-  background: var(--second-text-color);
-}
+/*? ============  Gallery  ============ */
 
-.portfolio .slideLinks .links {
-  text-align: right;
-}
-
-.portfolio .slideLinks .links ul li a {
-  position: relative;
-  font-size: 1rem;
-  color: var(--second-text-color);
-  display: inline-block;
-  padding: 0.7rem 3rem;
-  transition: padding-right 0.5s ease;
-  -webkit-transition: padding-right 0.5s ease;
-  -moz-transition: padding-right 0.5s ease;
-  -ms-transition: padding-right 0.5s ease;
-  -o-transition: padding-right 0.5s ease;
-}
-
-.portfolio .slideLinks .links ul li a:hover {
-  padding-right: 20%;
-  color: var(--text-light-color);
-}
-
-.portfolio .slideLinks .links ul li a::before {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 42%;
-  width: 20%;
-  height: 2px;
-  background: var(--second-text-color);
-  transition: width 0.5s ease;
-  -webkit-transition: width 0.5s ease;
-  -moz-transition: width 0.5s ease;
-  -ms-transition: width 0.5s ease;
-  -o-transition: width 0.5s ease;
-}
-
-.portfolio .slideLinks .links ul li a:hover::before {
-  width: 30%;
-  color: var(--text-light-color);
-}
+/*? ============  display  ============ */
 
 /** ===== Animations ===== */
 
-/* Slider Images Scroll*/
-@keyframes sliderImagesScroll {
-  0% {
-    transform: translateY(calc(150px * 3));
-    -webkit-transform: translateY(calc(150px * 3));
-    -moz-transform: translateY(calc(150px * 3));
-    -ms-transform: translateY(calc(150px * 3));
-    -o-transform: translateY(calc(150px * 3));
-  }
-  100% {
-    transform: translateY(calc(-102px * 7));
-    -webkit-transform: translateY(calc(-102px * 7));
-    -moz-transform: translateY(calc(-102px * 7));
-    -ms-transform: translateY(calc(-102px * 7));
-    -o-transform: translateY(calc(-102px * 7));
-  }
-}
-
-@keyframes showSelectImage {
-  from {
-    opacity: 0;
-    transform: translateX(-20%);
-    -webkit-transform: translateX(-20%);
-    -moz-transform: translateX(-20%);
-    -ms-transform: translateX(-20%);
-    -o-transform: translateX(-20%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-    -webkit-transform: translateX(0);
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -o-transform: translateX(0);
-  }
-}
+/** ===== Responsive ===== */
