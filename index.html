@@ -22,163 +22,44 @@
   <body>
     <!--  Navbar -->
     <nav class="navbar">
-      <!-- Nav Icons -->
-      <div class="navIcons">
-        <div class="icon"><i class="fa fa-user-circle"></i></div>
-        <div class="icon"><i class="fa fa-home"></i></div>
-        <div class="icon"><i class="fa fa-heart"></i></div>
-        <div class="icon navSearch">
-          <input id="searchBar" type="search" class="searchBar" />
-          <i id="showSearchBar" class="fa fa-search"></i>
-        </div>
+      <!-- Nav Menu -->
+      <div class="menuIcon">
+        <i class="fa fa-bars"></i>
       </div>
+
+      <!-- Nav Logo -->
+      <div class="logo">logo</div>
 
       <!-- Nav LInks -->
       <div class="navLinks">
-        <!-- Blog -->
-        <div class="link blog">
+        <!-- Projects -->
+        <div class="link projects">
           <div class="titleLink">
-            <a href="#">بلاگ</a>
+            <a href="#">پروژه‌ها</a>
           </div>
 
           <div class="dropdown">
-            <div class="blogTitle">
-              <h1>آخرین اخبار و مقالات</h1>
-
-              <p>
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-                استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
-                در ستون و سطرآنچنان که
-              </p>
-
-              <button class="btn"><a href="#">مطالب بیشتر</a></button>
+            <div class="content">
+              <h3>پروژه‌های اجرا شده</h3>
+              <ul id="navProjectsLinks">
+                <li data-id="0"><a href="#">پروژه‌های هتلی</a></li>
+                <li data-id="1"><a href="#">پروژه‌های اداری</a></li>
+                <li data-id="2"><a href="#">پروژه‌های تجاری</a></li>
+                <li data-id="3"><a href="#">پروژه‌های مسکونی</a></li>
+                <li data-id="4"><a href="#">پروژه های بیمارستانی</a></li>
+              </ul>
             </div>
 
-            <div class="cardsRight">
-              <div class="card">
-                <a href="#" class="imgBox">
-                  <img src="assets/images/pic5.jpg" alt="" />
-                  <h2>متن دلخواهی که به عنوان تیتر میباشد</h2>
-                </a>
-              </div>
-
-              <div class="card">
-                <a href="#" class="imgBox">
-                  <img src="assets/images/pic11.jpg" alt="" />
-                  <h2>متن دلخواهی که به عنوان تیتر میباشد</h2>
-                </a>
-              </div>
-            </div>
-
-            <div class="cardsLeft">
-              <div class="card">
-                <a href="#" class="imgBox">
-                  <img src="assets/images/pic9.jpg" alt="" />
-                  <h2>متن دلخواهی که به عنوان تیتر میباشد</h2>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Contact Us -->
-        <div class="link contactUs">
-          <div class="titleLink">
-            <a href="#"> تماس با ما</a>
-          </div>
-
-          <div class="dropdown">
-            <div class="contactInfo">
-              <div class="contacts">
-                <div class="contact">
-                  <div class="phone">
-                    <a href="#"><i class="fas fa-phone-volume"></i></a>
-                    <div class="numbers">
-                      <p>+98 21 88224330</p>
-                      <p>+98 21 88224000</p>
-                    </div>
-                  </div>
-
-                  <div class="email">
-                    <a href="#"><i class="fa fa-envelope"></i></a>
-                    <p>example@gmail.com</p>
-                  </div>
-
-                  <div class="address">
-                    <a href="#"><i class="fa fa-location-pin"></i></a>
-                    <p>
-                      تهران بلوار اندرزگو بین خ کاوه و قیطریه نبش بلوچ پلاک ۴
-                      طبقه ۴
-                    </p>
-                  </div>
-                </div>
-
-                <div class="qr-code">
-                  <img src="assets/images/qr-code.svg" alt="qr-code" />
-                  <p>اسکن کنید</p>
-                </div>
-              </div>
-
-              <div class="socialMedia">
-                <ul>
-                  <li>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"> <i class="fab fa-twitter"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"> <i class="fab fa-youtube"></i></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="imgBox">
+            <div id="navProjectsImg" class="imgBox">
               <img
-                src="assets/images/location-symbol-with-landscape-background.jpg"
+                src="assets/images/pic2.jpg"
+                class="navLinkImg active"
                 alt=""
               />
-            </div>
-
-            <div class="counseling">
-              <h2>مشاوره رایگان</h2>
-              <p>
-                شرکت مهندسی آنلاین سازه مفتخر است کلیه خدمات مرتبط با امور
-                ساختمانی را توسط برترین مهندسان متخصص و کارشناسان حرفه‌ای به
-                کارفرمایان عزیز ارائه دهد.
-              </p>
-
-              <button class="btn">تماس با مهندسین مشاور</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- About Us -->
-        <div class="link aboutUs">
-          <div class="titleLink">
-            <a href="#">درباره ما</a>
-          </div>
-
-          <div class="dropdown">
-            <div class="imgBox">
-              <img src="assets/images/pic12.jpg" alt="" />
-            </div>
-
-            <div class="content">
-              <h3>شرکت معمار مهندسین مشاور</h3>
-              <p>
-                ارتقا و پیشرفت شرکت طراحی دکوراسیون داخلی با تلاش و پشتکار
-                معماران خلاق و باتجربه تداوم یافته است و در حال حاضر پروژه‌های
-                بسیاری را در زمینه طراحی داخلی در دست اجرا دارد. اولویت این شرکت
-                در پروژه‌ها، استفاده از خلاقیت و طرح‌هایی کارآمد است تا رضایت
-                خاطر کارفرمایان فراهم شده و از سویی دیگر گامی مثبت در جهت ارتقای
-                سطح کیفی فضاهای امروزی برداشته شود.
-              </p>
-              <button class="btn">بیشتر بخوانید</button>
+              <img src="assets/images/pic6.jpg" alt="" />
+              <img src="assets/images/pic8.jpg" alt="" />
+              <img src="assets/images/pic5.jpg" alt="" />
+              <img src="assets/images/pic1.jpg" alt="" />
             </div>
           </div>
         </div>
@@ -249,34 +130,150 @@
           </div>
         </div>
 
-        <!-- Projects -->
-        <div class="link projects">
+        <!-- Blog -->
+        <div class="link blog">
           <div class="titleLink">
-            <a href="#">پروژه‌ها</a>
+            <a href="#">بلاگ</a>
           </div>
 
           <div class="dropdown">
-            <div class="content">
-              <h3>پروژه‌های اجرا شده</h3>
-              <ul id="navProjectsLinks">
-                <li data-id="0"><a href="#">پروژه‌های هتلی</a></li>
-                <li data-id="1"><a href="#">پروژه‌های اداری</a></li>
-                <li data-id="2"><a href="#">پروژه‌های تجاری</a></li>
-                <li data-id="3"><a href="#">پروژه‌های مسکونی</a></li>
-                <li data-id="4"><a href="#">پروژه های بیمارستانی</a></li>
-              </ul>
+            <div class="blogTitle">
+              <h1>آخرین اخبار و مقالات</h1>
+
+              <p>
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+                استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+                در ستون و سطرآنچنان که
+              </p>
+
+              <button class="btn"><a href="#">مطالب بیشتر</a></button>
             </div>
 
-            <div id="navProjectsImg" class="imgBox">
+            <div class="cardsRight">
+              <div class="card">
+                <a href="#" class="imgBox">
+                  <img src="assets/images/pic5.jpg" alt="" />
+                  <h2>متن دلخواهی که به عنوان تیتر میباشد</h2>
+                </a>
+              </div>
+
+              <div class="card">
+                <a href="#" class="imgBox">
+                  <img src="assets/images/pic11.jpg" alt="" />
+                  <h2>متن دلخواهی که به عنوان تیتر میباشد</h2>
+                </a>
+              </div>
+            </div>
+
+            <div class="cardsLeft">
+              <div class="card">
+                <a href="#" class="imgBox">
+                  <img src="assets/images/pic9.jpg" alt="" />
+                  <h2>متن دلخواهی که به عنوان تیتر میباشد</h2>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Us -->
+        <div class="link contactUs">
+          <div class="titleLink">
+            <a href="#"> تماس با ما</a>
+          </div>
+
+          <div class="dropdown">
+            <div class="contactInfo">
+              <div class="contacts">
+                <div class="qr-code">
+                  <img src="assets/images/qr-code.svg" alt="qr-code" />
+                  <p>اسکن کنید</p>
+                </div>
+
+                <div class="contact">
+                  <div class="phone">
+                    <a href="#"><i class="fas fa-phone-volume"></i></a>
+                    <div class="numbers">
+                      <p>+98 21 88224330</p>
+                      <p>+98 21 88224000</p>
+                    </div>
+                  </div>
+
+                  <div class="email">
+                    <a href="#"><i class="fa fa-envelope"></i></a>
+                    <p>example@gmail.com</p>
+                  </div>
+
+                  <div class="address">
+                    <a href="#"><i class="fa fa-location-pin"></i></a>
+                    <p>
+                      تهران بلوار اندرزگو بین خ کاوه و قیطریه نبش بلوچ پلاک ۴
+                      طبقه ۴
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="socialMedia">
+                <ul>
+                  <li>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"> <i class="fab fa-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"> <i class="fab fa-youtube"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="imgBox">
               <img
-                src="assets/images/pic2.jpg"
-                class="navLinkImg active"
+                src="assets/images/location-symbol-with-landscape-background.jpg"
                 alt=""
               />
-              <img src="assets/images/pic6.jpg" alt="" />
-              <img src="assets/images/pic8.jpg" alt="" />
-              <img src="assets/images/pic5.jpg" alt="" />
-              <img src="assets/images/pic1.jpg" alt="" />
+            </div>
+
+            <div class="counseling">
+              <h2>مشاوره رایگان</h2>
+              <p>
+                شرکت مهندسی آنلاین سازه مفتخر است کلیه خدمات مرتبط با امور
+                ساختمانی را توسط برترین مهندسان متخصص و کارشناسان حرفه‌ای به
+                کارفرمایان عزیز ارائه دهد.
+              </p>
+
+              <button class="btn">تماس با مهندسین مشاور</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- About Us -->
+        <div class="link aboutUs">
+          <div class="titleLink">
+            <a href="#">درباره ما</a>
+          </div>
+
+          <div class="dropdown">
+            <div class="imgBox">
+              <img src="assets/images/pic12.jpg" alt="" />
+            </div>
+
+            <div class="content">
+              <h3>شرکت معمار مهندسین مشاور</h3>
+              <p>
+                ارتقا و پیشرفت شرکت طراحی دکوراسیون داخلی با تلاش و پشتکار
+                معماران خلاق و باتجربه تداوم یافته است و در حال حاضر پروژه‌های
+                بسیاری را در زمینه طراحی داخلی در دست اجرا دارد. اولویت این شرکت
+                در پروژه‌ها، استفاده از خلاقیت و طرح‌هایی کارآمد است تا رضایت
+                خاطر کارفرمایان فراهم شده و از سویی دیگر گامی مثبت در جهت ارتقای
+                سطح کیفی فضاهای امروزی برداشته شود.
+              </p>
+              <button class="btn">بیشتر بخوانید</button>
             </div>
           </div>
         </div>
@@ -287,11 +284,16 @@
         <!-- Album -->
       </div>
 
-      <!-- Nav Logo -->
-      <div class="logo">logo</div>
-
-      <!-- Nav Menu -->
-      <div class="menuIcon"><i class="fa fa-bars"></i></div>
+      <!-- Nav Icons -->
+      <div class="navIcons">
+        <div class="icon navSearch">
+          <input id="searchBar" type="search" class="searchBar" />
+          <i id="showSearchBar" class="fa fa-search"></i>
+        </div>
+        <div class="icon"><i class="fa fa-user-circle"></i></div>
+        <div class="icon"><i class="fa fa-home"></i></div>
+        <div class="icon"><i class="fa fa-heart"></i></div>
+      </div>
     </nav>
 
     <!-- Showcase -->
@@ -302,6 +304,8 @@
         </div>
       </div>
     </section>
+
+    <section id="e3"></section>
 
     <!-- Portfolio -->
     <section id="portfolio">
@@ -476,7 +480,6 @@
       </div>
     </section>
 
-    <section id="e3"></section>
     <section id="e4"></section>
     <section id="e5"></section>
     <script src="./assets/js/script.js"></script>

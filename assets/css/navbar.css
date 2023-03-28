@@ -13,13 +13,13 @@
 
 .navbar {
   position: fixed;
-  top: 50px;
+  top: 5rem;
   width: 80vw;
-  height: 60px;
-  padding: 0 1rem;
+  height: 6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 1rem;
   background: var(--light-color);
   z-index: 2;
   color: var(--main-color);
@@ -39,15 +39,16 @@
 /*? ============ Shrink ============ */
 
 .navbar.shrink {
-  align-items: start;
-  justify-content: center;
+  flex-direction: column-reverse;
+  justify-content: start;
+  direction: ltr;
   top: 0px;
   right: 0px;
   width: 400px;
   height: 100vh;
-  flex-direction: column;
-  overflow: auto;
-  padding: 0 0 1rem 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0 0 2rem 0;
   border-radius: 10px 0 0 10px;
   -webkit-border-radius: 10px 0 0 10px;
   -moz-border-radius: 10px 0 0 10px;
@@ -55,53 +56,196 @@
   -o-border-radius: 10px 0 0 10px;
 }
 
+/* Show Menu Icon in responsive mode and scrolling down */
+
+.navbar.shrink .menuIcon {
+  position: absolute;
+  display: block;
+  top: 0.5rem;
+  right: 0;
+}
+
 /* All Animations Off */
 
-.navbar.shrink .navLinks .blog:hover .dropdown .blogTitle {
+.navbar.shrink .navLinks .blog:hover .dropdown .blogTitle,
+.navbar.shrink .navLinks .projects:hover .dropdown .content,
+.navbar.shrink .navLinks .services:hover .dropdown .content {
   animation: none;
   -webkit-animation: none;
 }
 
-.navbar.shrink .navLinks {
-  /* position: relative; */
+/* Icons */
+
+.navbar.shrink .navIcons {
+  position: relative;
   width: 100%;
+  height: 12rem;
+  padding: 0.2rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+
+.navbar.shrink .navIcons .navSearch {
+  position: absolute;
+  top: 5rem;
+  width: 100%;
+  height: 3.5rem;
+}
+
+.navbar.shrink .navIcons .navSearch i {
+  position: absolute;
+  left: 0;
+  padding-left: 1rem;
+}
+
+.navbar.shrink .navIcons .navSearch .searchBar {
+  opacity: 1;
+  width: 98%;
+}
+
+.navbar.shrink .navIcons .navSearch .searchBar.show {
+  width: 98%;
+}
+
+/* Logo */
+
+.navbar.shrink .logo {
+  position: absolute;
+  top: 11rem;
+  left: 0;
+  width: 100%;
+  height: 15rem;
+  padding: 2rem;
+  pointer-events: none;
+}
+
+/* Nav Links */
+
+.navbar.shrink .navLinks {
   display: flex;
   flex-direction: column;
-  margin-top: 180px;
-  background: tomato;
+  width: 100%;
+  height: max-content;
+  margin-top: 18rem;
+  overflow: auto;
 }
 
 .navbar.shrink .navLinks .link {
-  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
-  background: lime;
+}
+
+.navbar.shrink .navLinks .link:hover {
+  background: #ff63472e;
+}
+
+.navbar.shrink .navLinks .link .titleLink {
+  position: initial;
+  width: 100%;
+  height: 6rem;
+  align-items: center;
+  justify-content: right;
+  padding-right: 3rem;
+  border-top: 1px solid #0000001c;
+}
+
+.navbar.shrink .navLinks .link .titleLink a {
+  font-size: 2.3rem;
 }
 
 .navbar.shrink .navLinks .link .dropdown {
-  position: initial;
+  position: unset;
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 0;
   opacity: 1;
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
+  box-shadow: none;
 }
 
-.navbar.shrink .navLinks .link.active .dropdown {
+.navbar.shrink .navLinks .link .titleLink.active + .dropdown {
+  height: initial;
+}
+
+/* Nav Project */
+.navbar.shrink .navLinks .projects .dropdown .content {
+  width: 100%;
+  align-items: end;
+  padding: 0 8rem 0 0;
+}
+.navbar.shrink .navLinks .projects .dropdown .content h3 {
+  display: none;
+}
+
+.navbar.shrink .navLinks .projects .dropdown .content ul li {
+  justify-content: right;
+}
+
+.navbar.shrink .navLinks .projects .dropdown .content ul li:hover {
+  margin-right: 0;
+  background: none;
+}
+
+.navbar.shrink .navLinks .projects .dropdown .content ul li a {
+  color: var(--text-dark-color);
+}
+
+.navbar.shrink .navLinks .projects .dropdown .imgBox {
+  display: none;
+}
+
+/* Nav Services */
+
+.navbar.shrink .navLinks .services .dropdown .content {
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+}
+
+.navbar.shrink .navLinks .services .dropdown .content .verticalLine {
+  display: none;
+}
+
+.navbar.shrink .navLinks .services .dropdown .content .list,
+.navbar.shrink .navLinks .services .dropdown .content .list:last-child {
+  align-items: start;
+  justify-content: center;
+  padding: 0 8rem 0 0;
   height: max-content;
 }
 
-/* Nav Blog */
-
-.navbar.shrink .navLinks .blog {
-  /* position: absolute; */
-  flex-direction: column;
-  width: 100%;
-  top: 30px;
-  left: 0;
+.navbar.shrink .navLinks .services .dropdown .content .list h2 {
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  color: var(--text-dark-color);
 }
+
+.navbar.shrink .navLinks .services .dropdown .content .list ul {
+  display: none;
+  width: 100%;
+  height: max-content;
+}
+
+.navbar.shrink .navLinks .services .dropdown .content .list.active ul {
+  display: block;
+}
+
+.navbar.shrink .navLinks .services .dropdown .content .list ul li {
+  width: 100%;
+  padding: 1rem 4rem 1rem 0;
+}
+
+.navbar.shrink .navLinks .services .dropdown .imgBox {
+  display: none;
+}
+
+/* Nav Blog */
 
 .navbar.shrink .navLinks .blog .dropdown .blogTitle {
   width: 100%;
@@ -112,116 +256,46 @@
   display: none;
 }
 
-/* Nav  */
+/** ===== Nav Menu Icon ===== */
 
-/* Icons */
-
-.navbar.shrink .navIcons {
-  position: relative;
-  width: 100%;
-  height: 120px;
-  padding: 0.2rem;
-  margin-top: 10px;
-  justify-content: start;
-  align-items: start;
-}
-
-.navbar.shrink .navIcons .navSearch {
-  position: absolute;
-  top: 45px;
-  width: 100%;
-  height: 2.5rem;
-}
-
-.navbar.shrink .navIcons .navSearch i {
-  position: absolute;
-  left: 0;
-  padding-left: 10px;
-}
-
-.navbar.shrink .navIcons .navSearch .searchBar.show {
-  width: 98%;
-}
-
-.navbar.shrink .logo {
-  position: absolute;
-  top: 110px;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  padding: 1rem;
-  pointer-events: none;
-}
-
-/** ===== Nav Icons ===== */
-
-.navbar .navIcons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.navbar .menuIcon {
+  width: 50px;
+  height: 50px;
   cursor: pointer;
-}
-
-.navbar .navIcons .icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  padding: 1rem;
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
+  display: none;
 }
 
-.navbar .navIcons .icon i {
-  font-size: 1rem;
-}
-
-.navbar .navIcons .icon i:hover {
-  scale: 110%;
-  transform-origin: bottom;
-  color: var(--second-text-color);
-}
-
-.navbar .navIcons .navSearch {
-  position: relative;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-}
-
-.navbar .navIcons .navSearch .searchBar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50px;
+.navbar .menuIcon i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100%;
-  padding-left: 2rem;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  opacity: 0;
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
+  font-size: 3rem;
+  color: var(--main-color);
 }
 
-.navbar .navIcons .navSearch .searchBar.show {
-  opacity: 1;
-  width: 250px;
+.navbar .menuIcon:hover {
+  scale: 110%;
+  transform-origin: center;
+  color: var(--hover-color);
 }
 
-.navbar .navIcons .navSearch i {
-  position: absolute;
+/** ===== Nav Logo ===== */
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 100%;
+  font-size: 3rem;
+  padding: 1rem;
+  cursor: pointer;
 }
 
 /** ===== Nav Links ===== */
@@ -236,17 +310,17 @@
 }
 
 .navbar .navLinks .link .titleLink {
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
 .navbar .navLinks .link .titleLink a {
   font-family: "shabnam-Light";
-  font-size: 1rem;
+  font-size: 1.5rem;
   padding: 0 0.7rem;
   color: var(--main-text-color);
   transition: all 0.3s ease;
@@ -257,17 +331,16 @@
 }
 
 .navbar .navLinks .link .titleLink a:hover {
-  padding-bottom: 5px;
+  padding-bottom: 0.5rem;
   color: var(--second-text-color);
 }
 
 .navbar .navLinks .link .dropdown {
   position: absolute;
-  direction: rtl;
-  top: 55px;
+  top: 5.5rem;
   left: 0;
   width: 100%;
-  height: 500px;
+  height: 50rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -288,6 +361,190 @@
 .navbar .navLinks .link:hover .dropdown {
   opacity: 1;
   pointer-events: initial;
+}
+
+/*? ============ Projects ============ */
+
+.navbar .navLinks .projects .dropdown {
+  justify-content: space-between;
+}
+
+.navbar .navLinks .projects .dropdown .content {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.navbar .navLinks .projects:hover .dropdown .content {
+  animation: topIn 0.7s ease-out;
+  -webkit-animation: topIn 0.7s ease-out;
+}
+
+.navbar .navLinks .projects .dropdown .content h3 {
+  font-size: 2rem;
+  font-family: "shabnam-Light";
+}
+
+.navbar .navLinks .projects .dropdown .content ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .navLinks .projects .dropdown .content ul li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+.navbar .navLinks .projects .dropdown .content ul li:hover {
+  margin-right: 1rem;
+  background: var(--nav-text-hover-color);
+}
+
+.navbar .navLinks .projects .dropdown .content ul li a {
+  font-size: 1.5rem;
+  font-family: "shabnam";
+  color: var(--second-text-color);
+}
+
+.navbar .navLinks .projects .dropdown .imgBox {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.navbar .navLinks .projects .dropdown .imgBox img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+}
+
+.navbar .navLinks .projects .dropdown .imgBox img.active {
+  animation: scaleIn 1s ease;
+  -webkit-animation: scaleIn 1s ease;
+  opacity: 1;
+}
+
+/*? ============ Services ============ */
+
+.navbar .navLinks .services .dropdown {
+  justify-content: space-between;
+}
+
+.navbar .navLinks .services .dropdown .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .navLinks .services:hover .dropdown .content {
+  animation: topIn 0.7s ease-out;
+  -webkit-animation: topIn 0.7s ease-out;
+}
+
+.navbar .navLinks .services .dropdown .content .verticalLine {
+  width: 1px;
+  height: 400px;
+  background: #eaeaea;
+}
+
+.navbar .navLinks .services .dropdown .content .list {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar .navLinks .services .dropdown .content .list h2 {
+  padding-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--main-text-color);
+  cursor: default;
+  font-family: "shabnam-Light";
+}
+
+.navbar .navLinks .services .dropdown .content .list ul li {
+  padding: 0.8rem 0;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+}
+
+.navbar .navLinks .services .dropdown .content .list ul li a {
+  font-family: "shabnam";
+  font-size: 1.5rem;
+  color: var(--second-text-color);
+}
+
+.navbar .navLinks .services .dropdown .content .list ul li:hover {
+  margin-right: 1rem;
+}
+
+.navbar .navLinks .services .dropdown .content .list .imgBox {
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+}
+
+/* List 4 */
+.navbar .navLinks .services .dropdown .content .list:last-child {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .navLinks .services .dropdown .content .list:last-child ul li {
+  font-size: 1.5rem;
+  padding: 2rem 0;
+}
+
+.navbar .navLinks .services .dropdown .content .list .imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.navbar .navLinks .services:hover .dropdown .content .list .imgBox img {
+  animation: scaleIn 1s ease-in;
+  -webkit-animation: scaleIn 1s ease-in;
+}
+
+.navbar .navLinks .services .dropdown .imgBox {
+  overflow: hidden;
+  width: 500px;
+  height: 100%;
+}
+
+.navbar .navLinks .services .dropdown .imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.navbar .navLinks .services:hover .dropdown .imgBox img {
+  animation: scaleIn 1s ease-out;
+  -webkit-animation: scaleIn 1s ease-out;
 }
 
 /*? ============ Blog ============ */
@@ -321,17 +578,20 @@
 
 .navbar .navLinks .blog .dropdown .blogTitle h1 {
   text-align: center;
-  font-size: 1rem;
-  padding-bottom: 2rem;
+  font-size: 2rem;
+  padding-bottom: 3rem;
 }
 
 .navbar .navLinks .blog .dropdown .blogTitle p {
   text-align: justify;
-  font-size: 0.8rem;
+  font-size: 1.5rem;
+}
+
+.navbar .navLinks .blog .dropdown .blogTitle .btn {
+  margin-top: 6rem;
 }
 
 .navbar .navLinks .blog .dropdown .blogTitle .btn a {
-  font-size: 0.8rem;
   color: var(--text-light-color);
 }
 
@@ -394,11 +654,11 @@
 .navbar .navLinks .blog .dropdown .cardsRight .card h2 {
   position: absolute;
   bottom: 0;
-  font-size: 1rem;
+  font-size: 2rem;
   text-align: center;
   width: 100%;
-  height: 200px;
-  padding-top: 5rem;
+  height: 20rem;
+  padding-top: 12rem;
   color: var(--text-light-color);
   background: linear-gradient(
     180deg,
@@ -426,7 +686,7 @@
 
 .navbar .navLinks .blog .dropdown .cardsRight .card h2 {
   height: 100px;
-  padding-top: 2rem;
+  padding-top: 3rem;
 }
 
 /*? ============ Contact Us ============ */
@@ -451,7 +711,7 @@
   justify-content: center;
   width: 40%;
   height: 100%;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .contacts {
@@ -460,7 +720,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  direction: ltr;
 }
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .contacts .qr-code {
@@ -470,7 +729,7 @@
   flex-direction: column;
   align-items: end;
   justify-content: center;
-  padding-left: 1rem;
+  padding: 1rem;
 }
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .contacts .qr-code img {
@@ -478,8 +737,8 @@
 }
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .contacts .qr-code p {
-  font-size: 0.8rem;
-  margin: 10px auto;
+  font-size: 1.5rem;
+  margin: 1rem auto;
 }
 
 .navbar .navLinks .contactUs:hover .dropdown .contactInfo {
@@ -497,7 +756,7 @@
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .contact .phone {
   width: 100%;
-  padding: 0 0 1rem 0;
+  padding: 0 0 2rem 0;
   direction: ltr;
   display: flex;
   align-items: center;
@@ -508,13 +767,13 @@
 .navbar .navLinks .contactUs .dropdown .contactInfo .contact .phone .numbers {
   display: flex;
   flex-direction: column;
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   padding-left: 1rem;
 }
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .contact .email {
   width: 100%;
-  padding: 0 0 1rem 0;
+  padding: 0 0 2rem 0;
   display: flex;
   align-items: center;
   justify-content: start;
@@ -522,7 +781,7 @@
 }
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .contact .email p {
-  font-size: 1rem;
+  font-size: 1.5rem;
   padding-left: 1rem;
   direction: ltr;
   text-align: left;
@@ -537,10 +796,10 @@
 }
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .contact .address p {
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   padding-left: 1rem;
-  direction: rtl;
   text-align: left;
+  width: 70%;
 }
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .socialMedia {
@@ -564,7 +823,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 10px;
+  margin: 0 1rem;
 }
 
 /* Icons */
@@ -572,7 +831,7 @@
 .navbar .navLinks .contactUs .dropdown .contactInfo .contact .email a,
 .navbar .navLinks .contactUs .dropdown .contactInfo .contact .address a,
 .navbar .navLinks .contactUs .dropdown .contactInfo .socialMedia ul li a {
-  font-size: 1rem;
+  font-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -589,7 +848,7 @@
 }
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .socialMedia ul li a {
-  font-size: 1.5rem;
+  font-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -638,23 +897,22 @@
 }
 
 .navbar .navLinks .contactUs .dropdown .counseling h2 {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+  font-size: 2rem;
+  margin-bottom: 4rem;
 }
 
 .navbar .navLinks .contactUs .dropdown .counseling p {
-  font-size: 1rem;
+  font-size: 1.5rem;
   text-align: justify;
-  margin-bottom: 2rem;
+  width: 60%;
 }
 .navbar .navLinks .contactUs .dropdown .counseling .btn {
-  font-size: 0.7rem;
+  margin-top: 4rem;
 }
 
 /*? ============ About Us ============ */
 
 .navbar .navLinks .aboutUs .dropdown .content {
-  direction: rtl;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -668,13 +926,12 @@
 }
 
 .navbar .navLinks .aboutUs .dropdown .content h3 {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  font-size: 2rem;
 }
 
 .navbar .navLinks .aboutUs .dropdown .content p {
-  line-height: 1.5;
-  font-size: 1rem;
+  margin-top: 4rem;
+  font-size: 1.5rem;
   text-align: justify;
   color: var(--second-text-color);
 }
@@ -696,238 +953,76 @@
   -webkit-animation: scaleIn 1s ease;
 }
 
-/*? ============ Services ============ */
+/** ===== Nav Icons ===== */
 
-.navbar .navLinks .services .dropdown {
-  justify-content: space-between;
-}
-
-.navbar .navLinks .services .dropdown .content {
-  width: 100%;
-  height: 100%;
+.navbar .navIcons {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
-.navbar .navLinks .services:hover .dropdown .content {
-  animation: topIn 0.7s ease-out;
-  -webkit-animation: topIn 0.7s ease-out;
-}
-
-.navbar .navLinks .services .dropdown .content .verticalLine {
-  width: 1px;
-  height: 400px;
-  background: #eaeaea;
-}
-
-.navbar .navLinks .services .dropdown .content .list {
-  width: 100%;
-  height: 100%;
-  padding: 1rem;
+.navbar .navIcons .icon {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 
-.navbar .navLinks .services .dropdown .content .list h2 {
-  padding-bottom: 20px;
-  font-size: 1rem;
-  color: var(--main-text-color);
-  cursor: default;
-  font-family: "shabnam-Light";
+.navbar .navIcons .icon i {
+  font-size: 1.8rem;
 }
 
-.navbar .navLinks .services .dropdown .content .list ul li {
-  padding: 6px 0;
-  transition: all 0.4s ease;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -ms-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-}
-
-.navbar .navLinks .services .dropdown .content .list ul li a {
-  font-family: "shabnam";
-  font-size: 0.9rem;
+.navbar .navIcons .icon i:hover {
+  scale: 110%;
+  transform-origin: bottom;
   color: var(--second-text-color);
 }
 
-.navbar .navLinks .services .dropdown .content .list ul li:hover {
-  margin-right: 8px;
+.navbar .navIcons .navSearch {
+  position: relative;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
-.navbar .navLinks .services .dropdown .content .list .imgBox {
-  overflow: hidden;
-  width: 200px;
-  height: 200px;
-}
-/* List 4 */
-.navbar .navLinks .services .dropdown .content .list:last-child {
-  display: flex;
-  align-items: center;
-}
-
-.navbar .navLinks .services .dropdown .content .list:last-child ul li {
-  font-size: 1rem;
-  padding: 10px 0;
-}
-
-.navbar .navLinks .services .dropdown .content .list .imgBox img {
-  width: 100%;
+.navbar .navIcons .navSearch .searchBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
   height: 100%;
-  object-fit: cover;
-}
-
-.navbar .navLinks .services:hover .dropdown .content .list .imgBox img {
-  animation: scaleIn 1s ease-in;
-  -webkit-animation: scaleIn 1s ease-in;
-}
-
-.navbar .navLinks .services .dropdown .imgBox {
-  overflow: hidden;
-  width: 500px;
-  height: 100%;
-}
-
-.navbar .navLinks .services .dropdown .imgBox img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.navbar .navLinks .services:hover .dropdown .imgBox img {
-  animation: scaleIn 1s ease-out;
-  -webkit-animation: scaleIn 1s ease-out;
-}
-
-/*? ============ Projects ============ */
-
-.navbar .navLinks .projects .dropdown {
-  justify-content: space-between;
-}
-
-.navbar .navLinks .projects .dropdown .content {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-}
-
-.navbar .navLinks .projects:hover .dropdown .content {
-  animation: topIn 0.7s ease-out;
-  -webkit-animation: topIn 0.7s ease-out;
-}
-
-.navbar .navLinks .projects .dropdown .content h3 {
-  font-size: 1.8rem;
-  font-family: "shabnam-Light";
-}
-
-.navbar .navLinks .projects .dropdown .content ul {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.navbar .navLinks .projects .dropdown .content ul li {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.6rem 0;
+  padding-left: 2rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  opacity: 0;
   transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -ms-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
 }
-.navbar .navLinks .projects .dropdown .content ul li:hover {
-  margin-right: 1rem;
-  background: var(--nav-text-hover-color);
-}
 
-.navbar .navLinks .projects .dropdown .content ul li a {
-  font-size: 1rem;
-  font-family: "shabnam";
-  color: var(--second-text-color);
-}
-
-.navbar .navLinks .projects .dropdown .imgBox {
-  position: relative;
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.navbar .navLinks .projects .dropdown .imgBox img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-}
-
-.navbar .navLinks .projects .dropdown .imgBox img.active {
-  animation: scaleIn 1s ease;
-  -webkit-animation: scaleIn 1s ease;
+.navbar .navIcons .navSearch .searchBar.show {
   opacity: 1;
+  width: 250px;
 }
 
-/** ===== Nav Logo ===== */
-
-.navbar .logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 90px;
-  height: 100%;
-  font-size: 1.5rem;
-  padding: 1rem;
-  cursor: pointer;
+.navbar .navIcons .navSearch i {
+  position: absolute;
 }
-
-/** ===== Nav Menu Icon ===== */
-
-.navbar .menuIcon {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  display: none;
-}
-
-.navbar .menuIcon {
-  font-size: 2rem;
-  color: var(--main-color);
-}
-
-.navbar .menuIcon:hover {
-  scale: 110%;
-  transform-origin: center;
-  color: var(--hover-color);
-}
-
-/* Show Menu Icon in responsive mode and scrolling down */
-/* .navbar.sticky :not(.navbar, .menuIcon, .menuIcon i) {
-  display: none;
-} */
-
-/* .navbar.sticky .menuIcon {
-  display: block;
-} */
 
 /** ===== Animations  =====  */
 
