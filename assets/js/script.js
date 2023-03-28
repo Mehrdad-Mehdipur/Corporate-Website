@@ -5,7 +5,7 @@
 const navbar = document.querySelector("nav");
 
 window.onscroll = () => {
-  if (window.pageYOffset > navbar.offsetTop * 4) {
+  if (window.pageYOffset > navbar.offsetTop * 9) {
     navbar.classList.add("shrink");
   } else {
     navbar.classList.remove("shrink");
@@ -14,15 +14,35 @@ window.onscroll = () => {
 
 // ========== Dropdown links on Shrink Navbar mode ==========
 
-const links = document.querySelectorAll(".link");
+const titleLink = document.querySelectorAll("nav .titleLink");
 
-links.forEach((link) => {
-  link.addEventListener("click", function () {
+for (let i = 0; i < titleLink.length; i++) {
+  titleLink[i].addEventListener("click", function (e) {
+    e.preventDefault();
+    let isActive = this.classList.contains("active");
+    titleLink[i].classList.remove("active");
+    if (!isActive) {
+      titleLink[i].classList.add("active");
+    }
+  });
+}
+
+// Show Services Lists
+const lists = document.querySelectorAll(".services .list");
+const servicesListUls = document.querySelectorAll(".services ul");
+
+for (let i = 0; i < lists.length; i++) {
+  lists[i].addEventListener("click", function (e) {
+    e.preventDefault();
+    for (let r = 0; r < servicesListUls.length; r++) {
+      servicesListUls[r].classList.remove("active");
+    }
     this.classList.toggle("active");
   });
-});
+}
 
 // ========== Show Search bar ==========
+
 const showSearchBar = document.querySelector("#showSearchBar");
 const searchBar = document.querySelector("#searchBar");
 
