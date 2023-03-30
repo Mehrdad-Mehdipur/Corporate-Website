@@ -1,14 +1,34 @@
 //* Navbar
 
-// ========== Shrink Navbar ==========
+// ========== Navbar Shrink and Sidebar mode , Showcase Image Box change mode  ==========
 
 const navbar = document.querySelector("nav");
+const menuIcon = document.querySelector("nav .menuIcon");
+const menuIconClass = document.querySelector("nav .menuIcon i");
+const showcaseImgBox = document.querySelector("#showcase .imgBox");
+const showcaseTitle = document.querySelector("#showcase .title");
 
 window.onscroll = () => {
-  if (window.pageYOffset > navbar.offsetTop * 9) {
+  showcaseTitle.classList.add("moveDown");
+
+  if (window.scrollY > 20) {
     navbar.classList.add("shrink");
+
+    // Open Navbar as a Sidebar
+    menuIcon.addEventListener("click", function () {
+      navbar.classList.toggle("sidebar");
+    });
+
+    // Showcase ImgBox Change
+    showcaseImgBox.classList.add("fullScreen");
   } else {
+    // Close Sidebar mode
     navbar.classList.remove("shrink");
+    navbar.classList.remove("sidebar");
+
+    // Showcase ImgBox Change to Initial mode
+    showcaseImgBox.classList.remove("fullScreen");
+    showcaseTitle.classList.remove("moveDown");
   }
 };
 
@@ -50,7 +70,7 @@ showSearchBar.onclick = () => {
   searchBar.classList.toggle("show");
 };
 
-// ========== Change Image By Hover On The Links of Project ==========
+// ========== Project Links Images Change By Mouse Hover  ==========
 
 const navProjectsLinks = document.querySelector("#navProjectsLinks").children;
 const navProjectsImg = document.querySelector("#navProjectsImg").children;
@@ -64,22 +84,3 @@ for (let i = 0; i < navProjectsLinks.length; i++) {
     navProjectsImg[id].classList.add("active");
   });
 }
-
-//* Showcase
-
-// ========== Showcase imgBox becomes full screen when scroll down  ==========
-
-const showcaseImgBox = document.querySelector("#showcase .imgBox");
-const showcaseTitle = document.querySelector("#showcase .title");
-
-window.addEventListener("scroll", function () {
-  let scrollTop = window.scrollY;
-
-  if (scrollTop >= 20) {
-    showcaseImgBox.classList.add("fullScreen");
-    showcaseTitle.classList.add("moveDown");
-  } else {
-    showcaseImgBox.classList.remove("fullScreen");
-    showcaseTitle.classList.remove("moveDown");
-  }
-});
