@@ -5,7 +5,7 @@
 const navbar = document.querySelector("nav");
 const menuIcon = document.querySelector("nav .menuIcon");
 const menuIconClass = document.querySelector("nav .menuIcon i");
-const showcaseImgBox = document.querySelector("#showcase .imgBox");
+const intro = document.querySelector("#showcase .intro");
 const showcaseTitle = document.querySelector("#showcase .title");
 
 window.onscroll = () => {
@@ -13,21 +13,18 @@ window.onscroll = () => {
 
   if (window.scrollY > 20) {
     navbar.classList.add("shrink");
-
     // Open Navbar as a Sidebar
     menuIcon.addEventListener("click", function () {
       navbar.classList.toggle("sidebar");
     });
-
     // Showcase ImgBox Change
-    showcaseImgBox.classList.add("fullScreen");
+    intro.classList.add("fullScreen");
   } else {
     // Close Sidebar mode
     navbar.classList.remove("shrink");
     navbar.classList.remove("sidebar");
-
     // Showcase ImgBox Change to Initial mode
-    showcaseImgBox.classList.remove("fullScreen");
+    intro.classList.remove("fullScreen");
     showcaseTitle.classList.remove("moveDown");
   }
 };
