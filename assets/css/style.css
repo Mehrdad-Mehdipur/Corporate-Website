@@ -26,7 +26,6 @@ html {
 
 body {
   font-family: "shabnam", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: var(--main-color);
   display: flex;
   flex-direction: column;
   align-items: center;
