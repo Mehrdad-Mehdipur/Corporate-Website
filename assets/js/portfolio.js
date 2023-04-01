@@ -1,7 +1,6 @@
-// //* Portfolio
 
-const images = document.querySelectorAll(".slide img");
-let display = document.querySelector(".mainPic");
+const images = document.querySelectorAll(".imageBox img");
+let display = document.querySelector(".display");
 
 images.forEach(image => {
   image.addEventListener("click", () => {
@@ -13,4 +12,3 @@ images.forEach(image => {
     display.appendChild(newImage);
   })
 })
-
