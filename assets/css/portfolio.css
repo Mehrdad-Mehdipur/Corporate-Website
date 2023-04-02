@@ -24,25 +24,29 @@
 /*? ============  Portfolio Title  ============ */
 .portfolio .title {
   width: 100%;
-  height: 20%;
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 2rem;
+  margin: 2rem auto;
   color: var(--text-light-color);
 }
 
 .portfolio .title h3 {
   font-size: 2rem;
-  margin: 2rem auto;
 }
 
 .portfolio .title p {
   font-size: 1.5rem;
+  text-align: center;
 }
 /*? ============  Portfolio Content  ============ */
 
 .portfolio .content {
   width: 100%;
-  height: 75%;
+  height: 80%;
   display: flex;
   justify-content: space-between;
 }
@@ -53,6 +57,7 @@
   width: 53%;
   height: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 .portfolio .content .display img {
@@ -63,6 +68,21 @@
   -webkit-animation: scaleIn 0.8s ease;
 }
 
+.portfolio .content .display p {
+  position: absolute;
+  bottom: 0;
+  font-size: 1.7rem;
+  text-align: center;
+  width: 100%;
+  height: 18rem;
+  padding-top: 12rem;
+  color: var(--text-light-color);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 105%
+  );
+}
 /* Content Gallery */
 
 .portfolio .content .gallery {
@@ -144,6 +164,10 @@
   opacity: 1;
 }
 
+.portfolio .content .gallery .collection .imageBox p {
+  display: none;
+}
+
 .portfolio .content .gallery .galleryBtn {
   width: 100%;
   height: fit-content;
@@ -180,5 +204,3 @@
     -o-transform: translateX(0);
   }
 }
-
-/** ===== Responsive ===== */

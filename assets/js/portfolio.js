@@ -1,14 +1,13 @@
+const imageBoxes = document.querySelectorAll("#portfolio .imageBox");
+const displayImage = document.querySelector("#portfolio .display img");
+const displayTitle = document.querySelector("#portfolio .display p");
 
-const images = document.querySelectorAll(".imageBox img");
-let display = document.querySelector(".display");
+imageBoxes.forEach((imageBox) => {
+  imageBox.addEventListener("click", () => {
+    const ImageBoxImage = imageBox.querySelector("img").src;
+    const ImageBoxP = imageBox.querySelector("p").textContent;
 
-images.forEach(image => {
-  image.addEventListener("click", () => {
-    const id = image.getAttribute("data-id");
-    console.log(id);
-    const newImage = document.createElement("img");
-    newImage.src = `./assets/images/pic${id}.jpg`;
-    display.innerHTML = "";
-    display.appendChild(newImage);
-  })
-})
+    displayImage.src = ImageBoxImage;
+    displayTitle.textContent = ImageBoxP;
+  });
+});
