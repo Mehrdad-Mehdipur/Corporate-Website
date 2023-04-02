@@ -73,13 +73,13 @@ body {
 
 #showcase {
   width: 100%;
-  height: 150vh;
+  height: 120vh;
   background: radial-gradient(circle at 20% 10%, #4e646d 0%, #131313 100.2%);
 }
 
 .showcase {
   width: 100vw;
-  height: 150vh;
+  height: 120vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -150,7 +150,7 @@ body {
 
 .showcase .intro {
   position: absolute;
-  width: 60rem;
+  width: 35vw;
   height: 45vh;
   bottom: -10vh;
   display: flex;
@@ -179,7 +179,7 @@ body {
 }
 
 .showcase .intro.fullScreen {
-  width: 60rem;
+  width: 40vh;
   height: 50vh;
   animation: intro 0.5s linear forwards;
   -webkit-animation: intro 0.5s linear forwards;
@@ -220,17 +220,17 @@ body {
 
 @keyframes intro {
   0% {
-    width: 60rem;
+    width: 40vw;
     height: 50vh;
   }
 
   50% {
-    width: 60rem;
+    width: 40vw;
     height: 90vh;
   }
 
   70% {
-    width: 60rem;
+    width: 40vw;
     border-radius: 70px 70px 0 0;
     -webkit-border-radius: 70px 70px 0 0;
     -moz-border-radius: 70px 70px 0 0;
@@ -240,8 +240,8 @@ body {
 
   100% {
     width: 100%;
-    height: 150vh;
-    bottom: -50vh;
+    height: 120vh;
+    bottom: -20vh;
     box-shadow: none;
     border-radius: 0;
     -webkit-border-radius: 0;
