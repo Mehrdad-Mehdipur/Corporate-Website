@@ -89,6 +89,7 @@
   -o-border-radius: 7px 0 0 7px;
 }
 
+
 .navbar.shrink.sidebar :not(.menuIcon, .menuIcon i) {
   display: initial;
 }
@@ -578,15 +579,14 @@
 .navbar .navLinks .services .dropdown .content .verticalLine {
   width: 1px;
   height: 400px;
-  background: #eaeaea;
+  background: var(--line-color);
 }
 
 .navbar .navLinks .services .dropdown .content .horizontalLine {
   width: 90%;
   height: 1px;
   margin: 1rem;
-  background: #eaeaea;
-
+  background: var(--line-color);
 }
 
 .navbar .navLinks .services .dropdown .content .list {
@@ -938,12 +938,15 @@
 }
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .socialMedia {
-  display: flex;
-  direction: ltr;
   width: 100%;
+  height: 30%;
+  direction: ltr;
+  display: flex;
   align-items: center;
   justify-content: center;
-  height: 30%;
+  border-top: 1px solid var(--line-color);
+
+
 }
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .socialMedia ul {
@@ -1072,6 +1075,10 @@
   font-size: 1.5rem;
   text-align: justify;
   color: var(--second-text-color);
+}
+
+.navbar .navLinks .aboutUs .dropdown .content .btn {
+  margin-top: 5rem;
 }
 
 .navbar .navLinks .aboutUs .dropdown .imgBox {
@@ -1273,4 +1280,13 @@
 @media screen and (max-width: 768px) {}
 
 /* Smart Phone */
-@media screen and (max-width: 480px) {}
+@media screen and (max-width: 480px) {
+  .navbar.shrink.sidebar {
+    width: 100%;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+  }
+}
