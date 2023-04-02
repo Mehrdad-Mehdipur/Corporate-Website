@@ -29,6 +29,20 @@ window.onscroll = () => {
   }
 };
 
+// ========== Navbar Shadow ==========
+
+const links = document.querySelectorAll("nav .link");
+
+for (let i = 0; i < links.length; i++) {
+  links[i].addEventListener("mouseover", function () {
+    navbar.classList.add("fullShadow");
+  });
+
+  links[i].addEventListener("mouseout", function () {
+    navbar.classList.remove("fullShadow");
+  });
+}
+
 // ========== Dropdown links on Shrink Navbar mode ==========
 
 const titleLink = document.querySelectorAll("nav .titleLink");
@@ -81,3 +95,16 @@ for (let i = 0; i < navProjectsLinks.length; i++) {
     navProjectsImg[id].classList.add("active");
   });
 }
+
+// ========== Navbar Responsive  ==========
+
+function Responsive() {
+  let screenWidth = window.innerWidth;
+  if (screenWidth <= 900) {
+    navbar.classList.add("shrink");
+  } else {
+    navbar.classList.remove("shrink");
+  }
+}
+
+window.addEventListener("resize", Responsive);
