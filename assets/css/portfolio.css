@@ -17,20 +17,24 @@
 }
 
 .portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 /*? ============  Portfolio Title  ============ */
 .portfolio .title {
   width: 100%;
-  height: 10%;
+  height: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 2rem auto;
   color: var(--text-light-color);
 }
 
@@ -45,10 +49,11 @@
 /*? ============  Portfolio Content  ============ */
 
 .portfolio .content {
-  width: 100%;
-  height: 80%;
+  width: 85%;
+  height: 75%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 /* Content Display */
@@ -58,6 +63,16 @@
   height: 100%;
   overflow: hidden;
   position: relative;
+}
+
+.portfolio .content .display .closeBtn i {
+  position: absolute;
+  font-size: 3rem;
+  top: 1rem;
+  right: 1rem;
+  color: red;
+  cursor: pointer;
+  display: none;
 }
 
 .portfolio .content .display img {
@@ -202,5 +217,74 @@
     -moz-transform: translateX(0);
     -ms-transform: translateX(0);
     -o-transform: translateX(0);
+  }
+}
+
+/** ===== Portfolio Responsive ===== */
+/* Big Screen */
+@media screen and (max-width: 1200px) {
+  .portfolio .title {
+    height: 25%;
+  }
+  .portfolio .content {
+    height: 60%;
+  }
+}
+
+/* Desktop */
+@media screen and (max-width: 900px) {
+  .portfolio {
+    justify-content: center;
+    position: relative;
+    overflow-y: hidden;
+  }
+  .portfolio .title {
+    height: 15%;
+  }
+  .portfolio .content {
+    flex-direction: column;
+    height: 90vw;
+  }
+  .portfolio .content .display {
+    height: 70vh;
+    width: 95vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 1000px #000000b7;
+    display: none;
+    z-index: 3;
+  }
+  .portfolio .content .display .closeBtn i {
+    display: block;
+  }
+  .portfolio .content .gallery {
+    width: 90vw;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+  .portfolio {
+    justify-content: space-evenly;
+  }
+  .portfolio .title {
+    height: 15%;
+  }
+}
+
+/* Smart Phone */
+@media screen and (max-width: 480px) {
+  .portfolio {
+    justify-content: center;
+  }
+  .portfolio .title {
+    height: 20%;
+    margin-bottom: 3rem;
   }
 }
