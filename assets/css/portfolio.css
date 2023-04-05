@@ -17,12 +17,12 @@
 }
 
 .portfolio {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  width: 100%;
-  height: 100%;
 }
 
 /*? ============  Portfolio Title  ============ */
@@ -51,17 +51,17 @@
   width: 85%;
   height: 75%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 /* Content Display */
 
 .portfolio .content .display {
+  position: relative;
   width: 53%;
   height: 100%;
   overflow: hidden;
-  position: relative;
 }
 
 .portfolio .content .display .closeBtn {
@@ -73,31 +73,31 @@
 
 .portfolio .content .display .closeBtn i {
   font-size: 4rem;
-  color: var(--text-light-color);
   cursor: pointer;
+  color: var(--text-light-color);
 }
 
 .portfolio .content .display .arrowBtn {
-  width: 100%;
-  height: 100%;
   position: absolute;
   top: 0;
   right: 0;
+  width: 100%;
+  height: 100%;
   display: none;
 }
 
 .portfolio .content .display .arrowBtn button {
   width: 5rem;
   height: 100%;
-  background: #00000018;
   border: none;
   cursor: pointer;
   z-index: 5;
+  background: #00000027;
 }
 
 .portfolio .content .display .arrowBtn button i {
   font-size: 4rem;
-  color: rgb(255, 255, 255);
+  color: var(--text-light-color);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.59));
   -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.59));
 }
@@ -113,10 +113,11 @@
 .portfolio .content .display p {
   position: absolute;
   bottom: 0;
-  font-size: 1.7rem;
-  text-align: center;
+  right: 0;
   width: 100%;
   height: 18rem;
+  font-size: 1.7rem;
+  text-align: center;
   padding-top: 12rem;
   color: var(--text-light-color);
   background: linear-gradient(
@@ -231,8 +232,8 @@
 }
 
 /*? ============  content display  ============ */
-/** ===== Animations ===== */
 
+/** ===== Animations ===== */
 @keyframes showFromLeft {
   0% {
     opacity: 0;
@@ -266,8 +267,8 @@
 /* Desktop */
 @media screen and (max-width: 900px) {
   .portfolio {
-    justify-content: flex-start;
     position: relative;
+    justify-content: flex-start;
   }
   .portfolio .title {
     width: 85%;
@@ -280,26 +281,25 @@
     flex-direction: column;
   }
   .portfolio .content .display {
-    width: 95vw;
-    height: 80vw;
     position: fixed;
     top: 50%;
     left: 50%;
+    width: 95vw;
+    height: 80vw;
+    overflow: visible;
+    display: none;
+    box-shadow: 0 0 0 1000px #000000b7;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
-    box-shadow: 0 0 0 1000px #000000b7;
-    display: none;
-    z-index: 3;
-    overflow: visible;
   }
   .portfolio .content .display .closeBtn {
-    display: block;
     position: absolute;
     top: -8rem;
     right: 1rem;
+    display: block;
   }
   .portfolio .content .display .arrowBtn {
     display: flex;

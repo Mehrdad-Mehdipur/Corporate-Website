@@ -1,31 +1,15 @@
-// const imageBoxes = document.querySelectorAll("#portfolio .imageBox");
-// const displayImage = document.querySelector("#portfolio .display img");
-// const displayTitle = document.querySelector("#portfolio .display p");
+//* Portfolio
 
-// imageBoxes.forEach((imageBox) => {
-//   imageBox.addEventListener("click", () => {
-//     const imageBoxImage = imageBox.querySelector("img").src;
-//     const imageBoxP = imageBox.querySelector("p").textContent;
-
-//     displayImage.src = imageBoxImage;
-//     displayTitle.textContent = imageBoxP;
-//   });
-// });
-
-// ----------------------------------------------------------------------------------------------
-
+const gallery = document.querySelector("#portfolio .gallery");
 const imageBoxes = document.querySelectorAll("#portfolio .imageBox");
+const images = document.querySelectorAll("#portfolio .imageBox img");
+const display = document.querySelector("#portfolio .display");
 const displayImage = document.querySelector("#portfolio .display img");
 const displayTitle = document.querySelector("#portfolio .display p");
-const displayClass = document.querySelector("#portfolio .display");
 const closeBtn = document.querySelector("#portfolio .closeBtn");
-const galleryClass = document.querySelector("#portfolio .gallery");
-const arrowBtn = document.querySelector("#portfolio .arrowBtn");
 const nextBtn = document.querySelector("#portfolio .arrowBtn .nextSlide");
 const prevBtn = document.querySelector("#portfolio .arrowBtn .prevSlide");
-const images = document.querySelectorAll("#portfolio .imageBox img");
 let index = 0;
-
 
 imageBoxes.forEach((imageBox, index) => {
   imageBox.addEventListener("click", () => {
@@ -35,25 +19,25 @@ imageBoxes.forEach((imageBox, index) => {
     displayImage.src = imageBoxImage;
     displayTitle.textContent = imageBoxP;
 
-    // ? In Max-width 900px hide gallery and show Image ----------------------------
+    // ==========  In Max-width 900px ==========
+
+    // View full size clicked photo
     if (window.innerWidth < 900) {
-      (closeBtn, displayClass).style.display = "block";
-      galleryClass.style.display = "none";
+      (closeBtn, display).style.display = "block";
+      gallery.style.display = "none";
     }
 
-    //? close Btn hide with click and show gallery ----------------------------------
+    // Close the opened photo with the close btn and display the gallery again 
     closeBtn.addEventListener("click", () => {
-      galleryClass.style.display = "block";
-      (closeBtn, displayClass).style.display = "none";
+      gallery.style.display = "block";
+      (closeBtn, display).style.display = "none";
     })
 
-    //? Arrow Btn show next and prev image with click -------------------------------
-
+    // View photos with next and previous btn
     function init() {
       nextBtn.addEventListener("click", () => { next("next") });
       prevBtn.addEventListener("click", () => { next("prev") });
     }
-
     function next(direction) {
       if (direction == "next") {
         index++;
