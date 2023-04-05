@@ -23,7 +23,6 @@
   justify-content: flex-start;
   width: 100%;
   height: 100%;
-  position: relative;
 }
 
 /*? ============  Portfolio Title  ============ */
@@ -65,14 +64,42 @@
   position: relative;
 }
 
-.portfolio .content .display .closeBtn i {
-  position: absolute;
-  font-size: 3rem;
-  top: 1rem;
-  right: 1rem;
-  color: red;
-  cursor: pointer;
+.portfolio .content .display .closeBtn {
+  text-align: center;
+  width: 4rem;
+  height: 4rem;
   display: none;
+}
+
+.portfolio .content .display .closeBtn i {
+  font-size: 4rem;
+  color: var(--text-light-color);
+  cursor: pointer;
+}
+
+.portfolio .content .display .arrowBtn {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+}
+
+.portfolio .content .display .arrowBtn button {
+  width: 5rem;
+  height: 100%;
+  background: #00000018;
+  border: none;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.portfolio .content .display .arrowBtn button i {
+  font-size: 4rem;
+  color: rgb(255, 255, 255);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.59));
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.59));
 }
 
 .portfolio .content .display img {
@@ -98,6 +125,7 @@
     rgba(0, 0, 0, 1) 105%
   );
 }
+
 /* Content Gallery */
 
 .portfolio .content .gallery {
@@ -122,6 +150,10 @@
 
 .portfolio .content .gallery .collection:hover img {
   opacity: 0.7;
+}
+
+.portfolio .content .gallery .collection .imageBox.active {
+  display: block;
 }
 
 .portfolio .content .gallery .collection .imageBox {
@@ -234,21 +266,23 @@
 /* Desktop */
 @media screen and (max-width: 900px) {
   .portfolio {
-    justify-content: center;
+    justify-content: flex-start;
     position: relative;
-    overflow-y: hidden;
   }
   .portfolio .title {
-    height: 15%;
+    width: 85%;
+    height: 25%;
+  }
+  .portfolio .title h3 {
+    margin-bottom: 2rem;
   }
   .portfolio .content {
     flex-direction: column;
-    height: 90vw;
   }
   .portfolio .content .display {
-    height: 70vh;
     width: 95vw;
-    position: absolute;
+    height: 80vw;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -259,12 +293,22 @@
     box-shadow: 0 0 0 1000px #000000b7;
     display: none;
     z-index: 3;
+    overflow: visible;
   }
-  .portfolio .content .display .closeBtn i {
+  .portfolio .content .display .closeBtn {
     display: block;
+    position: absolute;
+    top: -8rem;
+    right: 1rem;
+  }
+  .portfolio .content .display .arrowBtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   .portfolio .content .gallery {
-    width: 90vw;
+    width: 80vw;
+    height: 80vw;
   }
 }
 
@@ -274,7 +318,7 @@
     justify-content: space-evenly;
   }
   .portfolio .title {
-    height: 15%;
+    height: 10%;
   }
 }
 
@@ -284,7 +328,6 @@
     justify-content: center;
   }
   .portfolio .title {
-    height: 20%;
-    margin-bottom: 3rem;
+    height: 30%;
   }
 }
