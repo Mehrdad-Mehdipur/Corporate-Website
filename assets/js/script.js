@@ -2,6 +2,7 @@
 
 // ========== Navbar Shrink and Sidebar mode , Showcase Image Box change mode  ==========
 
+const showcase = document.querySelector("#showcase");
 const navbar = document.querySelector("nav");
 const menuIcon = document.querySelector("nav .menuIcon");
 const menuIconClass = document.querySelector("nav .menuIcon i");
@@ -11,7 +12,7 @@ const showcaseTitle = document.querySelector("#showcase .title");
 window.onscroll = () => {
   showcaseTitle.classList.add("moveDown");
 
-  if (window.scrollY > 20) {
+  if (window.scrollY > innerHeight / 50) {
     navbar.classList.add("shrink");
     // Open Navbar as a Sidebar
     menuIcon.addEventListener("click", function () {
@@ -27,7 +28,22 @@ window.onscroll = () => {
     intro.classList.remove("fullScreen");
     showcaseTitle.classList.remove("moveDown");
   }
+
+  //  Intro Scroll Up
+  if (window.scrollY > window.innerHeight / 4) {
+    intro.classList.add("scrollUp");
+    intro.style.top = window.innerHeight / 4 + "px";
+  } else {
+    intro.classList.remove("scrollUp");
+    intro.style.top = "";
+  }
+
+  //TODO - When scrolling, the Items move up animatedly
+  if (window.scrollY > intro.pageOffsetHeight) {
+  }
 };
+
+console.log(intro.pageOffsetHeight);
 
 // ========== Navbar Shadow ==========
 
