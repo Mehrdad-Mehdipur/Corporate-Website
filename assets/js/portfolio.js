@@ -23,14 +23,12 @@ imageBoxes.forEach((imageBox, index) => {
 
     // View full size clicked photo
     if (window.innerWidth < 900) {
-      (closeBtn, display).style.display = "block";
-      gallery.style.display = "none";
+      display.classList.add("show")
     }
 
     // Close the opened photo with the close btn and display the gallery again 
     closeBtn.addEventListener("click", () => {
-      gallery.style.display = "block";
-      (closeBtn, display).style.display = "none";
+      display.classList.remove("show")
     })
 
     // View photos with next and previous btn
