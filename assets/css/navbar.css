@@ -434,7 +434,7 @@
   font-family: "shabnam-Light";
   font-size: 1.8rem;
   padding: 0 1rem;
-  color: var(--color-text-secondary);
+  color: var(--color-white);
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -1121,7 +1121,7 @@
 
 .navbar .navIcons .icon i {
   font-size: 1.8rem;
-  color: var(--color-text-secondary);
+  color: var(--color-white);
 }
 
 .navbar .navIcons .icon i:hover {

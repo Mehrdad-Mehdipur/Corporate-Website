@@ -6,27 +6,32 @@
   --nav-text-hover-color: #f4f4f4;
   --text-light-color: #fff;
   --text-dark-color: #000;
-  --line-color: #0000002e;
-  --hover-color: #bfad98;
+  --hover-color: #a8a8a8;
 
   /* Main color */
-  --color-canvas: #15181f;
-  --color-canvas-inverted: #363d4b;
-  --color-brand-primary: #252830;
-  --color-brand-secondary: #6a7080;
-  --color-brand-tertiary: #9a9fad;
+  --color-canvas: #262626;
+  --color-canvas-inverted: #323232;
 
-  --color-text-primary: #e7cea0;
-  --color-text-secondary: #888888;
-  --color-text-inverted: #15181f;
+  --color-brand-primary: #3d3d3d;
+  --color-brand-secondary: #a8a8a8;
+  --color-brand-tertiary: #f6d676;
 
-  --color-btn-primary: #e7cea0;
-  --color-btn-inverted: #252933;
-  --color-btn-secondary: #6a7080;
+  --color-text-primary: #f6d676;
+  --color-text-secondary: #3d3d3d;
+  --color-text-inverted: #a8a8a8;
+
+  --color-btn-primary: #f6d676;
+  --color-btn-inverted: #3d3d3d;
+  --color-btn-secondary: #a8a8a8;
+
   --color-border-primary: #3a3f4a;
   --color-border-secondary: #6a7080;
+  --color-border-white: #ffffff4a;
+
   --color-white: #fff;
   --color-black: #000;
+
+  --line-color: #0000002e;
 
   --color-text-link: --color-text-ok: --color-text-warn: --color-text-danger: --color-ui-primary: --color-ui-secondary: --color-ui-tertiary: --color-ui-ok: --color-ui-warn: --color-ui-danger:
 }
@@ -205,11 +210,24 @@ body {
   justify-content: space-between;
 }
 
+/* Dust Effect */
+.showcase .dust {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  opacity: .2;
+  z-index: 1;
+  pointer-events: none;
+}
+
 /*? ============ Showcase Image ============ */
+
 .showcase .imgBox {
   position: absolute;
   top: 11%;
-  left: -6%;
+  left: -7%;
   width: fit-content;
   height: 115vh;
   overflow: hidden;
@@ -219,8 +237,8 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 0 60px #00000072);
-  -webkit-filter: drop-shadow(0 0 60px #00000072);
+  filter: drop-shadow(-20px 20px 30px #00000099);
+  -webkit-filter: drop-shadow(-20px 20px 30px #00000099);
 }
 
 /*? ============ Showcase Title ============ */
@@ -236,7 +254,6 @@ body {
   -moz-transition: all 0.8s ease;
   -ms-transition: all 0.8s ease;
   -o-transition: all 0.8s ease;
-
 }
 
 .showcase .title.moveDown {
@@ -254,91 +271,63 @@ body {
   color: var(--color-text-primary);
 }
 
-/* Title Dot */
+/* Empty Boxes */
 
-.showcase .title .titleDot {
-  background: var(--color-text-primary);
-  width: 8px;
-  height: 8px;
-  margin-bottom: 0.5rem;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+.showcase .boxOne {
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 47vw;
+  height: 73vh;
+  background: linear-gradient(30deg, #0000008e 0%, #ffffff8e 400%);
+  backdrop-filter: blur(1px);
+  border: 1px solid var(--color-border-white);
+  border-radius: 30px 30px 0 0;
+  -webkit-border-radius: 30px 30px 0 0;
+  -moz-border-radius: 30px 30px 0 0;
+  -ms-border-radius: 30px 30px 0 0;
+  -o-border-radius: 30px 30px 0 0;
 }
 
-/* Title Line */
-
-.showcase .title .titleLineWrap {
-  width: 50px;
-  height: 50px;
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+.showcase .boxTow {
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 37vw;
+  height: 82vh;
+  background: linear-gradient(30deg, #0000008e 0%, #ffffff8e 400%);
+  backdrop-filter: blur(1px);
+  border: 1px solid var(--color-border-white);
+  border-radius: 30px 30px 0 0;
+  -webkit-border-radius: 30px 30px 0 0;
+  -moz-border-radius: 30px 30px 0 0;
+  -ms-border-radius: 30px 30px 0 0;
+  -o-border-radius: 30px 30px 0 0;
 }
 
-.showcase .titleLine {
-  width: 3px;
-  height: 50px;
-  background: var(--color-text-primary);
-  animation: pointingDown 1s linear infinite;
-  -webkit-animation: pointingDown 1s infinite;
-  transform: translateY(-100%);
-  -webkit-transform: translateY(-100%);
-  -moz-transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  -o-transform: translateY(-100%);
-}
-
-@keyframes pointingDown {
-  0% {
-    transform: translateY(-100%);
-    -webkit-transform: translateY(-100%);
-    -moz-transform: translateY(-100%);
-    -ms-transform: translateY(-100%);
-    -o-transform: translateY(-100%);
-  }
-
-  50% {
-    transform: translateY(0);
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -o-transform: translateY(0);
-  }
-
-  100% {
-    transform: translateY(100%);
-    -webkit-transform: translateY(100);
-    -moz-transform: translateY(100);
-    -ms-transform: translateY(100);
-    -o-transform: translateY(100);
-  }
-}
 
 /*? ============ Showcase Intro  ============ */
 
 .showcase .intro {
   position: fixed;
   width: 35vw;
-  height: 45vh;
-  bottom: -10vh;
+  height: 35vh;
+  bottom: -5vh;
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  background: var(--color-brand-primary);
+  backdrop-filter: blur(1px);
+  background: linear-gradient(30deg, #0000008e 0%, #ffffff8e 400%);
+  background-size: cover;
   overflow: hidden;
-  border: 1px solid var(--color-border-primary);
+  border: 1px solid var(--color-border-white);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border-radius: 50px 50px 0px 0px;
-  -webkit-border-radius: 50px 50px 0px 0px;
-  -moz-border-radius: 50px 50px 0px 0px;
-  -ms-border-radius: 50px 50px 0px 0px;
-  -o-border-radius: 50px 50px 0px 0px;
+  border-radius: 30px 30px 0px 0px;
+  -webkit-border-radius: 30px 30px 0px 0px;
+  -moz-border-radius: 30px 30px 0px 0px;
+  -ms-border-radius: 30px 30px 0px 0px;
+  -o-border-radius: 30px 30px 0px 0px;
   transition: all .5s ease;
   -webkit-transition: all .5s ease;
   -moz-transition: all .5s ease;
@@ -354,7 +343,7 @@ body {
   opacity: 1;
   border: none;
   background: var(--color-brand-primary);
-  background: linear-gradient(#000000e1, #ffff482c), url(../images/showcase-bg.jpg) no-repeat center bottom;
+  background: linear-gradient(#000000e1, #3434342c), url(../images/showcase-bg.jpg) no-repeat center bottom;
   background-size: cover;
 }
 
@@ -411,8 +400,12 @@ body {
 }
 
 /* Hide Logo images before open fullscreen mode */
-.showcase .intro .brandName .name img, .showcase .intro .brandName .secondName img {
+.showcase .intro :not(.intro) {
   opacity: 0;
+}
+
+.showcase .intro.fullScreen * {
+  opacity: 1;
 }
 
 /* Second Name */
