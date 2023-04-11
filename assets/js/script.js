@@ -3,6 +3,8 @@
 // ========== Navbar Shrink and Sidebar mode , Showcase Image Box change mode  ==========
 
 const showcase = document.querySelector("#showcase");
+const arrow = document.querySelector("#showcase .arrow");
+const showcaseImg = document.querySelector("#showcase .imgBox");
 const navbar = document.querySelector("nav");
 const menuIcon = document.querySelector("nav .menuIcon");
 const menuIconClass = document.querySelector("nav .menuIcon i");
@@ -11,22 +13,25 @@ const showcaseTitle = document.querySelector("#showcase .title");
 
 window.onscroll = () => {
   showcaseTitle.classList.add("moveDown");
-
   if (window.scrollY > innerHeight / 50) {
     navbar.classList.add("shrink");
     // Open Navbar as a Sidebar
     menuIcon.addEventListener("click", function () {
       navbar.classList.toggle("sidebar");
     });
-    // Showcase ImgBox Change
+    // Showcase Intro Change mode
+    arrow.classList.add("hide");
     intro.classList.add("fullScreen");
+    showcaseImg.classList.add("hide");
   } else {
     // Close Sidebar mode
+    showcaseTitle.classList.remove("moveDown");
     navbar.classList.remove("shrink");
     navbar.classList.remove("sidebar");
-    // Showcase ImgBox Change to Initial mode
+    arrow.classList.remove("hide");
     intro.classList.remove("fullScreen");
-    showcaseTitle.classList.remove("moveDown");
+    // Showcase Intro Change to Initial mode
+    showcaseImg.classList.remove("hide");
   }
 
   //  Intro Scroll Up
@@ -43,33 +48,31 @@ window.onscroll = () => {
   }
 };
 
-console.log(intro.pageOffsetHeight);
-
 // ========== Navbar Shadow ==========
 
 const links = document.querySelectorAll("nav .link");
 
-for (let i = 0; i < links.length; i++) {
-  links[i].addEventListener("mouseover", function () {
+for (let link of links) {
+  link.addEventListener("mouseover", function () {
     navbar.classList.add("fullShadow");
   });
 
-  links[i].addEventListener("mouseout", function () {
+  link.addEventListener("mouseout", function () {
     navbar.classList.remove("fullShadow");
   });
 }
 
 // ========== Dropdown links on Shrink Navbar mode ==========
 
-const titleLink = document.querySelectorAll("nav .titleLink");
+const titleLinks = document.querySelectorAll("nav .titleLink");
 
-for (let i = 0; i < titleLink.length; i++) {
-  titleLink[i].addEventListener("click", function (e) {
+for (let titleLink of titleLinks) {
+  titleLink.addEventListener("click", function (e) {
     e.preventDefault();
     let isActive = this.classList.contains("active");
-    titleLink[i].classList.remove("active");
+    titleLink.classList.remove("active");
     if (!isActive) {
-      titleLink[i].classList.add("active");
+      titleLink.classList.add("active");
     }
   });
 }
@@ -78,12 +81,12 @@ for (let i = 0; i < titleLink.length; i++) {
 const lists = document.querySelectorAll(".services .list");
 const servicesListUls = document.querySelectorAll(".services ul");
 
-for (let i = 0; i < lists.length; i++) {
-  lists[i].addEventListener("click", function (e) {
+for (const list of lists) {
+  list.addEventListener("click", function (e) {
     e.preventDefault();
-    for (let r = 0; r < servicesListUls.length; r++) {
-      servicesListUls[r].classList.remove("active");
-    }
+    servicesListUls.forEach((servicesListUl) => {
+      servicesListUl.classList.remove("active");
+    });
     this.classList.toggle("active");
   });
 }
@@ -100,15 +103,15 @@ showSearchBar.onclick = () => {
 // ========== Project Links Images Change By Mouse Hover  ==========
 
 const navProjectsLinks = document.querySelector("#navProjectsLinks").children;
-const navProjectsImg = document.querySelector("#navProjectsImg").children;
+const navProjectsImgs = document.querySelector("#navProjectsImg").children;
 
-for (let i = 0; i < navProjectsLinks.length; i++) {
-  navProjectsLinks[i].addEventListener("mouseover", function () {
+for (let navProjectsLink of navProjectsLinks) {
+  navProjectsLink.addEventListener("mouseover", function () {
     const id = this.getAttribute("data-id");
-    for (let r = 0; r < navProjectsImg.length; r++) {
-      navProjectsImg[r].classList.remove("active");
+    for (const navProjectsImg of navProjectsImgs) {
+      navProjectsImg.classList.remove("active");
     }
-    navProjectsImg[id].classList.add("active");
+    navProjectsImgs[id].classList.add("active");
   });
 }
 

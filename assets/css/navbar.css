@@ -1,14 +1,3 @@
-:root {
-  --main-color: #393940;
-  --light-color: #ffffff;
-  --main-text-color: #4d536d;
-  --second-text-color: #999fb6;
-  --nav-text-hover-color: #f4f4f4;
-  --text-light-color: #ffffff;
-  --text-dark-color: #000;
-  --hover-color: #bfad98;
-}
-
 /** ===== Navbar ===== */
 
 .navbar {
@@ -456,7 +445,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-text-primary);
+  color: var(--color-text-inverted);
   background: linear-gradient(0, var(--color-canvas) 0%, var(--color-brand-primary) 100%);
   overflow: hidden;
   border: 1px solid var(--color-border-primary);
@@ -500,6 +489,8 @@
 .navbar .navLinks .projects .dropdown .content h3 {
   font-size: 2rem;
   font-family: "shabnam-Light";
+  color: var(--color-text-primary);
+  margin-top: 2rem;
 }
 
 .navbar .navLinks .projects .dropdown .content ul {
@@ -526,13 +517,13 @@
 
 .navbar .navLinks .projects .dropdown .content ul li:hover {
   margin-right: 1rem;
-  background: var(--nav-text-hover-color);
+  background: var(--color-hover-black-translate);
 }
 
 .navbar .navLinks .projects .dropdown .content ul li a {
   font-size: 1.5rem;
   font-family: "shabnam";
-  color: var(--second-text-color);
+  color: var(--color-text-inverted);
 }
 
 .navbar .navLinks .projects .dropdown .imgBox {
@@ -579,14 +570,14 @@
 .navbar .navLinks .services .dropdown .content .verticalLine {
   width: 1px;
   height: 400px;
-  background: var(--line-color);
+  background: var(--color-border-white-translate);
 }
 
 .navbar .navLinks .services .dropdown .content .horizontalLine {
   width: 90%;
   height: 1px;
   margin: 1rem;
-  background: var(--line-color);
+  background: var(--color-border-white-translate);
 }
 
 .navbar .navLinks .services .dropdown .content .list {
@@ -606,7 +597,7 @@
 .navbar .navLinks .services .dropdown .content .list h2 {
   padding-bottom: 2rem;
   font-size: 2rem;
-  color: var(--main-text-color);
+  color: var(--color-text-primary);
   cursor: default;
   font-family: "shabnam-Light";
 }
@@ -623,7 +614,7 @@
 .navbar .navLinks .services .dropdown .content .list ul li a {
   font-family: "shabnam";
   font-size: 1.5rem;
-  color: var(--second-text-color);
+  color: var(--color-text-inverted);
 }
 
 .navbar .navLinks .services .dropdown .content .list ul li:hover {
@@ -632,6 +623,7 @@
 
 .navbar .navLinks .services .dropdown .content .list:last-child .specialPart {
   display: flex;
+  align-items: start;
   flex-direction: column;
   width: 100%;
 }
@@ -639,7 +631,7 @@
 .navbar .navLinks .services .dropdown .content .list:last-child .specialPart h3 {
   padding-bottom: 2rem;
   font-size: 2rem;
-  color: var(--text-dark-color);
+  color: var(--color-text-primary);
   cursor: default;
   font-family: "shabnam-Light";
 }
@@ -663,7 +655,7 @@
   font-size: 1.5rem;
   padding-top: 2rem;
   text-align: center;
-  color: var(--second-text-color);
+  color: var(--color-text-inverted);
 }
 
 .navbar .navLinks .services .dropdown .imgBox {
@@ -704,7 +696,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 2rem;
 }
 
@@ -716,7 +708,8 @@
 .navbar .navLinks .blog .dropdown .blogTitle h1 {
   text-align: center;
   font-size: 2rem;
-  padding-bottom: 3rem;
+  margin-top: 2rem;
+  color: var(--color-text-primary);
 }
 
 .navbar .navLinks .blog .dropdown .blogTitle p {
@@ -724,13 +717,10 @@
   font-size: 1.5rem;
 }
 
-.navbar .navLinks .blog .dropdown .blogTitle .btn {
-  margin-top: 6rem;
+.navbar .navLinks .blog .dropdown .blogTitle .btnFlip {
+  margin-bottom: 9rem;
 }
 
-.navbar .navLinks .blog .dropdown .blogTitle .btn a {
-  color: var(--text-light-color);
-}
 
 /* Cards Left and Right*/
 
@@ -791,12 +781,12 @@
 .navbar .navLinks .blog .dropdown .cardsRight .card h2 {
   position: absolute;
   bottom: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
   width: 100%;
   height: 20rem;
-  padding-top: 12rem;
-  color: var(--text-light-color);
+  padding-top: 16rem;
+  color: var(--color-white);
   background: linear-gradient(180deg,
       rgba(0, 0, 0, 0) 0%,
       rgba(0, 0, 0, 0.8015800070028012) 77%);
@@ -804,8 +794,8 @@
 
 .navbar .navLinks .blog:hover .dropdown .cardsLeft .card h2,
 .navbar .navLinks .blog:hover .dropdown .cardsRight .card h2 {
-  animation: downIn 1s ease-in;
-  -webkit-animation: downIn 1s ease-in;
+  animation: downIn .7s ease-in;
+  -webkit-animation: downIn .7s ease-in;
 }
 
 /* Cards Right Changes */
@@ -821,7 +811,7 @@
 
 .navbar .navLinks .blog .dropdown .cardsRight .card h2 {
   height: 100px;
-  padding-top: 3rem;
+  padding-top: 6rem;
 }
 
 /*? ============ Contact Us ============ */
@@ -883,15 +873,16 @@
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .contact {
   width: 60%;
+  height: 100%;
+  padding: 2rem 0;
   display: flex;
   flex-direction: column;
   align-items: end;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .contact .phone {
   width: 100%;
-  padding: 0 0 2rem 0;
   direction: ltr;
   display: flex;
   align-items: center;
@@ -908,7 +899,6 @@
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .contact .email {
   width: 100%;
-  padding: 0 0 2rem 0;
   display: flex;
   align-items: center;
   justify-content: start;
@@ -944,7 +934,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 1px solid var(--line-color);
+  border-top: 1px solid var(--color-border-white-translate);
 }
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .socialMedia ul {
@@ -965,17 +955,16 @@
 /* Icons */
 .navbar .navLinks .contactUs .dropdown .contactInfo .contact .phone a,
 .navbar .navLinks .contactUs .dropdown .contactInfo .contact .email a,
-.navbar .navLinks .contactUs .dropdown .contactInfo .contact .address a,
-.navbar .navLinks .contactUs .dropdown .contactInfo .socialMedia ul li a {
-  font-size: 2rem;
+.navbar .navLinks .contactUs .dropdown .contactInfo .contact .address a {
+  font-size: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
   padding: 0.6rem;
-  background: var(--main-text-color);
-  color: var(--text-light-color);
+  color: var(--color-text-secondary);
+  background: var(--color-brand-secondary);
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -984,13 +973,20 @@
 }
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .socialMedia ul li a {
-  font-size: 2rem;
+  font-size: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   padding: 1rem;
+  color: var(--color-text-secondary);
+  background: var(--color-brand-secondary);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
 }
 
 /* Image */
@@ -1021,7 +1017,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   width: 30%;
   height: 100%;
   padding: 2rem;
@@ -1034,18 +1030,20 @@
 
 .navbar .navLinks .contactUs .dropdown .counseling h2 {
   font-size: 2rem;
-  margin-bottom: 4rem;
+  margin-top: 4rem;
+  color: var(--color-text-primary);
 }
 
 .navbar .navLinks .contactUs .dropdown .counseling p {
   font-size: 1.5rem;
   text-align: justify;
   width: 100%;
+  margin-top: 7rem;
 }
 
-.navbar .navLinks .contactUs .dropdown .counseling .btn {
-  margin-top: 4rem;
-  font-size: 1.1vw;
+.navbar .navLinks .contactUs .dropdown .counseling .btnFlip {
+  margin-top: 8rem;
+
 }
 
 /*? ============ About Us ============ */
@@ -1054,8 +1052,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   width: 50%;
+  height: 100%;
   padding: 2rem;
 }
 
@@ -1066,17 +1065,19 @@
 
 .navbar .navLinks .aboutUs .dropdown .content h3 {
   font-size: 2rem;
+  margin-top: 4rem;
+  color: var(--color-text-primary);
 }
 
 .navbar .navLinks .aboutUs .dropdown .content p {
-  margin-top: 4rem;
+  margin-top: 8rem;
   font-size: 1.5rem;
   text-align: justify;
-  color: var(--color-text-secondary);
+  color: var(--color-text-inverted);
 }
 
-.navbar .navLinks .aboutUs .dropdown .content .btn {
-  margin-top: 5rem;
+.navbar .navLinks .aboutUs .dropdown .content .btnFlip {
+  margin-top: 8rem;
 }
 
 .navbar .navLinks .aboutUs .dropdown .imgBox {
@@ -1111,7 +1112,7 @@
   justify-content: center;
   width: 30px;
   height: 30px;
-  padding: 1rem;
+  padding: 2rem;
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
