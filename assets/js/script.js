@@ -29,8 +29,8 @@ window.onscroll = () => {
     navbar.classList.remove("shrink");
     navbar.classList.remove("sidebar");
     arrow.classList.remove("hide");
-    intro.classList.remove("fullScreen");
     // Showcase Intro Change to Initial mode
+    intro.classList.remove("fullScreen");
     showcaseImg.classList.remove("hide");
   }
 
