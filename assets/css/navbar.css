@@ -24,74 +24,6 @@
   box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 1000px;
 }
 
-/*? ============ Vertical Navbar ============ */
-
-/* بعد از طراحی باید حذف شود */
-.verticalNav * {
-  width: 100%;
-}
-
-.verticalNav {
-  position: fixed;
-  top: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 400px;
-  height: 100vh;
-  z-index: 1000;
-  overflow: hidden;
-  background: var(--color-border-primary);
-}
-
-/* Vertical Navbar Logo */
-
-.verticalNav .logo {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 10%;
-}
-
-.verticalNav .logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-/* Vertical Navbar Menu Icon */
-
-.verticalNav .menuIcon {
-  position: absolute;
-  top: 1%;
-  right: 1%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: var(--color-brand-secondary);
-  border-radius: 7px;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  -ms-border-radius: 7px;
-  -o-border-radius: 7px;
-}
-
-.verticalNav .menuIcon i {
-  color: var(--color-text-secondary);
-  width: 100%;
-  height: 100%;
-  font-size: 4rem;
-}
-
-
-
-
 /** ===== Nav Menu Icon ===== */
 
 .navbar .menuIcon {
@@ -913,7 +845,189 @@
   position: absolute;
 }
 
-/** ===== Responsive  =====  */
+
+
+/** ============ Vertical Navbar ============ */
+
+/* بعد از طراحی باید حذف شود */
+.verticalNav * {
+  width: 100%;
+}
+
+.verticalNav {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--color-border-primary);
+}
+
+/** ===== Vertical Logo ===== */
+
+.verticalNav .logo {
+  position: absolute;
+  top: 1%;
+  right: 0;
+  width: 100%;
+  height: 10%;
+}
+
+.verticalNav .logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/** ===== Vertical Menu Icon ===== */
+
+.verticalNav .menuIcon {
+  z-index: 1;
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-brand-secondary);
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  cursor: pointer;
+}
+
+.verticalNav .menuIcon i {
+  color: var(--color-text-secondary);
+  font-size: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/** ===== Vertical Nav Icons ===== */
+
+.verticalNav .navIcons {
+  position: absolute;
+  top: 13%;
+  right: 0;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verticalNav .navIcons .navSearch * {
+  display: none;
+}
+
+.verticalNav .navIcons .icon {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verticalNav .navIcons .icon i {
+  font-size: 2rem;
+  color: var(--color-text-inverted);
+}
+
+/** ===== Vertical Nav Links ===== */
+
+.verticalNav .navLinks {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.verticalNav .navLinks .link {
+  position: relative;
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
+}
+
+.verticalNav .navLinks .link:hover {
+  background: var(--color-hover-black-translate);
+}
+
+.verticalNav .navLinks .link:hover .titleLink a {
+  font-size: 2.2rem;
+}
+
+.verticalNav .navLinks .link .titleLink {
+  width: max-content;
+  height: max-content;
+}
+
+.verticalNav .navLinks .link .titleLink a {
+  font-size: 2rem;
+  color: var(--color-white);
+  transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+}
+
+.verticalNav .navLinks .link .dropdown {
+  display: none;
+}
+
+.verticalNav .navLinks .link.active .titleLink {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verticalNav .navLinks .link.active .dropdown {
+  display: block;
+}
+
+.verticalNav .navLinks .link.active .dropdown .content {
+  position: absolute;
+  top: 6rem;
+  right: 0;
+  width: 100%;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.verticalNav .navLinks .link.active .dropdown .imgBox {
+  display: none;
+}
+
+
+
+/** ============ Responsive ============ */
 
 /* Big Screen */
 @media screen and (max-width: 1200px) {

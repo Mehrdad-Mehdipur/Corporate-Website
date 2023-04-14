@@ -49,7 +49,6 @@ window.onscroll = () => {
 };
 
 // ========== Navbar Shadow ==========
-
 const links = document.querySelectorAll("nav .link");
 
 for (let link of links) {
@@ -59,21 +58,6 @@ for (let link of links) {
 
   link.addEventListener("mouseout", function () {
     navbar.classList.remove("fullShadow");
-  });
-}
-
-// ========== Dropdown links on Shrink Navbar mode ==========
-
-const titleLinks = document.querySelectorAll("nav .titleLink");
-
-for (let titleLink of titleLinks) {
-  titleLink.addEventListener("click", function (e) {
-    e.preventDefault();
-    let isActive = this.classList.contains("active");
-    titleLink.classList.remove("active");
-    if (!isActive) {
-      titleLink.classList.add("active");
-    }
   });
 }
 
@@ -127,3 +111,20 @@ function Responsive() {
 }
 
 window.addEventListener("resize", Responsive);
+
+// * Vertical Navbar
+
+// ========== Vertical Navbar links Click mode ==========
+
+const verticalLinks = document.querySelectorAll("nav .link");
+
+for (let verticalLink of verticalLinks) {
+  verticalLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    let isActive = this.classList.contains("active");
+    verticalLink.classList.remove("active");
+    if (!isActive) {
+      verticalLink.classList.add("active");
+    }
+  });
+}
