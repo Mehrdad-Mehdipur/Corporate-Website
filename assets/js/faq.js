@@ -5,16 +5,18 @@
 const items = document.querySelectorAll("#faq .item");
 const collectionItems = document.querySelector("#faq .collection");
 const plus = document.querySelector("#faq .plus")
-// const minus = document.querySelector("#faq .minus")
-// const question = document.querySelectorAll("#faq .question")
+const minus = document.querySelector("#faq .minus")
+const answer = document.querySelectorAll("#faq .answer")
+const question = document.querySelectorAll("#faq .question")
+
 
 items.forEach((item) => {
 	item.addEventListener("click", () => {
+		// Not Active
 		if (item.classList.contains("active")) { // کلیک که شد اگر اکتیو داشت 
 			item.classList.remove("active"); //  اکتیو را حذف کن
 			collectionItems.style.justifyContent = "center"; // استایل اسکرول بار چون اکتیو نداره بیاد وسط
-
-		} else {
+		} else { // Active
 			items.forEach((item) => {
 				item.classList.remove("active");// رو هر کدوم کلیک شد همه اکتیوها رو بردار
 			});
@@ -22,8 +24,8 @@ items.forEach((item) => {
 			collectionItems.style.justifyContent = "start"; // استایل اسکرول بار بره بالا
 		}
 	});
-
 });
+
 
 
 // ========== 3D Card in Faq ==========

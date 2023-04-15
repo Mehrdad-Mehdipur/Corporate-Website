@@ -32,15 +32,19 @@
 .scrollBar::-webkit-scrollbar {
   width: 1rem;
 }
+
 .scrollBar::-webkit-scrollbar-button {
   height: 0;
 }
+
 .scrollBar::-webkit-scrollbar-track {
   background: var(--color-brand-secondary);
 }
+
 .scrollBar::-webkit-scrollbar-thumb {
   background: #7a7a7a;
 }
+
 .scrollBar::-webkit-scrollbar-thumb:hover {
   background: var(--color-brand-tertiary);
 }
@@ -123,15 +127,18 @@
   font-size: 1.5rem;
   border-bottom: 1px solid var(--color-border-white);
   direction: rtl;
-}
-
-.faq .wrapper .content .collection .item.active .answer {
-  display: block;
+  height: fit-content;
 }
 
 .faq .wrapper .content .collection .item:first-child {
   border-top: 1px solid var(--color-border-white);
 }
+
+.faq .wrapper .content .collection .item.active {
+  background: var(--color-canvas);
+}
+
+
 
 .faq .wrapper .content .collection .item .question {
   display: flex;
@@ -139,6 +146,7 @@
   justify-content: space-between;
   font-weight: 900;
   padding: 1.5rem 1rem;
+  height: 6rem;
 }
 
 .faq .wrapper .content .collection .item .question:hover {
@@ -146,17 +154,11 @@
   background: var(--color-canvas);
 }
 
-.faq .wrapper .content .collection .item.active {
-  color: var(--color-text-primary);
-  background: var(--color-canvas);
-}
-
 .faq .wrapper .content .collection .item.active .question:hover {
-  color: var(--color-text-inverted);
+  color: var(--color-text-primary);
 }
 
-.faq .wrapper .content .collection .item .question i {
-  font-size: 1.7rem;
+.faq .wrapper .content .collection .item .question p {
   cursor: pointer;
 }
 
@@ -164,16 +166,42 @@
   color: var(--color-text-primary);
   font-size: 0.8rem;
   padding-left: 1rem;
+}
+
+.faq .wrapper .content .collection .item .question .plus,
+.minus {
+  padding-left: 1rem;
+  font-size: 1.7rem;
   cursor: pointer;
+}
+
+.faq .wrapper .content .collection .item.active .question .plus {
+  display: none;
+}
+
+.faq .wrapper .content .collection .item .question .minus {
+  display: none;
+}
+
+.faq .wrapper .content .collection .item.active .question .minus {
+  display: block;
 }
 
 .faq .wrapper .content .collection .item .answer {
   display: none;
+  height: 0;
+}
+
+.faq .wrapper .content .collection .item.active .answer {
+  display: block;
+  height: fit-content;
   text-align: justify;
   padding: 2rem;
   padding-top: 0;
   font-size: 1.5rem;
+
 }
+
 
 /* More */
 
@@ -207,7 +235,6 @@
   width: 75%;
   height: 90%;
   margin: auto;
-  scale: 1;
   perspective: 600px;
 }
 
@@ -220,6 +247,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  box-shadow: var(--color-canvas) 0px 25px 20px -20px;
+  border-radius: .5rem;
+  -webkit-border-radius: .5rem;
+  -moz-border-radius: .5rem;
+  -ms-border-radius: .5rem;
+  -o-border-radius: .5rem;
 }
 
 .faq .wrapper .imageBox .card3d,
