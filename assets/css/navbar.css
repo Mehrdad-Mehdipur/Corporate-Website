@@ -867,6 +867,7 @@
   height: 100vh;
   overflow: hidden;
   background: var(--color-border-primary);
+  display: none;
 }
 
 /** ===== Vertical Logo ===== */
