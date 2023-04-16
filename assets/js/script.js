@@ -14,10 +14,11 @@ const showcaseTitle = document.querySelector("#showcase .title");
 window.onscroll = () => {
   showcaseTitle.classList.add("moveDown");
   if (window.scrollY > innerHeight / 50) {
-    navbar.classList.add("shrink");
+    navbar.classList.add("verticalNav");
+    navbar.classList.remove("navbar");
     // Open Navbar as a Sidebar
     menuIcon.addEventListener("click", function () {
-      navbar.classList.toggle("sidebar");
+      navbar.classList.toggle("hide");
     });
     // Showcase Intro Change mode
     arrow.classList.add("hide");
@@ -25,13 +26,13 @@ window.onscroll = () => {
     showcaseImg.classList.add("hide");
   } else {
     // Close Sidebar mode
+    navbar.classList.add("navbar");
     showcaseTitle.classList.remove("moveDown");
-    navbar.classList.remove("shrink");
-    navbar.classList.remove("sidebar");
-    arrow.classList.remove("hide");
-    // Showcase Intro Change to Initial mode
-    intro.classList.remove("fullScreen");
-    showcaseImg.classList.remove("hide");
+    navbar.classList.remove("verticalNav"); // Back to navbar mode
+    navbar.classList.add("hide"); // Close verticalNav
+    arrow.classList.remove("hide"); // Hide flashing arrow
+    intro.classList.remove("fullScreen"); // Showcase Intro Change to Initial mode
+    showcaseImg.classList.remove("hide"); // Show image box
   }
 
   //  Intro Scroll Up
@@ -54,6 +55,9 @@ const links = document.querySelectorAll("nav .link");
 for (let link of links) {
   link.addEventListener("mouseover", function () {
     navbar.classList.add("fullShadow");
+    if (navbar.classList.contains("verticalNav")) {
+      navbar.classList.remove("fullShadow"); // link hover shadow id Off
+    }
   });
 
   link.addEventListener("mouseout", function () {
@@ -61,7 +65,7 @@ for (let link of links) {
   });
 }
 
-// Show Services Lists
+//TODO Show Services Lists
 const lists = document.querySelectorAll(".services .list");
 const servicesListUls = document.querySelectorAll(".services ul");
 
@@ -116,14 +120,18 @@ window.addEventListener("resize", Responsive);
 
 // ========== Vertical Navbar links Click mode ==========
 
+// ========== Vertical Navbar links Click mode ==========
+
 const verticalLinks = document.querySelectorAll("nav .link");
 
 for (let verticalLink of verticalLinks) {
-  verticalLink.addEventListener("click", function (e) {
-    e.preventDefault();
-    let isActive = this.classList.contains("active");
-    verticalLink.classList.remove("active");
-    if (!isActive) {
+  verticalLink.addEventListener("click", function () {
+    if (verticalLink.classList.contains("active")) {
+      verticalLink.classList.remove("active");
+    } else {
+      verticalLinks.forEach((verticalLink) => {
+        verticalLink.classList.remove("active");
+      });
       verticalLink.classList.add("active");
     }
   });
