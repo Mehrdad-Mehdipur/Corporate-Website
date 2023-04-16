@@ -17,11 +17,11 @@
 
   --color-border-primary: #3a3f4a;
   --color-border-secondary: #6a7080;
-  --color-border-white-translate: #ffffff4a;
-  --color-border-black-translate: #0000004a;
+  --color-border-white-transparent: #ffffff4a;
+  --color-border-black-transparent: #0000004a;
 
-  --color-hover-white-translate: #ffffff0f;
-  --color-hover-black-translate: #00000021;
+  --color-hover-white-transparent: #ffffff0f;
+  --color-hover-black-transparent: #00000021;
 
 
   --color-white: #fff;

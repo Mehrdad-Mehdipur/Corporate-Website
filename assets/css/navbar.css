@@ -246,14 +246,14 @@
 .navbar .navLinks .services .dropdown .content .verticalLine {
   width: 1px;
   height: 400px;
-  background: var(--color-border-white-translate);
+  background: var(--color-border-white-transparent);
 }
 
 .navbar .navLinks .services .dropdown .content .horizontalLine {
   width: 90%;
   height: 1px;
   margin: 1rem;
-  background: var(--color-border-white-translate);
+  background: var(--color-border-white-transparent);
 }
 
 .navbar .navLinks .services .dropdown .content .list {
@@ -610,7 +610,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 1px solid var(--color-border-white-translate);
+  border-top: 1px solid var(--color-border-white-transparent);
 }
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .socialMedia ul {
@@ -845,14 +845,7 @@
   position: absolute;
 }
 
-
-
 /** ============ Vertical Navbar ============ */
-
-/* بعد از طراحی باید حذف شود */
-.verticalNav * {
-  width: 100%;
-}
 
 .verticalNav {
   z-index: 1;
@@ -866,7 +859,21 @@
   width: 400px;
   height: 100vh;
   overflow: hidden;
-  background: var(--color-border-primary);
+  background: var(--color-brand-primary);
+  overflow: auto;
+  transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+}
+
+.verticalNav.hide {
+  width: 0;
+  padding: 0;
+}
+
+.verticalNav.hide :not(.navbar, .menuIcon, .menuIcon i) {
   display: none;
 }
 
@@ -874,7 +881,7 @@
 
 .verticalNav .logo {
   position: absolute;
-  top: 1%;
+  top: 3%;
   right: 0;
   width: 100%;
   height: 10%;
@@ -889,8 +896,8 @@
 /** ===== Vertical Menu Icon ===== */
 
 .verticalNav .menuIcon {
-  z-index: 1;
-  position: absolute;
+  z-index: 100;
+  position: fixed;
   top: 1%;
   right: 1%;
   width: 50px;
@@ -905,21 +912,35 @@
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
   cursor: pointer;
+  transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+}
+
+.verticalNav .menuIcon:hover {
+  background: none;
 }
 
 .verticalNav .menuIcon i {
   color: var(--color-text-secondary);
-  font-size: 4rem;
+  font-size: 3.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.verticalNav .menuIcon:hover i {
+  color: var(--color-text-inverted);
+}
+
+
 /** ===== Vertical Nav Icons ===== */
 
 .verticalNav .navIcons {
   position: absolute;
-  top: 13%;
+  top: 15%;
   right: 0;
   width: 100%;
   height: 5rem;
@@ -928,7 +949,7 @@
   justify-content: center;
 }
 
-.verticalNav .navIcons .navSearch * {
+.verticalNav .navIcons .icon.navSearch {
   display: none;
 }
 
@@ -943,13 +964,26 @@
 .verticalNav .navIcons .icon i {
   font-size: 2rem;
   color: var(--color-text-inverted);
+  transition: all .2s ease;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+}
+
+.verticalNav .navIcons .icon i:hover {
+  scale: 1.1;
+  color: var(--color-text-primary);
 }
 
 /** ===== Vertical Nav Links ===== */
 
 .verticalNav .navLinks {
+  position: absolute;
+  top: 30%;
+  right: 0;
   width: 100%;
-  height: 60%;
+  height: max-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -957,34 +991,37 @@
 }
 
 .verticalNav .navLinks .link {
-  position: relative;
   width: 100%;
   height: 6rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all .5s ease;
-  -webkit-transition: all .5s ease;
-  -moz-transition: all .5s ease;
-  -ms-transition: all .5s ease;
-  -o-transition: all .5s ease;
+  transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
 }
 
 .verticalNav .navLinks .link:hover {
   background: var(--color-hover-black-translate);
 }
 
-.verticalNav .navLinks .link:hover .titleLink a {
-  font-size: 2.2rem;
-}
 
 .verticalNav .navLinks .link .titleLink {
   width: max-content;
   height: max-content;
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
 }
 
 .verticalNav .navLinks .link .titleLink a {
+  font-family: 'shabnam-bold';
   font-size: 2rem;
   color: var(--color-white);
   transition: all .3s ease;
@@ -994,26 +1031,44 @@
   -o-transition: all .3s ease;
 }
 
+.verticalNav .navLinks .link:hover .titleLink a {
+  font-size: 2.2rem;
+}
+
 .verticalNav .navLinks .link .dropdown {
   display: none;
 }
 
+.verticalNav .navLinks .link.active {
+  height: max-content;
+  text-align: center;
+}
+
 .verticalNav .navLinks .link.active .titleLink {
   width: 100%;
-  height: 100%;
+  height: 6rem;
   display: flex;
   align-items: center;
   justify-content: center;
+
+}
+
+.verticalNav .navLinks .link.active .titleLink a {
+  font-family: 'shabnam-bold';
+  font-size: 2.2rem;
 }
 
 .verticalNav .navLinks .link.active .dropdown {
   display: block;
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .verticalNav .navLinks .link.active .dropdown .content {
-  position: absolute;
-  top: 6rem;
-  right: 0;
   width: 100%;
   height: max-content;
   display: flex;
@@ -1022,11 +1077,56 @@
   justify-content: center;
 }
 
+.verticalNav .navLinks .link.active .dropdown .content h3, h2 {
+  font-family: 'shabnam-bold';
+  font-size: 1.5rem;
+  padding: 2rem 0 1rem 0;
+  color: var(--color-text-primary);
+}
+
+.verticalNav .navLinks .link.active .dropdown .content ul {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.verticalNav .navLinks .link.active .dropdown .content li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verticalNav .navLinks .link.active .dropdown .content ul li a, p {
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  color: var(--color-text-inverted);
+  transition: all .2s ease;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+}
+
+.verticalNav .navLinks .link.active .dropdown .content ul li a:hover {
+  color: var(--color-text-primary);
+}
+
 .verticalNav .navLinks .link.active .dropdown .imgBox {
   display: none;
 }
 
+/*TODO Vertical Nav Services list Open */
 
+.verticalNav .navLinks .link.active.services .dropdown .list {
+  background: tomato;
+  cursor: pointer;
+}
+
+.verticalNav .navLinks .link.active.services .dropdown .list ul.active {
+  display: none;
+}
 
 /** ============ Responsive ============ */
 
