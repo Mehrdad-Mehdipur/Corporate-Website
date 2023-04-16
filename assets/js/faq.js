@@ -6,9 +6,7 @@ const items = document.querySelectorAll("#faq .item");
 const collectionItems = document.querySelector("#faq .collection");
 const plus = document.querySelector("#faq .plus")
 const minus = document.querySelector("#faq .minus")
-const answer = document.querySelectorAll("#faq .answer")
-const question = document.querySelectorAll("#faq .question")
-
+// const answers = document.querySelectorAll("#faq .answer")
 
 items.forEach((item) => {
 	item.addEventListener("click", () => {
