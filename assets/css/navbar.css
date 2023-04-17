@@ -868,6 +868,7 @@
   -o-transition: all .4s ease-in-out;
 }
 
+/* 
 .verticalNav.hide {
   width: 0;
   padding: 0;
@@ -875,7 +876,7 @@
 
 .verticalNav.hide :not(.navbar, .menuIcon, .menuIcon i) {
   display: none;
-}
+} */
 
 /** ===== Vertical Logo ===== */
 
@@ -1018,6 +1019,9 @@
   -moz-transition: all .3s ease-in-out;
   -ms-transition: all .3s ease-in-out;
   -o-transition: all .3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .verticalNav .navLinks .link .titleLink a {
@@ -1044,13 +1048,18 @@
   text-align: center;
 }
 
+.verticalNav .navLinks .link.active h3 {
+  width: 70%;
+  text-align: right;
+}
+
 .verticalNav .navLinks .link.active .titleLink {
   width: 100%;
   height: 6rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-
+  justify-content: flex-start;
+  padding: 2rem;
 }
 
 .verticalNav .navLinks .link.active .titleLink a {
@@ -1088,7 +1097,7 @@
   padding: 1rem 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: center;
 }
 
