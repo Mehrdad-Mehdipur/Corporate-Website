@@ -8,21 +8,33 @@ const plus = document.querySelector("#faq .plus")
 const minus = document.querySelector("#faq .minus")
 // const answers = document.querySelectorAll("#faq .answer")
 
+
 items.forEach((item) => {
 	item.addEventListener("click", () => {
 		// Not Active
 		if (item.classList.contains("active")) { // کلیک که شد اگر اکتیو داشت 
 			item.classList.remove("active"); //  اکتیو را حذف کن
-			collectionItems.style.justifyContent = "center"; // استایل اسکرول بار چون اکتیو نداره بیاد وسط
+			collectionItems.style.cursor = "context-menu" // حالت موس پیشفرض باشه
+			if (window.innerWidth < 900) {
+				collectionItems.style.justifyContent = "flex-start"; // چون عکس کنار نیست آیتم ها از بالا باشه
+			} else {
+				collectionItems.style.justifyContent = "center"// استایل اسکرول بار چون اکتیو نداره بیاد وسط
+			}
+
 		} else { // Active
 			items.forEach((item) => {
 				item.classList.remove("active");// رو هر کدوم کلیک شد همه اکتیوها رو بردار
+				collectionItems.style.cursor = "n-resize"// موس اسکرول نشون بده
 			});
 			item.classList.add("active"); // رو اونی که کلیک شد فقط اکتیو بده
-			collectionItems.style.justifyContent = "start"; // استایل اسکرول بار بره بالا
+			collectionItems.style.justifyContent = "flex-start"; // استایل اسکرول بار بره بالا
 		}
 	});
+
 });
+
+
+
 
 
 
