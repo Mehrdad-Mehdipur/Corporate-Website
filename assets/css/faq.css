@@ -88,7 +88,6 @@
 
 .faq .title h2 {
   font-size: 2rem;
-  padding-bottom: 2rem;
   color: var(--color-text-primary);
 }
 
@@ -139,7 +138,7 @@
 }
 
 .faq .wrapper .content .collection .item.active {
-  background: var(--color-hover-black-translate);
+  background: var(--color-hover-black-transparent);
 }
 
 .faq .wrapper .content .collection .item .question {
@@ -153,7 +152,7 @@
 
 .faq .wrapper .content .collection .item .question:hover {
   color: var(--color-text-primary);
-  background: var(--color-hover-black-translate);
+  background: var(--color-hover-black-transparent);
 }
 
 .faq .wrapper .content .collection .item.active .question:hover {
@@ -272,4 +271,128 @@
   -moz-transition: all 0.5s ease-out;
   -ms-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
+}
+
+
+
+/** ===== Faq Responsive ===== */
+/* Big Screen */
+@media screen and (max-width: 1200px) {
+  .faq .wrapper .content {
+    width: 55%;
+  }
+
+  .faq .wrapper .imageBox {
+    width: 45%;
+  }
+
+  .faq .wrapper .imageBox .card3d {
+    width: 85%;
+    height: 70%;
+  }
+}
+
+/* Desktop */
+@media screen and (max-width: 900px) {
+  .faq .title {
+    height: 15%;
+  }
+
+  .faq .wrapper {
+    height: 85%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .faq .wrapper .imageBox {
+    width: 100%;
+    height: 40%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .faq .wrapper .imageBox .card3d {
+    width: 60%;
+    height: 80%;
+    margin-top: 0;
+  }
+
+  .faq .wrapper .content {
+    width: 90%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .faq .wrapper .content .collection {
+    height: 75%;
+    justify-content: flex-start;
+  }
+
+  .faq .wrapper .content .more {
+    height: 15%;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+  .faq .wrapper .content {
+    width: 100%;
+  }
+
+  .faq .wrapper .content .collection .item .question {
+    padding: 1rem;
+    height: 5rem;
+  }
+}
+
+/* Smart Phone */
+@media screen and (max-width: 480px) {
+  .faq .title p {
+    font-size: 1.2rem;
+    text-align: center;
+    width: 80%;
+  }
+
+  .faq .wrapper .imageBox {
+    width: 100%;
+    height: 40%;
+  }
+
+  .faq .wrapper .imageBox .card3d {
+    margin: auto;
+  }
+
+  .faq .wrapper .content {
+    width: 100%;
+    height: 60%;
+  }
+
+  .faq .wrapper .content .collection {
+    padding: 0;
+    padding-left: .7rem;
+  }
+
+  .faq .wrapper .content .collection .item .question {
+    font-weight: 700;
+    padding: .5rem;
+    height: 4.5rem;
+  }
+
+  .faq .wrapper .content .collection .item .question p {
+    font-size: 3.2vw;
+  }
+
+  .faq .wrapper .content .collection .item .question .plus,
+  .minus {
+    padding-left: .5rem;
+    font-size: 1.5rem;
+  }
+
+  .faq .wrapper .content .more {
+    font-size: 1rem;
+    margin: 0 auto;
+    text-align: center;
+  }
 }
