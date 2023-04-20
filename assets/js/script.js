@@ -1,4 +1,4 @@
-//* Navbar
+//* ========== Navbar ==========
 
 // ========== Project Links Images Change By Mouse Hover  ==========
 
@@ -23,7 +23,7 @@ for (let link of links) {
   link.addEventListener("mouseover", function () {
     navbar.classList.add("fullShadow");
     if (navbar.classList.contains("verticalNav")) {
-      navbar.classList.remove("fullShadow"); // link hover shadow Off
+      navbar.classList.remove("fullShadow"); // link hover shadow Off on vertical mode
     }
   });
 
@@ -56,10 +56,12 @@ window.onscroll = () => {
   if (window.scrollY > innerHeight / 50) {
     navbar.classList.add("verticalNav");
     navbar.classList.remove("navbar");
+
     // Open Navbar as a Sidebar
     menuIcon.addEventListener("click", function () {
       navbar.classList.toggle("hide");
     });
+
     // Showcase Intro Change mode
     arrow.classList.add("hide");
     intro.classList.add("fullScreen");
@@ -81,10 +83,6 @@ window.onscroll = () => {
     intro.classList.remove("scrollUp");
     intro.style.top = "";
   }
-
-  //TODO - When scrolling, the Items move up animatedly
-  // if (window.scrollY > intro.pageOffsetHeight) {
-  // }
 };
 
 //* Vertical Navbar
@@ -123,7 +121,7 @@ for (const h3 of navServicesH3s) {
   });
 }
 
-//* Navbar Responsive
+//* ========== Navbar Responsive ==========
 
 function Responsive() {
   let screenWidth = window.innerWidth;
