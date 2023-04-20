@@ -124,5 +124,7 @@
     "ویلا",
     "یافته"
   ],
-  "cSpell.language": "en,fa"
+  "cSpell.language": "en,fa",
+  "html-to-css-autocompletion.autocompletionFilesScope": "multi-root",
+  "liveServer.settings.port": 5501
 }
