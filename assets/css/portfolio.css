@@ -24,9 +24,6 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-}
-
-.portfolio .title h3 {
   font-size: 2rem;
   color: var(--color-brand-tertiary)
 }

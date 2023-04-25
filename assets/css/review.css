@@ -1,3 +1,37 @@
+:root {
+	/* Main color */
+	--color-canvas: #262626;
+	--color-canvas-inverted: #323232;
+
+	--color-brand-primary: #3d3d3d;
+	--color-brand-secondary: #a8a8a8;
+	--color-brand-tertiary: #f6d676;
+
+	--color-text-primary: #f6d676;
+	--color-text-secondary: #3d3d3d;
+	--color-text-inverted: #a8a8a8;
+
+	--color-btn-primary: #f6d676;
+	--color-btn-inverted: #3d3d3d;
+	--color-btn-secondary: #a8a8a8;
+
+	--color-border-primary: #3a3f4a;
+	--color-border-secondary: #6a7080;
+	--color-border-white-transparent: #ffffff4a;
+	--color-border-black-transparent: #0000004a;
+
+	--color-hover-white-transparent: #ffffff0f;
+	--color-hover-black-transparent: #00000021;
+
+
+	--color-white: #fff;
+	--color-black: #000;
+
+	--line-color: #0000002e;
+
+	--color-text-link: --color-text-ok: --color-text-warn: --color-text-danger: --color-ui-primary: --color-ui-secondary: --color-ui-tertiary: --color-ui-ok: --color-ui-warn: --color-ui-danger:
+}
+
 /** ===== Portfolio ===== */
 
 #review {
@@ -9,8 +43,166 @@
 .review {
 	width: 100%;
 	height: 100%;
+	overflow-x: hidden;
+}
+
+/*? ============  Review Title  ============ */
+
+.review .title {
+	width: 100%;
+	height: 15%;
 	display: flex;
-	flex-direction: column;
 	align-items: center;
-	justify-content: flex-start;
+	direction: ltr;
+	font-size: 2rem;
+	color: var(--color-text-primary);
+	padding-left: 5rem;
+}
+
+/*? ============  Review Content  ============ */
+
+.review .content {
+	height: 85%;
+	width: 90%;
+	margin: 0 auto;
+	position: relative;
+}
+
+/* Arrow next and prev */
+.review .content .arrowBtn {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+
+.review .content .arrowBtn i {
+	font-size: 5rem;
+	color: var(--color-text-primary);
+	cursor: pointer;
+}
+
+.review .content .cards {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5rem;
+	width: 100%;
+	height: 100%;
+}
+
+.review .content .cards .card {
+	width: 30rem;
+	height: 50rem;
+	background: var(--color-brand-primary);
+	border-radius: 1rem;
+	-webkit-border-radius: 1rem;
+	-moz-border-radius: 1rem;
+	-ms-border-radius: 1rem;
+	-o-border-radius: 1rem;
+	animation: showCards 3s ease;
+	animation-timing-function: calc();
+	-webkit-animation: showCards 3s ease;
+	opacity: 0;
+}
+
+.review .content .cards .card:nth-child(1) {
+	animation-delay: 0s;
+	opacity: 1;
+}
+
+.review .content .cards .card:nth-child(2) {
+	animation-delay: .5s;
+	opacity: 1;
+}
+
+.review .content .cards .card:nth-child(3) {
+	animation-delay: 1s;
+	opacity: 1;
+}
+
+/* .review .content .cards :nth-child(4) {}
+
+.review .content .cards :nth-child(5) {}
+
+.review .content .cards :nth-child(6) {}
+
+.review .content .cards :nth-child(7) {}
+
+.review .content .cards :nth-child(8) {}
+
+.review .content .cards :nth-child(9) {} */
+
+.review .content .cards .card .userImage {
+	display: flex;
+	justify-content: space-around;
+	padding-top: 3rem;
+	position: relative;
+}
+
+.review .content .cards .card .userImage i {
+	color: var(--color-text-inverted);
+	font-size: 2rem;
+	text-align: end;
+	padding-top: 2rem;
+}
+
+.review .content .cards .card .userImage .borderBox {
+	width: 17rem;
+	height: 17rem;
+	border: 2px solid var(--color-brand-secondary);
+}
+
+.review .cards .card .userImage .borderBox::after {
+	content: "";
+	width: 7rem;
+	height: 10rem;
+	background: var(--color-brand-primary);
+	position: absolute;
+	right: 6rem;
+	top: 1rem;
+}
+
+.review .content .cards .card .userImage img {
+	width: 13rem;
+	height: 16rem;
+	position: absolute;
+	top: 2rem;
+	left: 4.8rem;
+}
+
+.review .content .cards .card .info {
+	font-size: 1.5rem;
+	color: var(--color-text-primary);
+	padding: 2rem;
+	text-align: end;
+}
+
+.review .content .cards .card p {
+	padding: 2rem;
+	font-size: 1.5rem;
+}
+
+@keyframes showCards {
+	0% {
+		transform: translateX(-100vw);
+		-webkit-transform: translateX(-100vw);
+		-moz-transform: translateX(-100vw);
+		-ms-transform: translateX(-100vw);
+		-o-transform: translateX(-100vw);
+
+	}
+
+	100% {
+		transform: translateX(0);
+		-webkit-transform: translateX(0);
+		-moz-transform: translateX(0);
+		-ms-transform: translateX(0);
+		-o-transform: translateX(0);
+	}
 }
