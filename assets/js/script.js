@@ -54,9 +54,9 @@ const showcaseTitle = document.querySelector("#showcase .title");
 window.onscroll = () => {
   showcaseTitle.classList.add("moveDown");
   if (window.scrollY > innerHeight / 50) {
-    navbar.classList.add("verticalNav");
     navbar.classList.remove("navbar");
-
+    navbar.classList.add("verticalNav");
+    showcaseImg.classList.add("hide");
     // Open Navbar as a Sidebar
     menuIcon.addEventListener("click", function () {
       navbar.classList.toggle("hide");
@@ -73,6 +73,7 @@ window.onscroll = () => {
     navbar.classList.add("hide"); // Close verticalNav
     arrow.classList.remove("hide"); // Hide flashing arrow
     intro.classList.remove("fullScreen"); // Showcase Intro Change to Initial mode
+    showcaseImg.classList.remove("hide");
   }
 
   //  Intro Scroll Up
