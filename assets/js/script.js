@@ -53,15 +53,11 @@ const showcaseTitle = document.querySelector("#showcase .title");
 
 window.onscroll = () => {
   showcaseTitle.classList.add("moveDown");
-  if (window.scrollY > innerHeight / 50) {
+  if (window.scrollY > window.innerHeight / 50) {
     navbar.classList.remove("navbar");
     navbar.classList.add("verticalNav");
     showcaseImg.classList.add("hide");
-    // Open Navbar as a Sidebar
-    menuIcon.addEventListener("click", function () {
-      navbar.classList.toggle("hide");
-    });
-
+    navbar.classList.add("hide"); // Close verticalNav
     // Showcase Intro Change mode
     arrow.classList.add("hide");
     intro.classList.add("fullScreen");
@@ -85,6 +81,13 @@ window.onscroll = () => {
     intro.style.top = "";
   }
 };
+
+// Open Navbar as a Sidebar
+menuIcon.addEventListener("click", function () {
+  navbar.classList.toggle("hide");
+  const verticalNav = document.querySelector(".verticalNav");
+  verticalNav.style.transition = "all 0.4s ease";
+});
 
 //* Vertical Navbar
 
@@ -134,3 +137,7 @@ function Responsive() {
 }
 
 window.addEventListener("resize", Responsive);
+
+//* ========== Showcase ==========
+
+// TODO ========== Click on the Arrow icon and move to the next section ==========
