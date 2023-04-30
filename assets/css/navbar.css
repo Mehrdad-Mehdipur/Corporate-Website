@@ -596,28 +596,44 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.navbar .navLinks .contactUs .dropdown .contactInfo .socialMedia ul li a {
-  font-size: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 60px;
   height: 60px;
   padding: 1rem;
-  color: var(--color-text-secondary);
   background: var(--color-brand-secondary);
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 
-.navbar .navLinks .contactUs .dropdown .contactInfo .socialMedia ul li a:hover {
-  background: var(--color-brand-tertiary);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+.navbar .navLinks .contactUs .dropdown .contactInfo .socialMedia ul li:hover {
+  background: none;
+  box-shadow: none;
+}
+
+.navbar .navLinks .contactUs .dropdown .contactInfo .socialMedia ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: var(--color-text-secondary);
+  transition: font-size 0.3s ease;
+  -webkit-transition: font-size 0.3s ease;
+  -moz-transition: font-size 0.3s ease;
+  -ms-transition: font-size 0.3s ease;
+  -o-transition: font-size 0.3s ease;
+}
+
+.navbar .navLinks .contactUs .dropdown .contactInfo .socialMedia ul li:hover a {
+  font-size: 4rem;
+  color: var(--color-text-primary);
 }
 
 /* Contact Icons */
@@ -625,20 +641,11 @@
 .navbar .navLinks .contactUs .dropdown .contactInfo .contact .phone a,
 .navbar .navLinks .contactUs .dropdown .contactInfo .contact .email a,
 .navbar .navLinks .contactUs .dropdown .contactInfo .contact .address a {
-  font-size: 2.5rem;
+  font-size: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  padding: 0.6rem;
-  color: var(--color-text-secondary);
-  background: var(--color-brand-secondary);
-  border-radius: 6px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
+  color: var(--color-text-inverted);
 }
 
 .navbar .navLinks .contactUs:hover .dropdown .contactInfo {
@@ -897,23 +904,11 @@
   overflow: hidden;
   background: var(--color-brand-primary);
   overflow: auto;
-  /* transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out; */
 }
 
 .verticalNav.hide {
-  animation: hideDown 0.3s linear forwards;
-  -webkit-animation: hideDown 0.3s linear forwards;
-}
-
-@keyframes hideDown {
-  to {
-    width: 0;
-    padding: 0;
-  }
+  width: 0;
+  padding: 0;
 }
 
 .verticalNav.hide :not(.navbar, .menuIcon, .menuIcon i) {
