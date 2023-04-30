@@ -69,6 +69,7 @@ window.onscroll = () => {
     navbar.classList.add("hide"); // Close verticalNav
     arrow.classList.remove("hide"); // Hide flashing arrow
     intro.classList.remove("fullScreen"); // Showcase Intro Change to Initial mode
+    intro.classList.add("closeFullScreen");
     showcaseImg.classList.remove("hide");
   }
 
