@@ -21,26 +21,26 @@ rightArrow.addEventListener('click', () => {
 		currentCategory++;
 		showCategory(currentCategory);
 		leftArrow.disabled = false; // چون دیگه دسته اول نیست دکمه چپ فعال باشه 
-		leftArrow.style.color = "#f6d676";
+		leftArrow.style.color = "var(--color-text-primary)";
 	}
 
 	if (currentCategory === categories.length - 1) {
 		rightArrow.disabled = true; // به دسته آخر رسید دکمه راست غیرفعال بشه 
-		rightArrow.style.color = "#3d3d3d";
+		rightArrow.style.color = "var(--color-text-secondary)";
 	}
 });
 
 // Click LeftBtn
-leftArrow.style.color = "#3d3d3d";
+leftArrow.style.color = "var(--color-text-secondary)";
 leftArrow.addEventListener('click', () => {
 	if (currentCategory > 0) {
 		currentCategory--;
 		showCategory(currentCategory);
 		rightArrow.disabled = false; // اگه زدیم عقب و دسته اول نبود دکمه راست فعال باشه
-		rightArrow.style.color = "#f6d676";
+		rightArrow.style.color = "var(--color-text-primary)";
 	}
 	if (currentCategory === 0) {
 		leftArrow.disabled = true;//  اگه زدیم عقب برگشت به دسته اول دکمه چپ غیر فعال بشه
-		leftArrow.style.color = "#3d3d3d";
+		leftArrow.style.color = "var(--color-text-secondary)";
 	}
 });
