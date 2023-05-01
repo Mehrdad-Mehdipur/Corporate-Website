@@ -21,14 +21,15 @@ const links = document.querySelectorAll("nav .link");
 
 for (let link of links) {
   link.addEventListener("mouseover", function () {
-    navbar.classList.add("fullShadow");
-    if (navbar.classList.contains("verticalNav")) {
-      navbar.classList.remove("fullShadow"); // link hover shadow Off on vertical mode
+    nav.classList.add("fullShadow");
+    let screenWidth = window.innerWidth;
+    if (nav.classList.contains("verticalNav") && screenWidth >= 900) {
+      nav.classList.remove("fullShadow"); // link hover shadow Off on vertical mode
     }
   });
 
   link.addEventListener("mouseout", function () {
-    navbar.classList.remove("fullShadow");
+    nav.classList.remove("fullShadow");
   });
 }
 
@@ -46,7 +47,7 @@ showSearchBar.onclick = () => {
 const showcase = document.querySelector("#showcase");
 const arrow = document.querySelector("#showcase .arrow");
 const showcaseImg = document.querySelector("#showcase .imgBox");
-const navbar = document.querySelector("nav");
+const nav = document.querySelector("nav");
 const menuIcon = document.querySelector("nav .menuIcon");
 const intro = document.querySelector("#showcase .intro");
 const showcaseTitle = document.querySelector("#showcase .title");
@@ -54,19 +55,23 @@ const showcaseTitle = document.querySelector("#showcase .title");
 window.onscroll = () => {
   showcaseTitle.classList.add("moveDown");
   if (window.scrollY > window.innerHeight / 50) {
-    navbar.classList.remove("navbar");
-    navbar.classList.add("verticalNav");
+    nav.classList.remove("navbar");
+    nav.classList.add("verticalNav");
     showcaseImg.classList.add("hide");
-    navbar.classList.add("hide"); // Close verticalNav
+    nav.classList.add("hide"); // Close verticalNav
     // Showcase Intro Change mode
     arrow.classList.add("hide");
     intro.classList.add("fullScreen");
   } else {
-    // Close Sidebar mode
-    navbar.classList.add("navbar");
+    if (window.innerWidth <= 900) {
+      nav.classList.remove("navbar");
+    } else {
+      // Close Sidebar mode
+      nav.classList.add("navbar");
+      nav.classList.remove("verticalNav"); // Back to navbar mode
+      nav.classList.add("hide"); // Close verticalNav
+    }
     showcaseTitle.classList.remove("moveDown");
-    navbar.classList.remove("verticalNav"); // Back to navbar mode
-    navbar.classList.add("hide"); // Close verticalNav
     arrow.classList.remove("hide"); // Hide flashing arrow
     intro.classList.remove("fullScreen"); // Showcase Intro Change to Initial mode
     intro.classList.add("closeFullScreen");
@@ -85,7 +90,7 @@ window.onscroll = () => {
 
 // Open Navbar as a Sidebar
 menuIcon.addEventListener("click", function () {
-  navbar.classList.toggle("hide");
+  nav.classList.toggle("hide");
   const verticalNav = document.querySelector(".verticalNav");
   verticalNav.style.transition = "all 0.4s ease";
 });
@@ -131,14 +136,16 @@ for (const h3 of navServicesH3s) {
 function Responsive() {
   let screenWidth = window.innerWidth;
   if (screenWidth <= 900) {
-    navbar.classList.add("shrink");
+    nav.classList.add("hide"); // Close verticalNav
+    nav.classList.remove("navbar");
+    nav.classList.add("verticalNav");
   } else {
-    navbar.classList.remove("shrink");
+    nav.classList.add("navbar");
+    nav.classList.remove("verticalNav");
   }
 }
 
 window.addEventListener("resize", Responsive);
+Responsive();
 
 //* ========== Showcase ==========
-
-// TODO ========== Click on the Arrow icon and move to the next section ==========
