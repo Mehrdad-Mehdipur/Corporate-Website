@@ -21,7 +21,7 @@
 }
 
 .navbar.fullShadow {
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 1000px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 4000px;
   border: 1px solid var(--color-border-white-navbar);
 }
 
@@ -1281,6 +1281,10 @@ p {
 
   .navbar .navLinks .services .dropdown .content .list .specialPart .imgBox {
     height: 100px;
+  }
+
+  .navbar .navLinks .services .dropdown .content .verticalLine {
+    height: 370px;
   }
 
   .navbar .navLinks .blog .dropdown .blogTitle,
