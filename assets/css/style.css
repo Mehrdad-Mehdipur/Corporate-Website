@@ -607,10 +607,11 @@ data-front="بیشتر بخوانید"
 .showcase .intro.fullScreen .introContent .introTitle .wrapper h2 {
   width: 100%;
   height: 100%;
-  font-size: 6rem;
+  font-family: 'shabnam-bold', Tahoma, sans-serif;
+  font-size: 5rem;
   color: var(--color-text-primary);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.59));
-  -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.59));
+  filter: drop-shadow(0px 4px 4px #00000096);
+  -webkit-filter: drop-shadow(0px 4px 4px #00000096);
   transform: translateX(100%);
   -webkit-transform: translateX(100%);
   -moz-transform: translateX(100%);
@@ -644,7 +645,7 @@ data-front="بیشتر بخوانید"
 .showcase .intro.fullScreen .introContent .introTitle .wrapper p {
   width: 100%;
   margin-top: 5%;
-  padding-right: 2rem;
+  padding: 0 2rem;
   font-size: 1.5rem;
   text-align: justify;
   color: var(--color-text-light);
@@ -664,32 +665,44 @@ data-front="بیشتر بخوانید"
 /* Intro Video */
 
 .showcase .intro.fullScreen .introContent .introVideo {
-  width: 40%;
+  width: 50%;
   height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   border: 0 solid var(--color-white);
-  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  box-shadow: inset 0 0 20px #ffffff00;
   outline: 1px solid;
   outline-color: rgba(255, 255, 255, .5);
   outline-offset: 0px;
-  text-shadow: none;
-  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+  opacity: 0;
+  animation: downInAll 1s ease forwards;
+  -webkit-animation: downInAll 1s ease forwards;
+  animation-delay: 2000ms;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  transform: translateY(150%);
-  -webkit-transform: translateY(150%);
-  -moz-transform: translateY(150%);
-  -ms-transform: translateY(150%);
-  -o-transform: translateY(150%);
-  animation: downInAll 1s ease forwards;
-  -webkit-animation: downInAll 1s ease forwards;
-  animation-delay: 2000ms;
-  opacity: 0;
+  transform: translateY(50%);
+  -webkit-transform: translateY(50%);
+  -moz-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  -o-transform: translateY(50%);
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  -moz-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  -ms-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.showcase .intro.fullScreen .introContent .introVideo:hover {
+  background: var(--color-hover-white-transparent);
+  outline-offset: 10px;
+}
+
+.showcase .intro.fullScreen .introContent .introVideo:hover .wrapper p {
+  font-size: 1.9rem;
 }
 
 .showcase .intro.fullScreen .introContent .introVideo .wrapper p {
@@ -886,18 +899,22 @@ data-front="بیشتر بخوانید"
 
 /* Big Screen */
 @media screen and (max-width: 1200px) {
-  .showcase .title{
+  .showcase .title {
     scale: 80%;
   }
-  .showcase .intro.fullScreen .brandName .name{
+  
+  .showcase .intro.fullScreen .brandName .name {
     width: 50vw;
   }
-  .showcase .intro.fullScreen .introContent .introTitle{
+
+  .showcase .intro.fullScreen .introContent .introTitle {
     width: 90%;
   }
-  .showcase .intro.fullScreen .introContent .introVideo{
+
+  .showcase .intro.fullScreen .introContent .introVideo {
     width: 80%;
   }
+
   .showcase .imgBox {
     scale: 95%;
     top: 6%;
@@ -907,24 +924,47 @@ data-front="بیشتر بخوانید"
 
 /* Desktop */
 @media screen and (max-width: 900px) {
+  .showcase .title {
+    scale: 100%;
+    top: 15%;
+  }
+
   .showcase .boxOne {
     width: 60vw;
     height: 65vh;
   }
-  .showcase .boxTow{
+
+  .showcase .boxTow {
     width: 50vw;
     height: 75vh;
   }
+
+  .showcase .intro.fullScreen .introContent .introTitle .wrapper {
+    display: flex;
+    justify-content: start;
+  }
+
+  .showcase .intro.fullScreen .introContent .introTitle .wrapper h2 {
+    width: max-content;
+  }
+
+  .showcase .intro.fullScreen .introContent .introTitle .wrapper h3 {
+    width: 100%;
+    font-size: 3rem;
+  }
+
   @keyframes closeFullScreen {
     100% {
       width: 60vw;
       height: 35vh;
     }
-      70% {
+
+    70% {
       width: 60vw;
       height: 90vh;
     }
-      50% {
+
+    50% {
       width: 60vw;
       border-radius: 70px 70px 0 0;
       -webkit-border-radius: 70px 70px 0 0;
@@ -932,7 +972,8 @@ data-front="بیشتر بخوانید"
       -ms-border-radius: 70px 70px 0 0;
       -o-border-radius: 70px 70px 0 0;
     }
-      0% {
+
+    0% {
       width: 100%;
       height: 100vh;
       bottom: 0;
@@ -944,20 +985,24 @@ data-front="بیشتر بخوانید"
       -o-border-radius: 0;
     }
   }
+
   .showcase .imgBox {
     scale: 130%;
     top: 12%;
     left: -9%;
   }
+
   @keyframes intro {
     0% {
       width: 60vw;
       height: 50vh;
     }
+
     50% {
       width: 60vw;
       height: 90vh;
     }
+
     70% {
       width: 60vw;
       border-radius: 70px 70px 0 0;
@@ -966,6 +1011,7 @@ data-front="بیشتر بخوانید"
       -ms-border-radius: 70px 70px 0 0;
       -o-border-radius: 70px 70px 0 0;
     }
+
     100% {
       width: 100%;
       height: 100vh;
@@ -984,6 +1030,44 @@ data-front="بیشتر بخوانید"
 @media screen and (max-width: 768px) {
   .container {
     max-width: 90vw;
+  }
+
+  .showcase .title {
+    top: 20%;
+  }
+
+  .showcase .boxOne {
+    width: 80vw;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+  }
+
+  .showcase .boxTow {
+    width: 60vw;
+  }
+
+  .showcase .imgBox {
+    top: 18%;
+    pointer-events: none;
+  }
+
+  .showcase .intro.fullScreen .brandName {
+    z-index: 1;
+    align-items: center;
+    padding-bottom: 10%;
+    pointer-events: none;
+  }
+
+  .showcase .intro.fullScreen .introContent {
+    width: 102vw;
+    box-shadow: none;
+    backdrop-filter: blur(2px);
+    padding-bottom: 40%;
+    padding-top: 20%;
   }
 }
 
