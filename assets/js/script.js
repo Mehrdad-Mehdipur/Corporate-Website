@@ -60,7 +60,6 @@ window.onscroll = () => {
     showcaseImg.classList.add("hide");
     nav.classList.add("hide"); // Close verticalNav
     // Showcase Intro Change mode
-    arrow.classList.add("hide");
     intro.classList.add("fullScreen");
   } else {
     if (window.innerWidth <= 900) {
@@ -80,6 +79,7 @@ window.onscroll = () => {
 
   //  Intro Scroll Up
   if (window.scrollY > window.innerHeight / 4) {
+    arrow.classList.add("hide");
     intro.classList.add("scrollUp");
     intro.style.top = window.innerHeight / 4 + "px";
   } else {
