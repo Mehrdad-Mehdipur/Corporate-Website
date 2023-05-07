@@ -1,112 +1,81 @@
-//* Review
+// * Review
 
-const reviewCards = document.querySelectorAll("#review .card");
+const reviewCards = document.querySelectorAll("#review .cards");
 const rightArrow = document.querySelector("#review .rightArrow");
 const leftArrow = document.querySelector("#review .leftArrow");
+const articleCards = document.querySelectorAll("#review .cards .card");
+let currentCard = 0; //کارت جاری 
+let maxCards = 3; //  حداکثز کارتی که باید در صفحه نمایش داده بشه
 
-function init() {
-	let currentCategory = 'firstGroup';
-	let currentIndex = 0;
-	if (window.innerWidth > 900) {
-		function showCards() {
-			reviewCards.forEach((card, index) => {
-				if (currentCategory === 'firstGroup' && index >= currentIndex && index < currentIndex + 3) {
-					card.style.display = 'block';
-				}
-				else if (currentCategory === 'secondGroup' && index >= currentIndex && index < currentIndex + 3) {
-					card.style.display = 'block';
-				}
-				else if (currentCategory === 'thirdGroup' && index >= currentIndex) {
-					card.style.display = 'block';
-				} else {
-					card.style.display = 'none';
-				}
-
-				if (currentIndex === reviewCards.length - 3 || currentCategory === 'thirdGroup') {
-					rightArrow.disabled = true;
-				} else {
-					rightArrow.disabled = false;
-				}
-				if (currentIndex === 0 || currentCategory === 'firstGroup') {
-					leftArrow.disabled = true;
-				} else {
-					leftArrow.disabled = false;
-				}
-			});
+function showCards() {
+	articleCards.forEach((card, index) => {
+		// اگه از صفر بزرگتر و از حداکثر کوجکتر بود نمایش بده در غیر اینصورت نمایش نده 
+		if (index >= currentCard && index < currentCard + maxCards) {
+			card.style.display = 'block';
 		}
-		rightArrow.addEventListener('click', () => {
-			if (currentIndex < reviewCards.length - 3) { //چون دیگه دسته اول نیست دکمه چپ فعال باشه
-				leftArrow.style.color = "var(--color-text-primary)";
-				currentIndex += 3;
-				if (currentCategory === 'firstGroup') {
-					currentCategory = 'secondGroup';
-				} else if (currentCategory === 'secondGroup') {
-					currentCategory = 'thirdGroup';
-					rightArrow.disabled = true;
-					rightArrow.style.color = "var(--color-text-secondary)"; //  به دسته آخر رسید دکمه راست غیرفعال بشه
-				}
-				showCards();
-			}
-		});
-		leftArrow.style.color = "var(--color-text-secondary)";
+		else {
+			card.style.display = 'none';
+		}
+	});
 
-		leftArrow.addEventListener('click', () => {
-			if (currentIndex >= 0) {//اگه زدیم عقب و دسته اول نبود دکمه راست و چپ فعال باشه
-				leftArrow.style.color = "var(--color-text-primary)";
-				rightArrow.style.color = "var(--color-text-primary)";
-				currentIndex -= 3;
-				if (currentCategory === 'thirdGroup') {
-					currentCategory = 'secondGroup';
-					rightArrow.disabled = false;
-				} else if (currentCategory === 'secondGroup') {
-					currentCategory = 'firstGroup';
-					leftArrow.disabled = true;//  اگه زدیم عقب برگشت به دسته اول دکمه چپ غیر فعال بشه
-					leftArrow.style.color = "var(--color-text-secondary)";
-				}
-				showCards();
-			}
-		});
+	// اگه ایندکس بکی از کارتهای جاری بعلاوه سه از تعداد کل کارتها بیشتر بود دکمه بعدی خاموش بشه
+	// Enable and disable the first and last button
+	if (currentCard + maxCards >= articleCards.length) {
+		rightArrow.disabled = true;
+		rightArrow.style.color = "var(--color-text-secondary)";
+	} else {
+		rightArrow.disabled = false;
+		leftArrow.style.color = "var(--color-text-inverted)";
+		rightArrow.style.color = "var(--color-text-inverted)";
 	}
-
-	else {
-		currentIndex = 0;
-		showCards(currentIndex)
-		function showCards() {
-			reviewCards.forEach((card, index) => {
-				if (index === currentIndex) {
-					card.style.display = 'block';
-					console.log(index);
-				} else {
-					card.style.display = 'none';
-				}
-			});
-		}
-
-		rightArrow.addEventListener('click', () => {
-			if (currentIndex < reviewCards.length - 1) {
-				currentIndex += 1;
-				rightArrow.disabled = true;
-				showCards();
-			}
-		});
-
-		leftArrow.addEventListener('click', () => {
-			if (currentIndex > 0) {
-				currentIndex -= 1;
-				rightArrow.disabled = false;
-				showCards();
-			}
-		});
+	//  اگه ایندکس یکی از کارت جاری صفر یا کوچکتر یود دکمه قبلی خاموش بشه 
+	if (currentCard <= 0) {
+		leftArrow.disabled = true;
+		leftArrow.style.color = "var(--color-text-secondary)";
+	} else {
+		leftArrow.disabled = false;
 	}
 }
-init();
+showCards();
 
+// اگه ایندکس بکی از کارتهای جاری بعلاوه سه از تعداد کل کارتها کمتر بود ایندکس کارت جاری را بعلاوه سه کن برو جلو
+// Go to the next page by clicking on the rightArrow
+rightArrow.addEventListener('click', () => {
+	if (currentCard + maxCards < articleCards.length) {
+		currentCard += maxCards;
+		showCards();
+	}
+	// Entering the card with animation from the right
+	articleCards.forEach((card) => {
+		card.classList.remove('cardVersa');
+	})
+});
 
+// اگه ایندکس کارت جاری از صفر بزرگتر بود ایندکس را منهای سه کن برگرد عقب
+// Go to the previous page by clicking on the leftArrow
+leftArrow.addEventListener('click', () => {
+	if (currentCard > 0) {
+		currentCard -= maxCards;
+		showCards();
+	}
+	// Entering the card with animation from the left
+	articleCards.forEach((card) => {
+		card.classList.add('cardVersa');
+	})
+});
 
+// از 900 کوجکتر یه کارت نمایش بده و کارت جاری اولین کارت با ایندکس 0 باشه
+// When Windows<=900 px
+function handleResize() {
+	if (window.innerWidth <= 900) {
+		maxCards = 1;
+		currentCard = 0;
+	} else {
+		maxCards = 3;
+		currentCard = 0;
+	}
+	showCards();
+}
 
-
-
-
-
-
-
+window.addEventListener('resize', handleResize);
+window.addEventListener('load', handleResize);
