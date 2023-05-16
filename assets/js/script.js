@@ -58,8 +58,13 @@ function horizontalNav() {
 }
 
 function verticalNav() {
+  nav.style.display = "flex";
   nav.classList.remove("navbar");
   nav.classList.add("verticalNav");
+}
+
+function hideNav() {
+  nav.style.display = "none";
 }
 
 function scrollingDown() {
@@ -149,9 +154,30 @@ function navResponsive() {
   }
 }
 
-// navResponsive();
-
 window.addEventListener("load", navResponsive);
 window.addEventListener("resize", navResponsive);
 
 //* ========== Showcase ==========
+
+// Show Intro Video
+
+const videoBtn = document.querySelector("#showcase .videoBtn");
+const introVideo = document.querySelector("#showcase .introVideo");
+const closeVideo = document.querySelector("#showcase .introVideo i");
+const videoDemo = document.querySelector("video");
+const brandName = document.querySelector(".brandName");
+
+// Open Video
+videoBtn.addEventListener("click", () => {
+  introVideo.style.display = "flex";
+  videoDemo.play();
+  hideNav();
+  brandName.style.zIndex = -2;
+});
+
+// Close Video
+closeVideo.addEventListener("click", () => {
+  introVideo.style.display = "none";
+  verticalNav();
+  brandName.style.zIndex = 1;
+});

@@ -11,17 +11,17 @@
   padding: 0 1rem;
   color: var(--color-text-inverted);
   background: var(--color-brand-primary);
-  z-index: 2;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
+  z-index: 2;
 }
 
 .navbar.fullShadow {
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 4000px;
+  box-shadow: #00000066 0px 0px 0px 4000px;
   border: 1px solid var(--color-border-white-navbar);
 }
 
@@ -893,7 +893,7 @@
 /** ============ Vertical Navbar ============ */
 
 .verticalNav {
-  z-index: 1;
+  z-index: 2;
   position: fixed;
   top: 0;
   right: 0;
@@ -954,42 +954,18 @@
   -moz-border-radius: 7px;
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .verticalNav .menuIcon:hover {
-  background: var(--color-brand-primary);
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
-    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-}
-
-.verticalNav .menuIcon {
-  z-index: 100;
-  position: fixed;
-  top: 1%;
-  right: 1%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border-radius: 7px;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  -ms-border-radius: 7px;
-  -o-border-radius: 7px;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  background: var(--color-brand-secondary);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .verticalNav .menuIcon i {
@@ -1001,7 +977,8 @@
 }
 
 .verticalNav .menuIcon:hover i {
-  color: var(--color-text-inverted);
+  color: var(--color-text-secondary);
+  font-size: 3.6rem;
 }
 
 /* Close mode */
