@@ -17,10 +17,10 @@ for (let navProjectsLink of navProjectsLinks) {
 
 // ========== Navbar Link Hover Shadow ==========
 
-const links = document.querySelectorAll("nav .link");
+const navLinks = document.querySelectorAll("nav .link");
 
-for (let link of links) {
-  link.addEventListener("mouseover", function () {
+for (let navLink of navLinks) {
+  navLink.addEventListener("mouseover", function () {
     nav.classList.add("fullShadow");
     let screenWidth = window.innerWidth;
     if (nav.classList.contains("verticalNav") && screenWidth >= 900) {
@@ -28,7 +28,7 @@ for (let link of links) {
     }
   });
 
-  link.addEventListener("mouseout", function () {
+  navLink.addEventListener("mouseout", function () {
     nav.classList.remove("fullShadow");
   });
 }
@@ -61,6 +61,7 @@ function verticalNav() {
   nav.style.display = "flex";
   nav.classList.remove("navbar");
   nav.classList.add("verticalNav");
+  nav.classList.add("hideScrollBar");
 }
 
 function hideNav() {
@@ -95,19 +96,24 @@ function scrollingDown() {
   }
 }
 
+window.addEventListener("load", scrollingDown);
 window.addEventListener("scroll", scrollingDown);
-
-// Toggle VerticalNav
-menuIcon.addEventListener("click", function () {
-  nav.classList.toggle("active");
-  const verticalNav = document.querySelector(".verticalNav");
-  verticalNav.style.transition = "all 0.4s ease";
-});
 
 //* Vertical Navbar
 
-// ========== Vertical Navbar links Click mode ==========
+// Open and Close VerticalNav
+menuIcon.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
 
+// Close the verticalNav when clicking outside
+window.addEventListener("click", function (event) {
+  if (!nav.contains(event.target)) {
+    nav.classList.remove("active");
+  }
+});
+
+// ========== VerticalNav links Click mode ==========
 const navTitleLinks = document.querySelectorAll("nav .titleLink");
 
 for (let navTitleLink of navTitleLinks) {
@@ -180,4 +186,7 @@ closeVideo.addEventListener("click", () => {
   introVideo.style.display = "none";
   verticalNav();
   brandName.style.zIndex = 1;
+  if (window.innerWidth < 900) {
+    brandName.style.zIndex = 0;
+  }
 });
