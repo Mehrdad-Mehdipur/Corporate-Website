@@ -34,10 +34,6 @@ items.forEach((item) => {
 });
 
 
-
-
-
-
 // ========== 3D Card in Faq ==========
 
 function map(val, minA, maxA, minB, maxB) {

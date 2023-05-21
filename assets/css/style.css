@@ -1140,13 +1140,4 @@ i {
 
 /* Smart Phone */
 @media screen and (max-width: 480px) {
-  .showcase .imgBox {
-    width: 100vw;
-    top: 10%;
-    left: -30%;
-  }
-
-  .showcase .intro.fullScreen .introContent .videoBtn p {
-    font-size: 1.3rem;
-  }
 }
