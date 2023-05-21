@@ -1,0 +1,195 @@
+:root {
+	/* Main color */
+	--color-canvas: #262626;
+	--color-canvas-inverted: #323232;
+
+	--color-brand-primary: #3d3d3d;
+	--color-brand-secondary: #a8a8a8;
+	--color-brand-tertiary: #f5d575;
+
+	--color-text-primary: #f5d575;
+	--color-text-secondary: #3d3d3d;
+	--color-text-inverted: #a8a8a8;
+	--color-text-light: #fff;
+	--color-text-dark: #000;
+
+	--color-btn-primary: #f6d676;
+	--color-btn-inverted: #3d3d3d;
+	--color-btn-secondary: #a8a8a8;
+
+	--color-border-primary: #3a3f4a;
+	--color-border-secondary: #6a7080;
+	--color-border-white-transparent: #ffffff4a;
+	--color-border-black-transparent: #0000004a;
+	--color-border-white-navbar: #ffffff2d;
+
+	--color-hover-white-transparent: #ffffff0f;
+	--color-hover-black-transparent: #00000021;
+
+	--color-white: #fff;
+	--color-black: #000;
+
+	--line-color: #0000002e;
+
+	--color-text-link: --color-text-ok: --color-text-warn: --color-text-danger: --color-ui-primary: --color-ui-secondary: --color-ui-tertiary: --color-ui-ok: --color-ui-warn: --color-ui-danger:
+}
+
+#blog {
+	width: 100%;
+	height: 100vh;
+	background: var(--color-canvas);
+}
+
+.blog {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.blog .title {
+	width: 90%;
+	height: 15%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.blog .title h2 {
+	font-size: 3rem;
+	margin-right: 25%;
+	color: var(--color-text-primary);
+}
+
+.blog .title h3 {
+	font-size: 2rem;
+	margin-right: 35%;
+	color: var(--color-text-inverted);
+}
+
+.blog .wrapper {
+	width: 90%;
+	height: 80%;
+	display: flex;
+	flex-direction: row;
+	padding: 0;
+}
+
+.blog .wrapper .prevBlogs {
+	width: 30%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 5%;
+}
+
+.blog .wrapper .prevBlogs .olderBlog {
+	position: relative;
+	width: 95%;
+	height: 40%;
+	overflow: hidden;
+	border-radius: 1rem;
+	-webkit-border-radius: 1rem;
+	-moz-border-radius: 1rem;
+	-ms-border-radius: 1rem;
+	-o-border-radius: 1rem;
+	box-shadow: #00000080 0px 2px 10px;
+}
+
+.blog .wrapper .prevBlogs .oldBlog {
+	position: relative;
+	width: 95%;
+	height: 48%;
+	overflow: hidden;
+	border-radius: 1rem;
+	-webkit-border-radius: 1rem;
+	-moz-border-radius: 1rem;
+	-ms-border-radius: 1rem;
+	-o-border-radius: 1rem;
+	box-shadow: #00000080 0px 2px 10px;
+}
+
+.blog .wrapper .lastBlog {
+	width: 70%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.blog .wrapper .lastBlog .more {
+	width: 90%;
+	height: 10%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.blog .wrapper .lastBlog .more p a {
+	color: var(--color-text-primary);
+}
+
+.blog .wrapper .lastBlog .newBlog {
+	position: relative;
+	width: 95%;
+	height: 85%;
+	overflow: hidden;
+	border-radius: 1rem;
+	-webkit-border-radius: 1rem;
+	-moz-border-radius: 1rem;
+	-ms-border-radius: 1rem;
+	-o-border-radius: 1rem;
+	box-shadow: #00000080 0px 5px 20px;
+}
+
+/* Common styles in objects */
+.blog .wrapper .cover {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.blog .wrapper img {
+	position: absolute;
+	transition: all .8s ease;
+	-webkit-transition: all .8s ease;
+	-moz-transition: all .8s ease;
+	-ms-transition: all .8s ease;
+	-o-transition: all .8s ease;
+}
+
+.blog .wrapper img:hover {
+	scale: 110%;
+}
+
+.blog .wrapper .description {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	justify-content: flex-end;
+	pointer-events: none;
+	padding: 1.2rem;
+	margin: auto;
+	background: linear-gradient(180deg,
+			#00000000 0%, #000000de 80%);
+}
+
+.blog .wrapper .description h3 {
+	font-size: 1.1vw;
+	font-weight: 200;
+	color: var(--color-text-primary);
+}
+
+.blog .wrapper .description p {
+	font-size: 0.9vw;
+	text-align: justify;
+	color: var(--color-text-inverted);
+}

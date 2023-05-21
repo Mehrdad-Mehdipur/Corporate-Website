@@ -75,30 +75,29 @@
 /*? ============  Review Content  ============ */
 
 .review .content {
+	position: relative;
 	width: 95%;
 	height: 65%;
-	margin: 0 auto;
-	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin: 0 auto;
 }
 
 .review .content .arrowBtn {
 	position: absolute;
 	top: 0;
 	right: 50%;
+	width: 95%;
+	height: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 95%;
-	height: 100%;
 	transform: translateX(50%);
 	-webkit-transform: translateX(50%);
 	-moz-transform: translateX(50%);
 	-ms-transform: translateX(50%);
 	-o-transform: translateX(50%);
-	/* background: green; */
 }
 
 .review .content .arrowBtn i {
@@ -106,7 +105,6 @@
 	color: var(--color-text-inverted);
 	cursor: pointer;
 	z-index: 1000;
-	/* color: var(--color-text-secondary); */
 }
 
 .review .content .cards {
@@ -115,11 +113,10 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr;
-	margin: 0 auto;
-	place-items: center;
-	gap: 2%;
 	justify-content: center;
-	/* background: red; */
+	gap: 2%;
+	place-items: center;
+	margin: 0 auto;
 }
 
 .review .content .cards .card {
@@ -133,7 +130,8 @@
 	-moz-border-radius: 1rem;
 	-ms-border-radius: 1rem;
 	-o-border-radius: 1rem;
-	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+		rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 /* Right Click Animation */
@@ -181,10 +179,10 @@
 }
 
 .review .content .cards .card .userImage {
+	position: relative;
 	display: flex;
 	justify-content: space-around;
 	padding-top: 5rem;
-	position: relative;
 }
 
 .review .content .cards .card .userImage .borderBox {
@@ -195,12 +193,12 @@
 
 .review .cards .card .userImage .borderBox::after {
 	content: "";
-	width: 5rem;
-	height: 8rem;
-	background: var(--color-canvas);
 	position: absolute;
 	left: 12rem;
 	top: 5rem;
+	width: 5rem;
+	height: 8rem;
+	background: var(--color-canvas);
 }
 
 .review .content .cards .card .userImage img {
@@ -217,7 +215,7 @@
 	text-align: end;
 	padding-top: 5rem;
 	padding-left: 2rem;
-	opacity: .2;
+	opacity: 0.2;
 }
 
 .review .content .cards .card .info {
@@ -296,11 +294,11 @@
 	}
 
 	.review .content .cards {
+		width: 90%;
+		scale: 80%;
 		justify-content: center;
 		align-items: center;
-		scale: 80%;
 		gap: 2rem;
-		width: 90%;
 	}
 }
 
@@ -343,8 +341,8 @@
 @media screen and (max-width: 768px) {
 	.review .title {
 		width: 90%;
-		text-align: center;
 		height: 40%;
+		text-align: center;
 	}
 
 	.review .content {
