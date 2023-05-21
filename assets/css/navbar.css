@@ -97,6 +97,7 @@
 }
 
 .navbar .navLinks .link .titleLink a {
+  width: max-content;
   font-family: "shabnam-Light";
   font-size: 1.8rem;
   padding: 0 1.5rem;
