@@ -52,45 +52,54 @@ const menuIcon = document.querySelector("nav .menuIcon");
 const intro = document.querySelector("#showcase .intro");
 const showcaseTitle = document.querySelector("#showcase .title");
 
-window.onscroll = () => {
-  showcaseTitle.classList.add("moveDown");
-  if (window.scrollY > window.innerHeight / 50) {
-    nav.classList.remove("navbar");
-    nav.classList.add("verticalNav");
+function horizontalNav() {
+  nav.classList.add("navbar");
+  nav.classList.remove("verticalNav"); // Back to navbar mode
+}
+
+function verticalNav() {
+  nav.style.display = "flex";
+  nav.classList.remove("navbar");
+  nav.classList.add("verticalNav");
+}
+
+function hideNav() {
+  nav.style.display = "none";
+}
+
+function scrollingDown() {
+  if (window.scrollY > 50) {
+    verticalNav();
+    showcaseTitle.classList.add("moveDown");
     showcaseImg.classList.add("hide");
-    nav.classList.add("hide"); // Close verticalNav
-    // Showcase Intro Change mode
-    intro.classList.add("fullScreen");
+    intro.classList.add("fullScreen"); // Showcase Intro Change mode
   } else {
-    if (window.innerWidth <= 900) {
-      nav.classList.remove("navbar");
-    } else {
-      // Close Sidebar mode
-      nav.classList.add("navbar");
-      nav.classList.remove("verticalNav"); // Back to navbar mode
-      nav.classList.add("hide"); // Close verticalNav
+    if (window.innerWidth > 900) {
+      horizontalNav();
     }
     showcaseTitle.classList.remove("moveDown");
     arrow.classList.remove("hide"); // Hide flashing arrow
     intro.classList.remove("fullScreen"); // Showcase Intro Change to Initial mode
-    intro.classList.add("closeFullScreen");
+    intro.classList.add("closeFullScreen"); // Rivers animation when closing intro
     showcaseImg.classList.remove("hide");
   }
 
-  //  Intro Scroll Up
+  // Showcase goes up when scrolling the page
   if (window.scrollY > window.innerHeight / 4) {
     arrow.classList.add("hide");
-    intro.classList.add("scrollUp");
+    intro.classList.add("scrollUp"); // Intro position change to absolute
     intro.style.top = window.innerHeight / 4 + "px";
   } else {
     intro.classList.remove("scrollUp");
     intro.style.top = "";
   }
-};
+}
 
-// Open Navbar as a Sidebar
+window.addEventListener("scroll", scrollingDown);
+
+// Toggle VerticalNav
 menuIcon.addEventListener("click", function () {
-  nav.classList.toggle("hide");
+  nav.classList.toggle("active");
   const verticalNav = document.querySelector(".verticalNav");
   verticalNav.style.transition = "all 0.4s ease";
 });
@@ -133,19 +142,42 @@ for (const h3 of navServicesH3s) {
 
 //* ========== Navbar Responsive ==========
 
-function Responsive() {
-  let screenWidth = window.innerWidth;
-  if (screenWidth <= 900) {
-    nav.classList.add("hide"); // Close verticalNav
-    nav.classList.remove("navbar");
-    nav.classList.add("verticalNav");
+function navResponsive() {
+  if (window.innerWidth < 900) {
+    verticalNav();
   } else {
-    nav.classList.add("navbar");
-    nav.classList.remove("verticalNav");
+    if (window.scrollY < 50) {
+      horizontalNav();
+    } else {
+      verticalNav();
+    }
   }
 }
 
-window.addEventListener("resize", Responsive);
-Responsive();
+window.addEventListener("load", navResponsive);
+window.addEventListener("resize", navResponsive);
 
 //* ========== Showcase ==========
+
+// Show Intro Video
+
+const videoBtn = document.querySelector("#showcase .videoBtn");
+const introVideo = document.querySelector("#showcase .introVideo");
+const closeVideo = document.querySelector("#showcase .introVideo i");
+const videoDemo = document.querySelector("video");
+const brandName = document.querySelector(".brandName");
+
+// Open Video
+videoBtn.addEventListener("click", () => {
+  introVideo.style.display = "flex";
+  videoDemo.play();
+  hideNav();
+  brandName.style.zIndex = -2;
+});
+
+// Close Video
+closeVideo.addEventListener("click", () => {
+  introVideo.style.display = "none";
+  verticalNav();
+  brandName.style.zIndex = 1;
+});

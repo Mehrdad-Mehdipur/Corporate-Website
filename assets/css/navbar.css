@@ -11,17 +11,17 @@
   padding: 0 1rem;
   color: var(--color-text-inverted);
   background: var(--color-brand-primary);
-  z-index: 2;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
+  z-index: 2;
 }
 
 .navbar.fullShadow {
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 4000px;
+  box-shadow: #00000066 0px 0px 0px 4000px;
   border: 1px solid var(--color-border-white-navbar);
 }
 
@@ -893,11 +893,11 @@
 /** ============ Vertical Navbar ============ */
 
 .verticalNav {
-  z-index: 1;
+  z-index: 2;
   position: fixed;
   top: 0;
   right: 0;
-  width: 400px;
+  width: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -908,13 +908,15 @@
   overflow: auto;
 }
 
-.verticalNav.hide {
-  width: 0;
+.verticalNav.active {
+  width: 400px;
   padding: 0;
 }
 
-.verticalNav.hide :not(.navbar, .menuIcon, .menuIcon i) {
-  display: none;
+.verticalNav .navbar,
+.verticalNav .menuIcon,
+.verticalNav .menuIcon i {
+  display: block;
 }
 
 /** ===== Vertical Logo ===== */
@@ -935,38 +937,6 @@
 
 /** ===== Vertical Menu Icon ===== */
 
-.verticalNav.hide .menuIcon {
-  z-index: 100;
-  position: fixed;
-  top: 1%;
-  right: 1%;
-  width: 50px;
-  height: 50px;
-  background: var(--color-brand-secondary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 7px;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  -ms-border-radius: 7px;
-  -o-border-radius: 7px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-
-.verticalNav.hide .menuIcon:hover {
-  background: transparent;
-}
-
-.verticalNav.hide .menuIcon:hover i {
-  color: var(--color-text-inverted);
-}
-
 .verticalNav .menuIcon {
   z-index: 100;
   position: fixed;
@@ -977,50 +947,56 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  background: var(--color-brand-secondary);
   border-radius: 7px;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.verticalNav .menuIcon:hover {
+  background: var(--color-brand-secondary);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .verticalNav .menuIcon i {
-  color: var(--color-text-inverted);
-  font-size: 3.4rem;
+  color: var(--color-text-secondary);
+  font-size: 3.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.verticalNav .menuIcon i:hover {
-  color: var(--color-text-primary);
+.verticalNav .menuIcon:hover i {
+  color: var(--color-text-secondary);
+  font-size: 3.6rem;
 }
 
 /* Close mode */
-
-.verticalNav.hide .menuIcon .menu {
-  display: block;
-  color: var(--color-text-secondary);
+.verticalNav.active .menuIcon .menu {
+  display: none;
 }
 
 .verticalNav .menuIcon .menu {
-  display: none;
-}
-
-/* Open mode */
-
-.verticalNav .menuIcon .close {
   display: block;
 }
 
-.verticalNav.hide .menuIcon .close {
+/* Open mode */
+.verticalNav.active .menuIcon .close {
+  display: block;
+}
+.verticalNav .menuIcon .close {
   display: none;
+  color: var(--color-text-secondary);
 }
 
 /** ===== Vertical Nav Icons ===== */
