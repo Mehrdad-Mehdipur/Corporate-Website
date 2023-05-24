@@ -97,6 +97,7 @@
 }
 
 .navbar .navLinks .link .titleLink a {
+  width: max-content;
   font-family: "shabnam-Light";
   font-size: 1.8rem;
   padding: 0 1.5rem;
@@ -619,7 +620,7 @@
   box-shadow: none;
 }
 
-.navbar .navLinks .contactUs .dropdown .contactInfo .socialMedia ul li a {
+.navbar .navLinks .contactUs .dropdown .contactInfo .socialMedia ul li a i {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -632,7 +633,16 @@
   -o-transition: font-size 0.3s ease;
 }
 
-.navbar .navLinks .contactUs .dropdown .contactInfo .socialMedia ul li:hover a {
+.navbar
+  .navLinks
+  .contactUs
+  .dropdown
+  .contactInfo
+  .socialMedia
+  ul
+  li:hover
+  a
+  i {
   font-size: 4rem;
   color: var(--color-text-primary);
 }
@@ -675,11 +685,12 @@
 .navbar .navLinks .contactUs .dropdown .contactInfo .contact .phone .numbers {
   width: 100%;
   display: flex;
+  flex-direction: column;
   font-size: 1.5rem;
 }
 
 .navbar .navLinks .contactUs .dropdown .contactInfo .contact .phone .numbers p {
-  padding-right: 2rem;
+  padding: 0.5rem 2rem;
   direction: ltr;
 }
 
@@ -867,7 +878,13 @@
   left: 0;
   width: 50px;
   height: 100%;
-  padding-left: 2rem;
+  font-family: "shabnam";
+  font-size: 1.4rem;
+  padding-left: 3rem;
+  padding-right: 1rem;
+  color: var(--color-text-inverted);
+  background: transparent;
+  border: 2px solid var(--color-border-white-transparent);
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -1318,6 +1335,10 @@ p {
   .navbar .navLinks .contactUs .dropdown .contactInfo .contact .email a,
   .navbar .navLinks .contactUs .dropdown .contactInfo .contact .address a {
     font-size: 2rem;
+  }
+
+  .navbar .navLinks .contactUs .dropdown .contactInfo .contact .phone .numbers {
+    flex-direction: row;
   }
 
   .navbar .navLinks .contactUs .dropdown .contactInfo .contact .email {
