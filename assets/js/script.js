@@ -73,6 +73,7 @@ function scrollingDown() {
     showcaseTitle.classList.add("moveDown");
     showcaseImg.classList.add("hide");
     intro.classList.add("fullScreen"); // Showcase Intro Change mode
+    intro.classList.remove("closeFullScreen"); // Disable Rivers animation when closing intro
   } else {
     if (window.innerWidth > 900) {
       horizontalNav();
@@ -161,23 +162,27 @@ window.addEventListener("resize", navResponsive);
 
 // Show Intro Video
 
-const videoBtn = document.querySelector("#showcase .videoBtn");
 const introVideo = document.querySelector("#showcase .introVideo");
-const closeVideo = document.querySelector("#showcase .introVideo i");
-const videoDemo = document.querySelector("video");
+const videoBtn = document.querySelector("#showcase .videoBtn");
+const closeVideo = document.querySelector("#showcase .videoBox i");
+const videoBox = document.querySelector("#showcase .videoBox");
+const videoDemo = document.querySelector(
+  "#showcase .introVideo .videoBox video"
+);
 const brandName = document.querySelector(".brandName");
 
 // Open Video
 videoBtn.addEventListener("click", () => {
-  introVideo.style.display = "flex";
+  videoBox.style.display = "flex";
   videoDemo.play();
   hideNav();
-  brandName.style.zIndex = -2;
+  brandName.style.opacity = 0;
 });
 
 // Close Video
 closeVideo.addEventListener("click", () => {
-  introVideo.style.display = "none";
+  videoBox.style.display = "none";
   verticalNav();
-  brandName.style.zIndex = 1;
+  videoDemo.pause();
+  brandName.style.opacity = 1;
 });
