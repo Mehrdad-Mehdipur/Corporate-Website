@@ -186,8 +186,8 @@
 			#00000000 0%, #000000de 80%);
 }
 
-.blog .wrapper .description h3 {
-	font-size: 1.2vw;
+.blog .wrapper .description a {
+	font-size: 1.7rem;
 	font-weight: 200;
 	color: var(--color-text-primary);
 }
@@ -274,8 +274,8 @@
 		height: 100%;
 	}
 
-	.blog .wrapper .description h3 {
-		font-size: 1.5rem;
+	.blog .wrapper .description a {
+		font-size: 1.4rem;
 	}
 
 	.blog .wrapper .description p {
@@ -334,8 +334,10 @@
 				#00000000 0%, #000000ed 80%);
 	}
 
-	.blog .wrapper .description h3 {
+	.blog .wrapper .description a {
 		font-size: 1.4rem;
+		width: 100%;
+		pointer-events: visible;
 	}
 }
 
@@ -371,6 +373,12 @@
 
 	.blog .wrapper .prevBlogs a {
 		width: 40%;
+	}
+
+	.blog .wrapper .description a {
+		font-size: 1.4rem;
+		width: 100%;
+		pointer-events: visible;
 	}
 
 	.blog .wrapper .prevBlogs .description p {
