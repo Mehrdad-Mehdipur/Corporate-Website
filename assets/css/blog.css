@@ -193,7 +193,7 @@
 }
 
 .blog .wrapper .description p {
-	font-size: 0.9vw;
+	font-size: 1.2rem;
 	color: var(--color-text-inverted);
 }
 
