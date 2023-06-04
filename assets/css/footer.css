@@ -1,0 +1,263 @@
+#footer {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: var(--color-canvas);
+  overflow: hidden;
+}
+
+#footer::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../images/pic4.jpg), var(--color-canvas) no-repeat center;
+  background-size: cover;
+  background-blend-mode: soft-light;
+  opacity: 0.5;
+}
+
+#footer .fadeColor {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(var(--color-canvas) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+#footer .footerImage {
+  position: absolute;
+  top: 15%;
+  right: -30%;
+  width: 70vw;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+
+.footerImage .colorBox {
+  width: 48%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-brand-primary);
+}
+
+.footerImage .colorBox .colorShape {
+  width: 80%;
+  height: 80%;
+  background: var(--color-brand-tertiary);
+}
+
+.footerImage .imgBox {
+  width: 48%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  background: yellow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerImage .imgBox img {
+  width: 140%;
+  height: 140%;
+  margin-top: 40%;
+  margin-right: 5%;
+  object-fit: cover;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+
+#footer .footer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  flex-direction: column;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+.footer .footerTitle {
+  width: 70%;
+  height: 35%;
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footer .footerTitle h2 {
+  width: 70%;
+  font-size: 3rem;
+  font-family: "shabnam";
+  color: var(--color-text-light);
+  text-align: center;
+}
+
+.footer .footerTitle .titleBtn {
+  width: 80%;
+  margin-top: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .footerTitle .titleBtn a {
+  width: 45%;
+  font-size: 2rem;
+}
+
+.footer .footerContent {
+  width: 75%;
+  height: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.footer .footerContent .footerLinks {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: space-around;
+}
+
+.footer .footerContent .footerLinks .footerProjects,
+.footer .footerContent .footerLinks .footerServices,
+.footer .footerContent .footerLinks .footerAboutUs {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footer .footerContent .footerLinks .footerProjects h3,
+.footer .footerContent .footerLinks .footerServices h3,
+.footer .footerContent .footerLinks .footerAboutUs h3 {
+  font-size: 2rem;
+  color: var(--color-text-primary);
+
+  padding: 1rem 0;
+  font-weight: bold;
+}
+
+.footer .footerContent .footerLinks .footerAboutUs p {
+  width: 300px;
+  font-size: 1.5rem;
+  color: var(--color-text-inverted);
+}
+
+.footer .footerContent .footerLinks .footerProjects ul li,
+.footer .footerContent .footerLinks .footerServices ul li {
+  padding: 0.5rem 0 0.5rem 1rem;
+}
+
+.footer .footerContent .footerLinks .footerProjects ul li:hover a,
+.footer .footerContent .footerLinks .footerServices ul li:hover a {
+  color: var(--color-text-primary);
+}
+
+.footer .footerContent .footerLinks .footerProjects ul li a,
+.footer .footerContent .footerLinks .footerServices ul li a {
+  font-size: 1.5rem;
+  color: var(--color-text-inverted);
+}
+
+.footer .footerContent .contact {
+  width: 100%;
+  height: max-content;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer .footerContent .contact .address,
+.footer .footerContent .contact .email,
+.footer .footerContent .contact .phone,
+.footer .footerContent .contact .phone .numbers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.footer .footerContent .contact .phone .numbers {
+  direction: ltr;
+}
+
+.footer .footerContent .contact .address,
+.footer .footerContent .contact .email,
+.footer .footerContent .contact .phone,
+.footer .footerContent .contact .phone .numbers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.footer .footerContent .contact .address a i,
+.footer .footerContent .contact .email a i,
+.footer .footerContent .contact .phone a i {
+  font-size: 2.5rem;
+  padding: 1rem;
+  color: var(--color-text-inverted);
+  cursor: pointer;
+}
+
+.footer .footerContent .contact .address a i:hover,
+.footer .footerContent .contact .email a i:hover,
+.footer .footerContent .contact .phone a i:hover {
+  color: var(--color-text-primary);
+}
+
+.footer .footerContent .contact .address p,
+.footer .footerContent .contact .email p,
+.footer .footerContent .contact .phone p {
+  font-size: 1.5rem;
+  padding: 1rem;
+  color: var(--color-text-inverted);
+}
+
+#footer .copyRight {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 6%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid var(--color-white-transparent-200);
+}
+
+#footer .copyRight p {
+  font-size: 1.5rem;
+  padding: 1rem;
+  color: var(--color-text-inverted);
+}
