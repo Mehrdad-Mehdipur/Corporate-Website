@@ -1,8 +1,9 @@
-let titles = document.querySelectorAll("#blog .description h3");
-const descriptions = document.querySelectorAll("#blog .description p");
+//* Faq
+
+// ========== Setting maximum title length ==========
+let titles = document.querySelectorAll("#blog .description a");
 const newBlog = document.querySelector("#blog .newBlog .description p");
 
-// Title length less than 85 characters
 titles.forEach((title) => {
   document.addEventListener("DOMContentLoaded", function () {
     if (title.innerHTML.length > 85) {
@@ -11,7 +12,8 @@ titles.forEach((title) => {
   });
 });
 
-// Descriptions length less than 60 characters
+// ========== Setting maximum description length ==========
+const descriptions = document.querySelectorAll("#blog .description p");
 let originalTexts = [];
 
 function handleOriginalText() {
@@ -29,7 +31,7 @@ function handleDescriptions() {
       description.innerHTML = description.innerHTML.slice(0, 140) + "...";
     }
 
-    if (index === 2 && window.innerWidth > 768) {
+    if (index === descriptions.length - 1 && window.innerWidth > 768) {
       description.innerHTML = originalTexts[index].slice(0, 300) + "...";
     }
   });

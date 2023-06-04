@@ -1,39 +1,5 @@
 /** ===== Faq ===== */
 
-:root {
-  /* Main color */
-  --color-canvas: #262626;
-  --color-canvas-inverted: #323232;
-
-  --color-brand-primary: #3d3d3d;
-  --color-brand-secondary: #a8a8a8;
-  --color-brand-tertiary: #f6d676;
-
-  --color-text-primary: #f6d676;
-  --color-text-secondary: #3d3d3d;
-  --color-text-inverted: #a8a8a8;
-
-  --color-btn-primary: #f6d676;
-  --color-btn-inverted: #3d3d3d;
-  --color-btn-secondary: #a8a8a8;
-
-  --color-border-primary: #3a3f4a;
-  --color-border-secondary: #6a7080;
-  --color-border-white-transparent: #ffffff4a;
-  --color-border-black-transparent: #0000004a;
-
-  --color-hover-white-transparent: #ffffff0f;
-  --color-hover-black-transparent: #00000021;
-
-
-  --color-white: #fff;
-  --color-black: #000;
-
-  --line-color: #0000002e;
-
-  --color-text-link: --color-text-ok: --color-text-warn: --color-text-danger: --color-ui-primary: --color-ui-secondary: --color-ui-tertiary: --color-ui-ok: --color-ui-warn: --color-ui-danger:
-}
-
 #faq {
   width: 100%;
   height: 100vh;
@@ -90,8 +56,7 @@
   height: 100%;
 }
 
-/* collection */
-
+/* Items collection */
 .faq .wrapper .content .collection {
   width: 100%;
   height: 85%;
@@ -104,7 +69,6 @@
   justify-content: center;
   position: relative;
 }
-
 
 .faq .wrapper .content .collection .item {
   font-size: 1.5rem;
@@ -129,17 +93,14 @@
   height: 6rem;
 }
 
-.faq .wrapper .content .collection .item .question:hover {
-  color: var(--color-text-primary);
-  background: var(--color-hover-black-transparent);
-}
-
+.faq .wrapper .content .collection .item .question:hover,
 .faq .wrapper .content .collection .item.active .question:hover {
-  color: var(--color-text-primary);
-  background: transparent;
+  background: var(--color-black-transparent-100);
 }
 
-.faq .wrapper .content .collection .item .question p {
+.faq .wrapper .content .collection .item .question:hover p,
+.faq .wrapper .content .collection .item.active .question:hover p {
+  color: var(--color-text-primary);
   cursor: pointer;
 }
 
@@ -156,10 +117,6 @@
   cursor: pointer;
 }
 
-.faq .wrapper .content .collection .item.active .question .plus {
-  display: none;
-}
-
 .faq .wrapper .content .collection .item .question .minus {
   display: none;
 }
@@ -168,10 +125,8 @@
   display: block;
 }
 
-.faq .wrapper .content .collection .item .answer p {
-  text-align: justify;
-  padding: 2rem;
-  padding-top: 0;
+.faq .wrapper .content .collection .item.active .question .plus {
+  display: none;
 }
 
 .faq .wrapper .content .collection .item .answer {
@@ -191,8 +146,13 @@
   opacity: 1;
 }
 
-/* More */
+.faq .wrapper .content .collection .item .answer p {
+  text-align: justify;
+  padding: 2rem;
+  padding-top: 0;
+}
 
+/* More */
 .faq .wrapper .content .more {
   width: 100%;
   height: 15%;
@@ -297,7 +257,7 @@
   }
 
   .faq .wrapper .content {
-    width: 90%;
+    width: 100%;
     height: 60%;
     display: flex;
     flex-direction: column;
@@ -307,6 +267,24 @@
   .faq .wrapper .content .collection {
     height: 75%;
     justify-content: flex-start;
+    padding: 0.5rem 2rem;
+  }
+
+  .faq .wrapper .content .hideScrollBar::-webkit-scrollbar-track {
+    background: var(--color-white-transparent-100);
+  }
+
+  .faq .wrapper .content .hideScrollBar::-webkit-scrollbar-thumb {
+    background: var(--color-white-transparent-100);
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+  }
+
+  .faq .wrapper .content .hideScrollBar::-webkit-scrollbar-thumb:hover {
+    background: var(--color-white-transparent-200);
   }
 
   .faq .wrapper .content .more {
@@ -350,7 +328,8 @@
 
   .faq .wrapper .content .collection {
     padding: 0;
-    padding-left: .7rem;
+    padding: 0.5rem 1rem;
+
   }
 
   .faq .wrapper .content .collection .item .question {
@@ -369,9 +348,9 @@
     font-size: 1.5rem;
   }
 
-  .faq .wrapper .content .more {
-    font-size: 1rem;
-    margin: 0 auto;
+  .faq .wrapper .content .more p {
+    width: 100%;
     text-align: center;
+    font-size: 1rem;
   }
 }
