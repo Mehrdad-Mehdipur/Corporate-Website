@@ -1,39 +1,4 @@
 /** ===== Blog ===== */
-:root {
-	/* Main color */
-	--color-canvas: #262626;
-	--color-canvas-inverted: #323232;
-
-	--color-brand-primary: #3d3d3d;
-	--color-brand-secondary: #a8a8a8;
-	--color-brand-tertiary: #f5d575;
-
-	--color-text-primary: #f5d575;
-	--color-text-secondary: #3d3d3d;
-	--color-text-inverted: #a8a8a8;
-	--color-text-light: #fff;
-	--color-text-dark: #000;
-
-	--color-btn-primary: #f6d676;
-	--color-btn-inverted: #3d3d3d;
-	--color-btn-secondary: #a8a8a8;
-
-	--color-border-primary: #3a3f4a;
-	--color-border-secondary: #6a7080;
-	--color-border-white-transparent: #ffffff4a;
-	--color-border-black-transparent: #0000004a;
-	--color-border-white-navbar: #ffffff2d;
-
-	--color-hover-white-transparent: #ffffff0f;
-	--color-hover-black-transparent: #00000021;
-
-	--color-white: #fff;
-	--color-black: #000;
-
-	--line-color: #0000002e;
-
-	--color-text-link: --color-text-ok: --color-text-warn: --color-text-danger: --color-ui-primary: --color-ui-secondary: --color-ui-tertiary: --color-ui-ok: --color-ui-warn: --color-ui-danger:
-}
 
 #blog {
 	width: 100%;
@@ -90,19 +55,6 @@
 	gap: 5%;
 }
 
-.blog .wrapper .prevBlogs .olderBlog {
-	position: relative;
-	width: 95%;
-	height: 40%;
-	overflow: hidden;
-	border-radius: 1rem;
-	-webkit-border-radius: 1rem;
-	-moz-border-radius: 1rem;
-	-ms-border-radius: 1rem;
-	-o-border-radius: 1rem;
-	box-shadow: #00000080 0px 2px 10px;
-}
-
 .blog .wrapper .prevBlogs .oldBlog {
 	position: relative;
 	width: 95%;
@@ -116,8 +68,21 @@
 	box-shadow: #00000080 0px 2px 10px;
 }
 
+.blog .wrapper .prevBlogs .olderBlog {
+	position: relative;
+	width: 95%;
+	height: 40%;
+	overflow: hidden;
+	border-radius: 1rem;
+	-webkit-border-radius: 1rem;
+	-moz-border-radius: 1rem;
+	-ms-border-radius: 1rem;
+	-o-border-radius: 1rem;
+	box-shadow: #00000080 0px 2px 10px;
+}
+
 /* Right Blog */
-.blog .wrapper .lastBlog {
+.blog .wrapper .mainBlog {
 	width: 70%;
 	height: 100%;
 	display: flex;
@@ -126,7 +91,7 @@
 	align-items: center;
 }
 
-.blog .wrapper .lastBlog .more {
+.blog .wrapper .mainBlog .more {
 	width: 90%;
 	height: 10%;
 	display: flex;
@@ -134,11 +99,11 @@
 	justify-content: flex-end;
 }
 
-.blog .wrapper .lastBlog .more p a {
+.blog .wrapper .mainBlog .more p a {
 	color: var(--color-text-primary);
 }
 
-.blog .wrapper .lastBlog .newBlog {
+.blog .wrapper .mainBlog .newBlog {
 	position: relative;
 	width: 95%;
 	height: 85%;
@@ -199,6 +164,7 @@
 
 
 /** ===== Blog Responsive ===== */
+
 /* Big Screen */
 @media screen and (max-width: 1200px) {
 	.blog .title {
@@ -215,8 +181,6 @@
 
 /* Laptop */
 @media screen and (max-width: 900px) {
-
-	/* Blog Title */
 	.blog .title {
 		width: 75%;
 		height: 20%;
@@ -233,7 +197,6 @@
 		color: var(--color-text-inverted);
 	}
 
-	/* Blog Aria */
 	.blog .wrapper {
 		position: relative;
 		width: 80%;
@@ -242,13 +205,13 @@
 		justify-content: flex-end;
 	}
 
-	.blog .wrapper .lastBlog {
+	.blog .wrapper .mainBlog {
 		width: 100%;
 		height: 50%;
 		margin-bottom: 5rem;
 	}
 
-	.blog .wrapper .lastBlog .more {
+	.blog .wrapper .mainBlog .more {
 		position: absolute;
 		bottom: 0;
 		right: 0;
@@ -256,7 +219,7 @@
 		justify-content: center;
 	}
 
-	.blog .wrapper .lastBlog .newBlog {
+	.blog .wrapper .mainBlog .newBlog {
 		width: 100%;
 		height: 100%;
 	}
@@ -268,8 +231,8 @@
 		gap: 2rem;
 	}
 
-	.blog .wrapper .prevBlogs .olderBlog,
-	.blog .wrapper .prevBlogs .oldBlog {
+	.blog .wrapper .prevBlogs .oldBlog,
+	.blog .wrapper .prevBlogs .olderBlog {
 		width: 50%;
 		height: 100%;
 	}
@@ -281,8 +244,6 @@
 	.blog .wrapper .description p {
 		font-size: 1.2rem;
 	}
-
-
 }
 
 /* Tablet */
@@ -291,25 +252,25 @@
 		width: 90%;
 	}
 
-	.blog .wrapper .lastBlog {
+	.blog .wrapper .mainBlog {
 		height: 45%;
 		margin-bottom: 2rem;
 	}
 
-	.blog .wrapper .lastBlog .more p {
+	.blog .wrapper .mainBlog .more p {
 		font-size: 1.2rem;
 		font-weight: 600;
 	}
 
 	.blog .wrapper .prevBlogs {
-		flex-direction: column;
 		height: 45%;
-		gap: 2rem;
+		flex-direction: column;
 		justify-content: flex-start;
+		gap: 2rem;
 	}
 
-	.blog .wrapper .prevBlogs .olderBlog,
-	.blog .wrapper .prevBlogs .oldBlog {
+	.blog .wrapper .prevBlogs .oldBlog,
+	.blog .wrapper .prevBlogs .olderBlog {
 		width: 100%;
 		height: 35%;
 		display: flex;
@@ -335,8 +296,8 @@
 	}
 
 	.blog .wrapper .description a {
-		font-size: 1.4rem;
 		width: 100%;
+		font-size: 1.4rem;
 		pointer-events: visible;
 	}
 }
@@ -351,23 +312,23 @@
 		width: 100%;
 	}
 
-	.blog .wrapper .lastBlog {
+	.blog .wrapper .mainBlog {
 		height: 40%;
 		margin-bottom: 4rem;
-
 	}
 
-	.blog .wrapper .lastBlog .more p {
-		text-align: center;
+	.blog .wrapper .mainBlog .more p {
+		width: 80%;
 		font-size: 1.3rem;
+		text-align: center;
 	}
 
 	.blog .wrapper .prevBlogs {
 		height: 40%;
 	}
 
-	.blog .wrapper .prevBlogs .olderBlog,
-	.blog .wrapper .prevBlogs .oldBlog {
+	.blog .wrapper .prevBlogs .oldBlog,
+	.blog .wrapper .prevBlogs .olderBlog {
 		height: 35%;
 	}
 
@@ -376,8 +337,8 @@
 	}
 
 	.blog .wrapper .description a {
-		font-size: 1.4rem;
 		width: 100%;
+		font-size: 1.4rem;
 		pointer-events: visible;
 	}
 

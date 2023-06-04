@@ -11,6 +11,7 @@ const nextBtn = document.querySelector("#portfolio .arrowBtn .nextSlide");
 const prevBtn = document.querySelector("#portfolio .arrowBtn .prevSlide");
 let index = 0;
 
+// show image clicked in display div
 imageBoxes.forEach((imageBox, index) => {
   imageBox.addEventListener("click", () => {
     const imageBoxImage = imageBox.querySelector("img").src;
@@ -19,22 +20,32 @@ imageBoxes.forEach((imageBox, index) => {
     displayImage.src = imageBoxImage;
     displayTitle.textContent = imageBoxP;
 
-    // ==========  In Max-width 900px ==========
+    // set Display animation
+    display.classList.add("showDisplay");
+    setTimeout(() => {
+      display.classList.remove("showDisplay");
+    }, 800);
 
-    // View full size clicked photo
+    // When Windows<=900px =========
+
+    // Open full size clicked image
     if (window.innerWidth < 900) {
-      display.classList.add("show")
+      display.classList.add("show");
     }
 
-    // Close the opened photo with the close btn and display the gallery again 
+    // Close full size image
     closeBtn.addEventListener("click", () => {
-      display.classList.remove("show")
-    })
+      display.classList.remove("show");
+    });
 
     // View photos with next and previous btn
     function init() {
-      nextBtn.addEventListener("click", () => { next("next") });
-      prevBtn.addEventListener("click", () => { next("prev") });
+      nextBtn.addEventListener("click", () => {
+        next("next");
+      });
+      prevBtn.addEventListener("click", () => {
+        next("prev");
+      });
     }
     function next(direction) {
       if (direction == "next") {
@@ -55,5 +66,3 @@ imageBoxes.forEach((imageBox, index) => {
     init();
   });
 });
-
-

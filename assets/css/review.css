@@ -1,38 +1,4 @@
-:root {
-	/* Main color */
-	--color-canvas: #262626;
-	--color-canvas-inverted: #323232;
-
-	--color-brand-primary: #3d3d3d;
-	--color-brand-secondary: #a8a8a8;
-	--color-brand-tertiary: #f6d676;
-
-	--color-text-primary: #f6d676;
-	--color-text-secondary: #3d3d3d;
-	--color-text-inverted: #a8a8a8;
-
-	--color-btn-primary: #f6d676;
-	--color-btn-inverted: #3d3d3d;
-	--color-btn-secondary: #a8a8a8;
-
-	--color-border-primary: #3a3f4a;
-	--color-border-secondary: #6a7080;
-	--color-border-white-transparent: #ffffff4a;
-	--color-border-black-transparent: #0000004a;
-
-	--color-hover-white-transparent: #ffffff0f;
-	--color-hover-black-transparent: #00000021;
-
-
-	--color-white: #fff;
-	--color-black: #000;
-
-	--line-color: #0000002e;
-
-	--color-text-link: --color-text-ok: --color-text-warn: --color-text-danger: --color-ui-primary: --color-ui-secondary: --color-ui-tertiary: --color-ui-ok: --color-ui-warn: --color-ui-danger:
-}
-
-/** ===== Portfolio ===== */
+/** ===== Review ===== */
 
 #review {
 	width: 100%;
@@ -43,10 +9,10 @@
 .review {
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	overflow: hidden;
 }
 
 /*? ============  Review Title  ============ */
@@ -67,9 +33,9 @@
 }
 
 .review .title p {
+	font-size: 1.5rem;
 	text-align: center;
 	color: var(--color-text-inverted);
-	font-size: 1.5rem;
 }
 
 /*? ============  Review Content  ============ */
@@ -102,9 +68,9 @@
 
 .review .content .arrowBtn i {
 	font-size: 5rem;
-	color: var(--color-text-inverted);
 	cursor: pointer;
 	z-index: 1000;
+	color: var(--color-text-inverted);
 }
 
 .review .content .cards {
@@ -134,7 +100,7 @@
 		rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
-/* Right Click Animation */
+/* Right button animation */
 .review .content .cards .card:nth-child(1),
 .review .content .cards .card:nth-child(4),
 .review .content .cards .card:nth-child(7) {
@@ -156,7 +122,7 @@
 	-webkit-animation: showCardsFromRight 2.7s ease forwards;
 }
 
-/* Left Click Animation */
+/* Left button animation */
 .review .content .cards .card.cardVersa:nth-child(1),
 .review .content .cards .card.cardVersa:nth-child(4),
 .review .content .cards .card.cardVersa:nth-child(7) {
@@ -202,11 +168,11 @@
 }
 
 .review .content .cards .card .userImage img {
-	width: 12rem;
-	height: 14rem;
 	position: absolute;
 	top: 4rem;
 	right: 3.4rem;
+	width: 12rem;
+	height: 14rem;
 }
 
 .review .content .cards .card .userImage i {
@@ -238,7 +204,7 @@
 	font-size: 1.2rem;
 }
 
-/** ===== Animations ===== */
+/** ===== Review Animations ===== */
 @keyframes showCardsFromRight {
 	0% {
 		transform: translateX(-100vw);
@@ -295,10 +261,10 @@
 
 	.review .content .cards {
 		width: 90%;
-		scale: 80%;
 		justify-content: center;
 		align-items: center;
 		gap: 2rem;
+		scale: 80%;
 	}
 }
 
