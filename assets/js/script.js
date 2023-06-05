@@ -42,25 +42,28 @@ showSearchBar.onclick = () => {
   searchBar.classList.toggle("show");
 };
 
-// ========== Navbar Vertical mode , Showcase Image Box change mode  ==========
+// ========== Navbar Vertical mode | Showcase Image Box change mode  ==========
 
 const showcase = document.querySelector("#showcase");
 const arrow = document.querySelector("#showcase .arrow");
 const showcaseImg = document.querySelector("#showcase .imgBox");
 const nav = document.querySelector("nav");
-const menuIcon = document.querySelector("nav .menuIcon");
+const menuIcon = document.querySelector(".menuIcon");
 const intro = document.querySelector("#showcase .intro");
 const showcaseTitle = document.querySelector("#showcase .title");
 
 function horizontalNav() {
   nav.classList.add("navbar");
   nav.classList.remove("verticalNav"); // Back to navbar mode
+  menuIcon.style.display = "none";
+  nav.style.transition = "none";
 }
 
 function verticalNav() {
   nav.style.display = "flex";
   nav.classList.remove("navbar");
   nav.classList.add("verticalNav");
+  menuIcon.style.display = "flex";
 }
 
 function hideNav() {
@@ -108,7 +111,6 @@ menuIcon.addEventListener("click", function () {
 //* Vertical Navbar
 
 // ========== Vertical Navbar links Click mode ==========
-
 const navTitleLinks = document.querySelectorAll("nav .titleLink");
 
 for (let navTitleLink of navTitleLinks) {
@@ -125,7 +127,6 @@ for (let navTitleLink of navTitleLinks) {
 }
 
 // ========== Vertical Navbar Services inner lists open ==========
-
 const navServicesH3s = document.querySelectorAll("nav .services .list h3");
 
 for (const h3 of navServicesH3s) {
