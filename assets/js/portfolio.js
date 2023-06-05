@@ -4,6 +4,7 @@ const gallery = document.querySelector("#portfolio .gallery");
 const imageBoxes = document.querySelectorAll("#portfolio .imageBox");
 const images = document.querySelectorAll("#portfolio .imageBox img");
 const display = document.querySelector("#portfolio .display");
+const mainImage = document.querySelector("#portfolio .display .displayImg");
 const displayImage = document.querySelector("#portfolio .display img");
 const displayTitle = document.querySelector("#portfolio .display p");
 const closeBtn = document.querySelector("#portfolio .closeBtn");
@@ -21,9 +22,9 @@ imageBoxes.forEach((imageBox, index) => {
     displayTitle.textContent = imageBoxP;
 
     // set Display animation
-    display.classList.add("showDisplay");
+    mainImage.classList.add("showDisplay");
     setTimeout(() => {
-      display.classList.remove("showDisplay");
+      mainImage.classList.remove("showDisplay");
     }, 800);
 
     // When Windows<=900px =========
